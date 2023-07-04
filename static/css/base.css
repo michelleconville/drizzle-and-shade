@@ -60,6 +60,11 @@ body {
     background: #072446 !important;
 }
  
+.delivery-banner {
+    background: #ff9d5c;
+
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -70,7 +75,7 @@ body {
   }
   
   /* fixed top navbar only on medium and up */
-  @media (min-width: 992px) {
+  @media (min-width: 1103px) {
       .fixed-top-desktop-only {
           position: fixed;
           top: 0;
