@@ -1,0 +1,58 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/homepage_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #072446;
+    font-family: 'montserrat', sans-serif;
+}
+
+.text-blue {
+    color: #072446 !important;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.shop-now-button {
+    background: #072446;
+    color: white;
+    min-width: 260px;
+    border-radius: 25px;
+}
+
+.btn-blue {
+    background: #072446;
+    color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue:focus {
+    background: #012A67;
+    color: white;
+}
+
+.border-blue {
+    border: 1px solid #072446 !important;
+}
