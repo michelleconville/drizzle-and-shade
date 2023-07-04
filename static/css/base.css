@@ -7,14 +7,10 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #072446;
-    font-family: 'montserrat', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.text-blue {
-    color: #072446 !important;
-}
-
-/* from Bulma */
+/* from Bulma for font awesome icons */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -35,7 +31,6 @@ body {
     background: #072446;
     color: white;
     min-width: 260px;
-    border-radius: 25px;
 }
 
 .btn-blue {
@@ -53,6 +48,38 @@ body {
     color: white;
 }
 
+.text-blue {
+    color: #072446 !important;
+}
+
 .border-blue {
     border: 1px solid #072446 !important;
 }
+
+.bg-blue {
+    background: #072446 !important;
+}
+ 
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+  
+  /* fixed top navbar only on medium and up */
+  @media (min-width: 992px) {
+      .fixed-top-desktop-only {
+          position: fixed;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: 1030;
+      }
+  
+      .header-container {
+          padding-top: 164px;
+      }
+  }
