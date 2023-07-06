@@ -47,51 +47,29 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-md-block">
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-blue my-0"><i class="fa-solid fa-umbrella" style="color: #072446;"></i>
                         Drizzle & Shade</h2>
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1">
-                <nav class="navbar navbar-expand-lg navbar-light w-100">
-                    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                        aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span> -->
-                    <!-- </button> -->
-                    <!-- {% include 'includes/mobile-top-header.html' %} -->
-                    {% include 'includes/main-nav.html' %}
-                </nav>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-block">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item">
-                        <a class="text-blue nav-link" href="#" id="search" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-search fa-lg"></i></div>
-                                <p class="my-0">Search</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu w-100 p-3 search-icon bg-nav my-0" aria-labelledby="search">
-                            <form class="form" method="GET" action="">
-                                <div class="input-group w-100">
-                                    <input class="form-control border border-blue rounded-0" type="text" name="q"
-                                        placeholder="Search our site">
-                                    <div class="input-group-append">
-                                        <button
-                                            class="form-control form-control btn btn-blue border border-blue rounded-0"
-                                            type="submit">
-                                            <span class="icon">
-                                                <i class="fas fa-search"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-blue rounded-0" type="text" name="q" placeholder="Search our site">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-blue border border-blue rounded-3" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
                         </div>
-                    </li>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-blue nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -128,16 +106,18 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                {% include 'includes/mobile-top-header.html' %}
-            </nav>
-        </div>
-        <div id="delivery-banner" class="row text-center delivery-banner">
-            <div class="col text-white">
+    </div>
+    <div class="row bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% include 'includes/mobile-top-header.html' %}
+            {% include 'includes/main-nav.html' %}
+        </nav>
+    </div>
+        <div id="delivery-banner" class="row text-center">
+            <div class="col bg-blue text-white">
                 <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>
             </div>
         </div>
