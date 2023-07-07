@@ -17,11 +17,11 @@
                 All Umbrellas
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="umbrellas-link">
-                <a href="" class="dropdown-item">Beach Umbrellas</a>
-                <a href="" class="dropdown-item">Childrens Umbrellas</a>
-                <a href="" class="dropdown-item">Foldable Umbrellas</a>
-                <a href="" class="dropdown-item">Golf Umbrellas</a>
-                <a href="" class="dropdown-item">All Umbrellas</a>
+                <a href="{% url 'products' %}?category=beach_umbrellas" class="dropdown-item">Beach Umbrellas</a>
+                <a href="{% url 'products' %}?category=childrens_umbrellas" class="dropdown-item">Childrens Umbrellas</a>
+                <a href="{% url 'products' %}?category=foldable_umbrellas" class="dropdown-item">Foldable Umbrellas</a>
+                <a href="{% url 'products' %}?category=golf_umbrellas" class="dropdown-item">Golf Umbrellas</a>
+                <a href="{% url 'products' %}?category=beach_umbrellas,childrens_umbrellas,golf_umbrellas,foldable_umbrellas" class="dropdown-item">All Umbrellas</a>
             </div>
         </li>
 
