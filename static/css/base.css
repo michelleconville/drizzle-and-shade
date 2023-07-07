@@ -56,7 +56,12 @@ hr {
     color: #072446 !important;
 }
 
-
+.card {
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    
+}
 
 .border-blue {
     border: 1px solid #072446 !important;
