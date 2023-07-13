@@ -4,6 +4,7 @@
     --grey: #f1f1f1;
     --white: #ffffff;
     --orange: #ff9d5c;
+    --pink: #b2218d;
 
 }
 
@@ -20,7 +21,8 @@ body {
 }
 
 .container-fluid {
-    background-color: var(--grey);
+    background: rgb(7,36,70);
+background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, rgba(255,157,92,1) 100%);
 }
 
 
@@ -43,13 +45,13 @@ body {
 
 .shop-now-button {
     background: var(--main_blue);
-    color: var(--white);
+    color: var(--orange);
     min-width: 260px;
 }
 
 .btn-blue {
     background: var(--main_blue);
-    color: var(--white);
+    color: var(--orange);
 }
 
 .btn-outline-blue {
@@ -62,7 +64,7 @@ hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--main_blue);
   }
 
 
@@ -76,6 +78,8 @@ hr {
     color: var(--main_blue);
 }
 
+
+
 .text-blue {
     color: var(--main_blue) !important;
 }
@@ -84,11 +88,19 @@ hr {
         color: var(--orange) !important;
     }
 
+.text-pink {
+    color: var(--pink) !important;
+    }
+
 .card {
     text-decoration: none;
     color: var(--main_blue);
-    border-radius: 5px;
+    border-radius: 10px;
     
+}
+
+.card-footer {
+    background: rgba(255,157,92, 0.5);
 }
 
 .border-blue {
