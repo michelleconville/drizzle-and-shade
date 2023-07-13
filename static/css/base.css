@@ -39,6 +39,10 @@ background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, 
     text-transform: uppercase;
 }
 
+.logo {
+    font-family: 'Pangolin';
+    color: var(--orange);
+}
 .main-logo-link {
     width: fit-content;
 }
@@ -52,6 +56,11 @@ background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, 
 .btn-blue {
     background: var(--main_blue);
     color: var(--orange);
+}
+
+.btn-orange {
+    background: var(--orange);
+    color: var(--main_blue);
 }
 
 .btn-outline-blue {
@@ -77,8 +86,6 @@ hr {
     background: #ff9d5c;
     color: var(--main_blue);
 }
-
-
 
 .text-blue {
     color: var(--main_blue) !important;
@@ -113,6 +120,7 @@ hr {
  
 .delivery-banner {
     background: var(--orange);
+    font-family: 'Pangolin';
 }
 
 .overlay {
