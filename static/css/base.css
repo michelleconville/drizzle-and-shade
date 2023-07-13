@@ -80,6 +80,10 @@ hr {
     color: var(--main_blue) !important;
 }
 
+.text-orange {
+        color: var(--orange) !important;
+    }
+
 .card {
     text-decoration: none;
     color: var(--main_blue);
