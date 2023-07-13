@@ -10,6 +10,15 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
+/* .container-fluid {
+    background-color: #fadadd;
+} */
+
+/* .nav-color, nav {
+    background-color: #ff9d5c;
+} */
+
+
 /* from Bulma for font awesome icons */
 .icon {
     align-items: center;
@@ -39,19 +48,19 @@ body {
 }
 
 hr {
-    border: 1px solid #072446;
+    border: 0.5px solid #072446;
 }
 
 /* .card {
-    background: orange;
-}
+    background: #fadadd;
+} 
 
 .card {
     border-radius: 20px;
 } 
 
 .card-footer {
-    background: orange;
+    background: #fadadd;
 }  */
 
 
