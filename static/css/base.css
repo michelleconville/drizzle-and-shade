@@ -52,6 +52,12 @@ body {
     color: var(--white);
 }
 
+.btn-outline-blue {
+    background: var(--white);
+    color: var(--main_blue) !important;
+    border: 1px solid var(--main_blue);
+}
+
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
