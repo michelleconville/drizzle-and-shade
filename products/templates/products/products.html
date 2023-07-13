@@ -69,7 +69,7 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold text-blue">€{{ product.price }}</p>
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -112,10 +112,11 @@
             </div>
         </div>
     </div>
-    <div class="btt-button shadow-sm rounded-2 border border-black">
-        <a class="btt-link d-flex h-100">
+
+    <div class="btt-button shadow-sm border border-black">
+        <a class="btt-link d-flex h-100" aria-label="Back to Top Button">
             <i class="fas fa-arrow-up text-blue mx-auto my-auto"></i>
-        </a>	
+        </a>
     </div>
 {% endblock %}
 

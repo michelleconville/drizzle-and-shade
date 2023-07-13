@@ -1,3 +1,12 @@
+:root {
+    /** Colours */
+    --main_blue: #072446;
+    --grey: #f1f1f1;
+    --white: #ffffff;
+    --orange: #ff9d5c;
+
+}
+
 html {
     height: 100%;
 }
@@ -6,17 +15,13 @@ body {
     background: url('/media/homepage_background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #072446;
+    color: var(--main_blue);
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
-/* .container-fluid {
-    background-color: #fadadd;
-} */
-
-/* .nav-color, nav {
-    background-color: #ff9d5c;
-} */
+.container-fluid {
+    background-color: var(--grey);
+}
 
 
 /* from Bulma for font awesome icons */
@@ -37,31 +42,22 @@ body {
 }
 
 .shop-now-button {
-    background: #072446;
-    color: white;
+    background: var(--main_blue);
+    color: var(--white);
     min-width: 260px;
 }
 
 .btn-blue {
-    background: #072446;
-    color: white;
+    background: var(--main_blue);
+    color: var(--white);
 }
 
 hr {
-    border: 0.5px solid #072446;
-}
-
-/* .card {
-    background: #fadadd;
-} 
-
-.card {
-    border-radius: 20px;
-} 
-
-.card-footer {
-    background: #fadadd;
-}  */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
 
 .shop-now-button:hover,
@@ -71,30 +67,30 @@ hr {
 .btn-blue:active,
 .btn-blue:focus {
     background: #ff9d5c;
-    color: white;
+    color: var(--main_blue);
 }
 
 .text-blue {
-    color: #072446 !important;
+    color: var(--main_blue) !important;
 }
 
 .card {
     text-decoration: none;
-    color: black;
+    color: var(--main_blue);
     border-radius: 5px;
     
 }
 
 .border-blue {
-    border: 1px solid #072446 !important;
+    border: 1px solid var(--main_blue) !important;
 }
 
-.bg-blue {
-    background: #072446 !important;
-}
+/* .bg-blue {
+    background: var(--main_blue) !important;
+} */
  
 .delivery-banner {
-    background: #072446;
+    background: var(--orange);
 }
 
 .overlay {
@@ -114,7 +110,8 @@ hr {
     position: fixed;
     bottom: 10px;
     right: 10px;
-}
+    border-radius: 50px;
+  }
 
 .btt-link {
     cursor: pointer;
