@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -48,7 +49,7 @@
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="">
+                                        <form class="form update-form" method="POST" action="{% url 'amend_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -72,9 +73,6 @@
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    {% if item.product.has_sizes %}
-                                                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </form>
@@ -82,7 +80,7 @@
                                         <a class="update-link text-orange float-right"><small>Update</small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price }}</p>
+                                        <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -137,23 +135,24 @@
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function (e) {
-            var form = $(this).prev('.update-form');
-            form.submit();
-        });
+        var form = $(this).closest('td').find('.update-form');
+        form.submit();
+    });
+
 
     // Remove item and reload on click
-    $('.delete-item').click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('delete_')[1];
-        var url = `/shopping_bag/delete/${itemId}/`;
-        var data = {
-            'csrfmiddlewaretoken': csrfToken,
-        };
+    $('.remove-item').click(function(e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var url = `/bag/remove/${itemId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken};
 
-        $.post(url, data)
-            .done(function () {
+            $.post(url, data)
+            .done(function() {
                 location.reload();
             });
-    });
+        })
 </script>
+
+
 {% endblock %}
