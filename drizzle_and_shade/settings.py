@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-michellecon-drizzleands-wrkmznaae5j.ws-eu101.gitpod.io',
+    '8000-michellecon-drizzleands-fqh6q52qkj0.ws-eu101.gitpod.io',
     ]
 
 # Application definition
