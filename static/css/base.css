@@ -47,6 +47,13 @@ background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, 
     width: fit-content;
 }
 
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid var(--main_blue);
+}
+
 .shop-now-button {
     background: var(--main_blue);
     color: var(--orange);
@@ -63,18 +70,11 @@ background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, 
     color: var(--main_blue);
 }
 
-.btn-outline-blue {
+/* .btn-outline-blue {
     background: var(--white);
     color: var(--main_blue) !important;
     border: 1px solid var(--main_blue);
-}
-
-hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid var(--main_blue);
-  }
+} */
 
 
 .shop-now-button:hover,
@@ -83,8 +83,15 @@ hr {
 .btn-blue:hover,
 .btn-blue:active,
 .btn-blue:focus {
-    background: #ff9d5c;
+    background: var(--orange);
     color: var(--main_blue);
+}
+
+.btn-orange:hover,
+.btn-orange:active,
+.btn-orange:focus {
+    background: var(--main_blue);
+    color: var(--orange);
 }
 
 .text-blue {
