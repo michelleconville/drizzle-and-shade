@@ -1,5 +1,6 @@
 from django.db import models
 from djrichtextfield.models import RichTextField
+from profiles.models import UserProfile
 
 
 class Category(models.Model):
@@ -38,3 +39,24 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    """ A review model for users to review products """
+
+    RATING = [
+        (5, '5'),
+        (4, '4'),
+        (3, '3'),
+        (2, '2'),
+        (1, '1'),
+    ]
+
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    name = models.ForeignKey(Product, on_delete=models.CASCADE)
+    rating = models.IntegerField(choices=RATING, default=3)
+    body = models.TextField(max_length=1024)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'User: {self.user} rated {self.product}, {self.product} stars.'

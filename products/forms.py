@@ -1,7 +1,7 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
 from .widgets import CustomClearableFileInput
-from .models import Product, Category
+from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
@@ -34,3 +34,13 @@ class CategoryForm(forms.ModelForm):
         """category model fields"""
         model = Category
         fields = '__all__'
+
+
+class ReviewForm(forms.ModelForm):
+    """ Form for leaving rating and review """
+
+    class Meta:
+        """review model fields"""
+        model = Review
+        fields = ['rating', 'body']
+        labels = {'body': 'Please Write Your Review'}
