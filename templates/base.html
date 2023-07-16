@@ -150,10 +150,19 @@
 
     {% block postloadjs %}
     <script type="text/javascript">
+        // Display toast messages
         $('.toast').toast('show');
     </script>
-    {% endblock %}
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Close toast messages after 3 seconds (3000 milliseconds)
+            setTimeout(function() {
+                $('.toast').toast('hide');
+            }, 3000);
+        });
+    </script>
+    {% endblock %}
 
 </body>
 
