@@ -1,4 +1,5 @@
 from django import forms
+from djrichtextfield.widgets import RichTextWidget
 from .models import Product, Category
 
 
@@ -7,6 +8,10 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+
+        widgets = {
+            "description": RichTextWidget(),
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
