@@ -19,3 +19,8 @@
     max-height: 416px; /* height of profile form + submit button */
     overflow-y: auto;
 }
+
+.accounts-btns{
+    width: 75%;
+    font-size: 1.3rem;
+}

@@ -50,3 +50,14 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def product_management(request):
+    """ Display product management page where admin
+    can choose to add category and umbrella """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store owners can do that.')
+        return redirect(reverse('home'))
+    template = 'profiles/product_management.html'
+    return render(request, template)

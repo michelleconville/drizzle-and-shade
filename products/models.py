@@ -3,19 +3,25 @@ from djrichtextfield.models import RichTextField
 
 
 class Category(models.Model):
+    """ category models """
     class Meta:
+        """ add correct plural name"""
         verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     def get_friendly_name(self):
-        return self.friendly_name
+        """method to get category friendly name"""
+        return str(self.friendly_name)
 
 
 class Product(models.Model):
+    """ Product model """
+    
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)

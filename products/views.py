@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Product, Category
-from .forms import ProductForm
+from .forms import ProductForm, CategoryForm
 
 # Create your views here.
 
@@ -143,3 +143,31 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_category(request):
+    """ Add a category to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added category!')
+            return redirect(reverse('add_category'))
+        else:
+            messages.error(
+                request, 'Failed to add category.\
+                     Please ensure the form is valid.')
+    else:
+        form = CategoryForm()
+    template = 'products/add_category.html'
+    context = {
+        'form': form,
+        'on_page': True,
+    }
+    return render(request, template, context)
