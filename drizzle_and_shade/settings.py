@@ -31,7 +31,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-michellecon-drizzleands-fqh6q52qkj0.ws-eu101.gitpod.io',
-    'drizzleandshade.herokuapp.com',
+    'drizzleandshade-4e77ed93aac5.herokuapp.com',
     'localhost'
     ]
 
