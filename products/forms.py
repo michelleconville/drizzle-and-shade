@@ -10,8 +10,11 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = '__all__'
 
-        description = forms.CharField(widget=RichTextWidget())
-        image = forms.ImageField(
+    description = forms.CharField(
+            label='Description',
+            required=False, widget=RichTextWidget
+            )
+    image = forms.ImageField(
             label='Image', required=False, widget=CustomClearableFileInput
             )
 
