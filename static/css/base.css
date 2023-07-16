@@ -41,7 +41,7 @@ background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, 
 
 .logo {
     font-family: 'Pangolin';
-    color: var(--orange);
+    color: var(--pink);
 }
 .main-logo-link {
     width: fit-content;
