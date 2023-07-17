@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %} | Wishlist{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Wishlist</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 text-center">
+            {% if wishlist_items %}
+            <div class="table-responsive mb-5">
+                <table class="table table-borderless w-100">
+                    <thead>
+                        <tr class="border-bottom">
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for wishlist_item in wishlist_items %}
+                        <tr class="border-top">
+                            <td>
+                                <p class="m-0">{{ wishlist_item.product.name }}</p>
+                                <div class="small wishlist-img">
+                                    {% if wishlist_item.product.image %}
+                                    <a href="{{ wishlist_item.product.image.url }}" target="_blank">
+                                        <img src="{{ wishlist_item.product.image.url }}"
+                                            alt="{{ wishlist_item.product.name }}">
+                                    </a>
+                                    {% else %}
+                                    <a href="">
+                                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ wishlist_item.product.name }}">
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </td>
+                            <td>
+                                €{{ wishlist_item.product.price }}
+                            </td>
+                            <td>
+                                <div class="btn btn-orange logo-font p-0">
+                                    <a href="{% url 'remove_from_wishlist' wishlist_item.product.id %}"
+                                        class="btn btn-orange">Remove</a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                {% else %}
+                <p>No products in wishlist</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

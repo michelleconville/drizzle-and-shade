@@ -13,3 +13,11 @@ class Wishlist(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+class WishlistItem(models.Model):
+    wishlist = models.ForeignKey(Wishlist, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.product} in {self.wishlist}"
