@@ -49,13 +49,16 @@
 
 <body>
     <header class="container-fluid fixed-top">
+        <!-- Top navigation -->
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <!-- Logo -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font my-0 logo"><i class="fa-solid fa-umbrella" style="color: #072446;"></i>
                         Drizzle & Shade</h2>
                 </a>
             </div>
+            <!-- Search bar -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
@@ -70,6 +73,7 @@
                     </div>
                 </form>
             </div>
+            <!-- Basket and Account links -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -112,6 +116,7 @@
             </div>
         </div>
     </div>
+    <!-- Main page navigation -->
     <div class="row bg-white">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -148,9 +153,28 @@
 
     {% block page_header %}
     {% endblock %}
-
+        
     {% block content %}
     {% endblock %}
+        
+        <!-- Main page navigation -->
+    <footer class="container-fluid p-3 text-white">
+            <div class="container quotes-container content-container">
+              <section class="footer">
+               <div class="row">
+                 <div class="col-12 col-md-6">
+                   <h4>Social</h4>
+                   <p>Keep up to date with all our latest offers</p>
+                   <a class="text-white" href="" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+                 </div>
+                 <div class="col-12 col-md-6">
+                   <!-- Mailchimp signup form here -->
+                   Newsletter
+                 </div>
+               </div>
+             </section>
+           </div>
+    </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">
