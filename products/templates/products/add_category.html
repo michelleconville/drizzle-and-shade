@@ -36,27 +36,38 @@
                 </form>
             </div>
             <div class="col-12 col-lg-6">
-                <div class="category-table table-responsive mb-5">
-                    <table class="table table-sm table-borderless">
-                        <thead>
-                            <tr class="border-bottom text-blue">
-                                <th>Name</th>
-                                <th>Friendly Name</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for c in current_categories %}
-                            <tr>
-                                <td>
-                                    <p>{{c.name}}</p>
-                                </td>
-                                <td>{{ c.friendly_name }}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+                <h3 class="text-pink">List of Categories</h3>
+                    <div class="category-table table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr class="border-bottom text-blue">
+                                    <th>Name</th>
+                                    <th>Friendly Name</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-blue">
+                                {% for category in categories %}
+                                <tr>
+                                    <td>
+                                        <p>{{ category.name }}</p>
+                                    </td>
+                                    <td>{{ category.friendly_name }}</td>
+                                    <td>
+                                        <div class="btn logo-font d-inline">
+        
+                                            <a href="{% url 'edit_category' category.id %}" class="text-orange">Edit</a>
+        
+                                            <a class="text-pink" href="{% url 'delete_category' category.id %}">Delete</a>
+                                        </div>
+        
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                
             </div>       
         </div>
     </div>

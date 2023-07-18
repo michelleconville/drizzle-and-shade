@@ -328,7 +328,7 @@ input[name='q']::placeholder {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: var(--orange);
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -348,13 +348,13 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
-    background-color: #222;
-    border-color: #222;
+	color: var(--main_blue);
+    background-color: var(--orange);
+    border-color: var(--main_blue);
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: var(--main_blue); /* text-info */
 }
 
 /* Product Form */

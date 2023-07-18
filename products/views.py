@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.urls import reverse_lazy
 
 from .models import Product, Category, Review
 from .forms import ProductForm, CategoryForm, ReviewForm
@@ -158,28 +159,28 @@ def delete_product(request, product_id):
 
 @login_required
 def add_category(request):
-    """ Add a category to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry only store owners can do that.')
+        messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
+
+    categories = Category.objects.all()
 
     if request.method == 'POST':
         form = CategoryForm(request.POST)
-
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully added category!')
-            return redirect(reverse('add_category'))
+            form = CategoryForm()  # Reset the form after saving the category
         else:
-            messages.error(
-                request, 'Failed to add category.\
-                     Please ensure the form is valid.')
+            messages.error(request, 'Failed to add a new category. \
+                Please ensure the form is valid.')
     else:
         form = CategoryForm()
+
     template = 'products/add_category.html'
     context = {
         'form': form,
-        'on_page': True,
+        'categories': categories,
     }
     return render(request, template, context)
 
