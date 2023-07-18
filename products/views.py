@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
-from .forms import ProductForm, CategoryForm
+from .models import Product, Category, Review
+from .forms import ProductForm, CategoryForm, ReviewForm
 
 # Create your views here.
 
@@ -65,13 +65,24 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
+    form = ReviewForm()
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+            product.review_count += 1
+            product.save()
+            return redirect('product_detail', product_id=product_id)
 
     context = {
         'product': product,
+        'form': form,
     }
-
     return render(request, 'products/product_detail.html', context)
 
 

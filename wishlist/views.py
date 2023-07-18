@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from products.models import Product
 from profiles.models import UserProfile
-from . models import Wishlist
+from . models import Wishlist, WishlistItem
 
 
 @login_required
@@ -24,8 +24,7 @@ def add_to_wishlist(request, product_id):
     """ View to add product to wishlist"""
     user = UserProfile.objects.get(user=request.user)
     product = get_object_or_404(Product, pk=product_id)
-    wishlist_exists = Wishlist.objects.filter(
-        user=user, product=product).exists()
+    wishlist_exists = Wishlist.objects.filter(user=user, product=product).exists()
 
     if wishlist_exists:
         wishlist_item = Wishlist.objects.get(
