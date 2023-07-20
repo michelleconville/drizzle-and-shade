@@ -287,12 +287,12 @@ input[name='q']::placeholder {
         font-size: .9rem;
     }
 
-    .btn.btn-outline-blue.rounded-0,
+    .btn.btn-orange.rounded-0,
     .btn.btn-blue.rounded-0 {
         padding: .375rem .375rem;
     }
 
-    .btn.btn-outline-blue.rounded-0.btn-lg,
+    .btn.btn-orange.rounded-0.btn-lg,
     .btn.btn-blue.rounded-0.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
