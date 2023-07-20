@@ -29,18 +29,18 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-            <div class="product-details-container mb-5 mt-md-5 text-white">
+            <div class="product-details-container mb-5 mt-md-5 text-blue">
                 <p class="mb-0">{{ product.name }}</p>
-                <p class="lead mb-0 text-left">${{ product.price }}</p>
+                <p class="lead mb-0 text-left">€{{ product.price }}</p>
                 {% if product.category %}
                 <p class="small mt-1 mb-0">
-                    <a class="text-white" href="{% url 'products' %}?category={{ product.category.name }}">
+                    <a class="text-blue" href="{% url 'products' %}?category={{ product.category.name }}">
                         <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                     </a>
                 </p>
                 {% endif %}
                 {% if product.rating %}
-                <small class="text-white"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                <small class="text-blue"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
                 <small class="text-muted">No Rating</small>
                 {% endif %}
@@ -80,31 +80,30 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-orange rounded-0 mt-5">
+                            <a href="{% url 'products' %}" class="btn btn-orange rounded-0 mt-2">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <input type="submit" class="btn btn-blue rounded-0 text-uppercase mt-5" value="Add to Bag">
+                            <input type="submit" class="btn btn-blue rounded-0 text-uppercase mt-2" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
-                </form>
-            </div>
-            <div>
-                {% if request.user.is_authenticated %}
-                <a href="{% url 'add_to_wishlist' product.id %}">
-                    {% if is_in_wishlist %}
-                        <div class="btn btn-orange logo-font">Remove from wishlist</div>
+                    <div>
+                        {% if request.user.is_authenticated %}
+                        <a href="{% url 'add_to_wishlist' product.id %}">
+                            {% if is_in_wishlist %}
+                                <div class="btn btn-orange rounded-0 mb-5 mt-4 text-uppercase">Remove from wishlist</div>
+                            {% else %}
+                                <div class="btn btn-blue rounded-0 mb-5 mt-4 text-uppercase">Add to wishlist</div>
+                            {% endif %}
+                        </a>
                     {% else %}
-                        <div class="btn btn-blue logo-font">Add to wishlist</div>
+                        <button class="btn btn-blue rounded-0 mb-5 mt-4 text-uppercase" data-toggle="modal" data-target="#wishlist">Add to wishlist</button>
                     {% endif %}
-                </a>
-            {% else %}
-                <button class="btn btn-blue" data-toggle="modal" data-target="#wishlist">Add to wishlist</button>
-            {% endif %}
-            
+                    </div>
+                </form>
             </div>
         </div>
         {% include 'products/includes/wishlist_modal.html' %}
@@ -113,7 +112,7 @@
 </div>
 </div>
 </div>
-<!-- <div class="col-12 col-md-6 text-white">
+<!-- <div class="col-12 col-md-6 text-blue">
         <div class="container">
             <div class="row">
                 <div class="col">

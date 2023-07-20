@@ -8,6 +8,8 @@ from django.urls import reverse_lazy
 from .models import Product, Category, Review
 from .forms import ProductForm, CategoryForm, ReviewForm
 
+from wishlist.models import Wishlist, WishlistItem
+
 # Create your views here.
 
 
@@ -68,6 +70,14 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id)
     form = ReviewForm()
+    is_in_wishlist = False
+
+    if request.user.is_authenticated:
+        user = request.user
+        wishlist_exists = Wishlist.objects.filter(
+            user__user=user, product=product
+        ).exists()
+        is_in_wishlist = wishlist_exists
 
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -83,6 +93,7 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'form': form,
+        'is_in_wishlist': is_in_wishlist,
     }
     return render(request, 'products/product_detail.html', context)
 

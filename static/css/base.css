@@ -24,11 +24,14 @@ body {
     flex: 1 1 auto;
 }
 
-.container-fluid, .modal {
+.modal {
     background: rgb(7,36,70);
 background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, rgba(255,157,92,1) 100%);
 }
 
+footer {
+    background: var(--orange);
+}
 
 /* from Bulma for font awesome icons */
 .icon {
@@ -114,11 +117,10 @@ hr {
     text-decoration: none;
     color: var(--main_blue);
     border-radius: 10px;
-    
 }
 
 .card-footer {
-    background: rgba(255,157,92, 0.5);
+    background: var(--orange);
 }
 
 .border-blue {

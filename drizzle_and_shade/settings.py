@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-michellecon-drizzleands-fqh6q52qkj0.ws-eu101.gitpod.io',
+    '8000-michellecon-drizzleands-fqh6q52qkj0.ws-eu102.gitpod.io',
     'drizzleandshade-4e77ed93aac5.herokuapp.com',
     'localhost'
     ]
@@ -125,6 +125,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+
+AUTH_USER_MODEL = 'auth.User'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
