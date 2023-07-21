@@ -120,26 +120,19 @@ To fork the repository by following these steps:
 
 This project uses the Django framework. To install django, follow these steps:
 
-1. In your IDE type the command: 
-    `pip3 install django`
-2. To name your project:  
-    `django-admin startproject *Your project name here*`  
-This will add your django project folder to your file explorer
-3. Next you will need to add a gitignore file. To do this enter the command line:  
-    `touch .gitignore`
+1. In your IDE type the command `pip3 install django`
+2. To name your project and add your django project folder to your file explorer type the command `django-admin startproject *Your project name here*`  
+3. Add a gitignore file, type the command `touch .gitignore`
 4. Inside this file add these 3 lines:  
     ``` 
     *.sqlite3
     *.pyc
     __pycache__
     ```
-5. To check everything is up and running, run the command:  
-    `python3 manage.py runserver`
+5. To check everything is working, type the command `python3 manage.py runserver`
     This should expose port 8000. Open that port and you should be welcomed by Django's success page.
-6. Next you need to perform the initial migrations. This is done by running the command:
-    `python3 manage.py migrate`
-7. Finally, in order to have access to the admin panel you will need to create a superuser. This is done by running the command:
-    `python3 manage.py createsuperuser`
+6. Next you need to perform the initial migrations. Type the command `python3 manage.py migrate`
+7. To access to the admin panel, create a superuser. type the command `python3 manage.py createsuperuser`
     This will then ask you to create a username and password with an optional email address.
 8. Once these steps are completed you can push your changes to github by running the commands, in order:
     ```
@@ -166,12 +159,9 @@ Heroku is used to deploy the final project.
 
 To use Postgres you will need to install dj_database_url and psycopg2. This should be done in whatever IDE you are using.
 
-1. In your IDE type the command:  
-    `pip3 install dj_database_url`
-2. Then once that is installed type the command:  
-    `pip3 install psycopg2-binary`
-3. Then, to make sure Heroku install all your apps requirements when you deploy it, run the command:  
-    `pip3 freeze > requirements.txt`
+1. In your IDE type the command `pip3 install dj_database_url`
+2. Then once that is installed type the command `pip3 install psycopg2-binary`
+3. Then, to make sure Heroku install all your apps requirements when you deploy it, run the command `pip3 freeze > requirements.txt`
 4. Next, navigate to your setting.py file in your main project folder. At the top of the file add the line:  
     ```
     import dj_database_url
@@ -207,10 +197,8 @@ To use Postgres you will need to install dj_database_url and psycopg2. This shou
             }
     }
     ```
-10. Next we will have to install another package called gunicorn, which will act as our web server. To do so, run the command:  
-    `pip3 install gunicorn`
-    And then remember to freeze the requirements with:  
-    `pip3 freeze > requirements.txt`
+10. Next we will have to install another package called gunicorn, which will act as our web server. To do so, run the command `pip3 install gunicorn`
+    And then remember to freeze the requirements with `pip3 freeze > requirements.txt`
 11. Now we can create our Procfile to tell Heroku to create a web dyno. In your root directory create a file named 'Procfile' and inside insert the code:  
     `web: gunicorn **'your_projects_name_here'**.wsgi:application
 12. Then, back in heroku, navigate to settings and in the config vars input the key DISABLE_COLLECTSTATIC with the value 1, and click 'Add'.
