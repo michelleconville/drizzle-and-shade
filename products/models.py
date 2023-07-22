@@ -54,10 +54,13 @@ class Review(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, null=True, related_name='reviews'
+        )
+    name = models.CharField(max_length=255)
     rating = models.IntegerField(choices=RATING, default=3)
     body = models.TextField(max_length=1024)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'User: {self.user} rated {self.name}, {self.rating} stars.'
+        return f'Review for {self.product.name} by {self.user.username}'

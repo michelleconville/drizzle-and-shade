@@ -8,6 +8,8 @@ from profiles.models import UserProfile
 from .models import Product, Category, Review
 from .forms import ProductForm, CategoryForm, ReviewForm
 from django.db.models import Avg
+from django.db import models
+from django.conf import settings
 
 from wishlist.models import Wishlist, WishlistItem
 
@@ -87,11 +89,11 @@ def product_detail(request, product_id):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            reviews.create(
-                user=user_profile,
-                product=product,
-                rating=request.POST.get('rating'),
-                body=request.POST.get('body'))
+            review = form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.name = product.name  # Assuming the "name" field is used for product association
+            review.save()
 
             # Update the product's rating and review count
             reviews = Review.objects.filter(product=product)
@@ -274,10 +276,9 @@ def edit_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     product = review.product
 
-    if request.user.id != review.user.user.id:
+    if request.user.id != review.user.id:
         messages.error(request, 'Sorry, you do not have access to that.')
-        return redirect(
-            reverse('product_detail', args=[product.id]))
+        return redirect(reverse('product_detail', args=[product.id]))
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
@@ -314,10 +315,9 @@ def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     product = review.product
 
-    if request.user.id != review.user.user.id:
+    if request.user.id != review.user.id:
         messages.error(request, 'Sorry, you do not have access to that.')
-        return redirect(
-            reverse('product_detail', args=[product.id]))
+        return redirect(reverse('product_detail', args=[product.id]))
 
     review.delete()
     reviews = Review.objects.all().filter(product=product)
@@ -327,3 +327,4 @@ def delete_review(request, review_id):
     product.save()
     messages.success(request, 'Review successfully deleted!')
     return redirect(reverse('product_detail', args=[product.id]))
+
