@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'wishlist',
-    'newsletter',
 
     # Other
     'djrichtextfield',
