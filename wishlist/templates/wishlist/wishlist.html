@@ -39,7 +39,7 @@
 
                     {% for wishlist_item in wishlist_items %}
                     <tr>
-                        <td class="p-3 w-25">
+                        <td class="p-3 w-25 text-blue">
                             {% if wishlist_item.product.image %}
                             <img class="img-fluid rounded" src="{{ wishlist_item.product.image.url }}"
                                 alt="{{ wishlist_item.product.name }}">
@@ -49,10 +49,10 @@
                             {% endif %}
                         </td>
                         <td class="py-3">
-                            <p class="my-0"><strong>{{ wishlist_item.product.name }}</strong></p>
+                            <p class="my-0 text-pink">{{ wishlist_item.product.name }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">${{ wishlist_item.product.price }}</p>
+                            <p class="my-0 text-pink">€{{ wishlist_item.product.price }}</p>
                         </td>
                         <td class="py-3 w-25">
                             <div class="btn btn-orange logo-font p-0">

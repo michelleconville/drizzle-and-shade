@@ -92,7 +92,7 @@ def product_detail(request, product_id):
             review = form.save(commit=False)
             review.user = request.user
             review.product = product
-            review.name = product.name  # Assuming the "name" field is used for product association
+            review.name = product.name
             review.save()
 
             # Update the product's rating and review count
@@ -105,7 +105,8 @@ def product_detail(request, product_id):
             messages.success(request, 'Review successfully added')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add review. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add review. \
+                Please ensure the form is valid.')
 
     else:
         form = ReviewForm()
@@ -327,4 +328,3 @@ def delete_review(request, review_id):
     product.save()
     messages.success(request, 'Review successfully deleted!')
     return redirect(reverse('product_detail', args=[product.id]))
-

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'marketing.apps.MarketingConfig',
 
     # Apps
     'home',
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'wishlist',
+    'newsletter',
 
     # Other
     'djrichtextfield',
