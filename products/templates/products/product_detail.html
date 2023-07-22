@@ -109,33 +109,97 @@
         {% include 'products/includes/wishlist_modal.html' %}
     </div>
 </div>
-</div>
-</div>
-</div>
-<div class="col-12 col-md-6 text-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <hr>
-                    <h2 class="logo-font mb-4">Review Umbrella</h2>
-                    <hr>
-                </div>
-            </div>
-            <div>
-                {% if user.is_authenticated %}
-                <form method="post" action="{% url 'product_detail' product_id=product.id %}">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="decrement-qty btn btn-blue rounded-0">Submit Review</button>
-                </form>
-                {% else %}
-                <p>Please log in to leave a review.</p>
-                {% endif %}
 
+<section id="reviews-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                {% if reviews %}
+                <h4>{{ review_count }} Reviews for <strong>{{ product.name }}</strong></h4>
+                <hr>
             </div>
         </div>
+    </div>
 
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+
+                {% for review in reviews %}
+                <div class="row mt-3">
+                    <div class="col review-stars">
+                        {% if review.rating == 5 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i>
+                        {% elif review.rating == 4 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 3 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 2 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-regular fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 1 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <!-- User and admin edit btn -->
+                        {% if review.user.user.id == user.id or request.user.is_superuser %}
+                        <a href="{% url 'edit_review' review.id %}#reviews-section"
+                            aria-label="Edit review from {{ review.user }}" class="text-secondary text-decoration-none">
+                            <span class="icon mr-2">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </span>
+                        </a>
+                        <a class="text-danger text-decoration-none btn" data-toggle="modal"
+                            data-target="#reviewDeleteModal" aria-label="Delete review from {{ review.user }}">
+                            <span class="icon">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </span>
+                        </a>
+
+                        {% include 'products/includes/delete_review_modal.html' %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {{ review.body}}
+                        <p class="small text-muted">{{ review.user }} &#8226; {{review.created_on|timesince }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                {% if not edit %}
+                <div class="col-12 col-md-8 mx-auto">
+                    <h5>This Product has no reviews</h5>
+                </div>
+                {% endif %}
+                {% endif %}
+
+
+
+            </div>
+
+            <!-- Add review -->
+            <div class="col-12 col-md-6">
+                <h4 class="text-center">Leave A Review</h4>
+                {% include 'products/includes/add_edit_review_forms.html' %}
+            </div>
+
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block postloadjs %}
