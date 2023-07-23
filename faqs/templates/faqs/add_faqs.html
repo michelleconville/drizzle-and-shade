@@ -26,13 +26,11 @@
             <form method="POST" action="{% url 'add_faqs' %}" enctype="multipart/form-data" class="mb-2 prod-form">
                 {% csrf_token %}
                 {{ form | crispy }}
+
+                <!-- Move the "Submit FAQ" button inside the form tag -->
+                <button type="submit" class="btn btn-blue my-3">Submit FAQ</button>
             </form>
-        </div>
-        <div>
-            <button class="btn btn-blue my-3" value="submit"> Submit FAQ</button>
         </div>
     </div>
 </div>
-
-
 {% endblock %}

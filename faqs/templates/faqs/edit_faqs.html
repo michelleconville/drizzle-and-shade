@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} | Edit an FAQ {% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+            <hr>
+            <h2 class="logo-font mb-4">Edit an FAQ</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="col-12 col-md-8 mx-auto mb-5">
+        <div class="prod-form">
+            <!-- Change the form action to point to the correct URL for the edit_faqs view -->
+            <form method="POST" action="{% url 'edit_faqs' item.id %}" enctype="multipart/form-data" class="mb-2 prod-form">
+                {% csrf_token %}
+                {{ form | crispy }}
+
+                <!-- Change the button label to "Save FAQ" -->
+                <button type="submit" class="btn btn-blue my-3">Save FAQ</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
