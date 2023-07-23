@@ -71,23 +71,23 @@
                                 <div class="card-footer pt-0 border-2 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold text-blue">€{{ product.price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold text-orange">€{{ product.price }}</p>
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
-                                                <a class="text-blue" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                <a class="text-orange" href="{% url 'products' %}?category={{ product.category.name }}">
                                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                 </a>
                                             </p>
                                             {% endif %}
                                             {% if product.rating %}
-                                                <small class="text-blue"><i class="fas fa-star mr-1"></i><strong>{{ product.rating }} / 5</strong></small>
+                                                <small class="text-orange"><i class="fas fa-star mr-1"></i><strong>{{ product.rating }} / 5</strong></small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
                                             {% if request.user.is_superuser %}
                                             <small class="ml-3">
-                                                <a class="text-blue" href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                <a class="text-blue" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                <a class="text-orange" href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                <a class="text-orange" href="{% url 'delete_product' product.id %}">Delete</a>
                                             </small>
                                         {% endif %}
                                         </div>

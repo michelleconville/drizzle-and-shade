@@ -119,7 +119,8 @@ hr {
 }
 
 .card-footer {
-    background: var(--orange);
+    background: var(--main_blue);
+    color: var(--orange);
 }
 
 .border-blue {
