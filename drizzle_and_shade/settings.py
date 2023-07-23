@@ -63,7 +63,6 @@ INSTALLED_APPS = [
     'djrichtextfield',
     'crispy_forms',
     'storages',
-    'django_summernote',
 ]
 
 DJRICHTEXTFIELD_CONFIG = {
