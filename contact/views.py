@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from .forms import ContactForm
 
 
 def contact(request):
@@ -12,7 +13,7 @@ def contact(request):
     from_email = "drizzleandshade.com"
 
     html_message = render_to_string(
-        "contact/emails/contact_email_confirmation.html",
+        "contact/contact_email_confirmation.html",
     )
     plain_message = strip_tags(html_message)
 

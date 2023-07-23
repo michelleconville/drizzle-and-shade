@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'djrichtextfield',
     'crispy_forms',
     'storages',
+    'django_summernote',
 ]
 
 DJRICHTEXTFIELD_CONFIG = {
@@ -90,6 +91,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'drizzle_and_shade.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 TEMPLATES = [
     {
