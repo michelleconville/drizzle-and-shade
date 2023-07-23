@@ -24,7 +24,7 @@
             </div>
             <p>
                 {% if request.user.is_superuser %}
-                <a class="text-decoration-none btn btn-blue border-2" href=""> Add FAQs</a>
+                <a class="text-decoration-none btn btn-blue border-2" href="{% url 'add_faqs' %}"> Add FAQs</a>
                 {% endif %}
             </p>
         </div>

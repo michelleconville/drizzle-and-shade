@@ -32,7 +32,7 @@
             </div>
             <div class="col-12 col-md-8 mx-auto mb-5">
                 <div class="prod-form">
-                    <form method="POST" action="{% url 'contact' %}" class="mb-2" enctype="multipart/form-data" class="mb-2 prod-form">
+                    <form method="POST" action="{% url 'contact' %}" enctype="multipart/form-data" class="mb-2 prod-form">
                         {% csrf_token %}
                         {{form|crispy}}
                         <div>
