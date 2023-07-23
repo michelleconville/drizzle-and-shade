@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'profiles',
     'wishlist',
     'contact',
+    'faqs',
 
     # Other
     'djrichtextfield',
