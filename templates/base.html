@@ -46,8 +46,9 @@
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
-
     {% block extra_js %}
+    <!-- mailchimp pop-up form -->
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/f1ae47876209890d38ac99ad6/3975537ee5e09759f5eddb72e.js");</script>
     {% endblock %}
 
     <title>Drizzle and Shade {% block extra_title %}{% endblock %}</title>
@@ -69,9 +70,9 @@
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-blue rounded-0" type="text" name="q"
-                            placeholder="Search our site">
+                            placeholder="Search our site" aria-label="Search Input Box">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-blue border border-blue rounded-3" type="submit">
+                            <button class="form-control btn btn-blue border border-blue rounded-3" type="submit" aria-label="Search Box Button">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -137,7 +138,7 @@
         </div>
         <div id="delivery-banner" class="row text-center delivery-banner">
             <div class="col text-blue">
-                <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
+                <p class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</p>
             </div>
         </div>
     </header>
@@ -184,7 +185,6 @@
     </script>
     {% endblock %}
     <!-- Main page navigation -->
-
 
 </body>
 </html>

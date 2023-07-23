@@ -5,7 +5,6 @@
     --white: #ffffff;
     --orange: #ff9d5c;
     --pink: #b2218d;
-
 }
 
 html {
@@ -30,7 +29,8 @@ background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, 
 }
 
 footer {
-    background: var(--orange);
+    background: var(--main_blue);
+    color: var(--orange);
 }
 
 /* from Bulma for font awesome icons */
@@ -76,13 +76,6 @@ hr {
     background: var(--orange);
     color: var(--main_blue);
 }
-
-/* .btn-outline-blue {
-    background: var(--white);
-    color: var(--main_blue) !important;
-    border: 1px solid var(--main_blue);
-} */
-
 
 .shop-now-button:hover,
 .shop-now-button:active,

@@ -13,7 +13,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container-fluid pb-4">
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Umbrellas</h2>
@@ -74,13 +74,13 @@
                                             <p class="lead mb-0 text-left font-weight-bold text-blue">€{{ product.price }}</p>
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
-                                                <a class="text-pink" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                <a class="text-blue" href="{% url 'products' %}?category={{ product.category.name }}">
                                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                 </a>
                                             </p>
                                             {% endif %}
                                             {% if product.rating %}
-                                                <small class="text-pink"><i class="fas fa-star mr-1"></i><strong>{{ product.rating }} / 5</strong></small>
+                                                <small class="text-blue"><i class="fas fa-star mr-1"></i><strong>{{ product.rating }} / 5</strong></small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
@@ -123,7 +123,7 @@
 
     <div class="btt-button shadow-sm border border-black">
         <a class="btt-link d-flex h-100" aria-label="Back to Top Button">
-            <i class="fas fa-arrow-up text-blue mx-auto my-auto"></i>
+            <i class="fas fa-arrow-up text-orange mx-auto my-auto"></i>
         </a>
     </div>
 {% endblock %}
