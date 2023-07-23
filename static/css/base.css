@@ -28,10 +28,16 @@ body {
 background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, rgba(255,157,92,1) 100%);
 }
 
+/* Footer */
+
 footer {
     background: var(--main_blue);
     color: var(--orange);
 }
+
+.footer hr {
+    border-color: var(--orange);
+  }
 
 /* from Bulma for font awesome icons */
 .icon {
@@ -379,3 +385,4 @@ input[name='q']::placeholder {
     border-color: var(--pink);
     border-radius: 0;
 }
+
