@@ -16,25 +16,26 @@
 
 {% block content %}
 <!-- Contact -->
-<div class="overlay"></div>
 <section class="contact">
+    <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 mx-auto">
                 <hr>
                 <h1 class="text-blue">Contact Us</h1>
                 <hr>
-                <p>At <strong class="font-weight-bold text-pink">Drizzle and Shade</strong>, we respect your comments and questions, 
-                    and our committed staff are here to help. We would love to hear from you if you have any inquiries regarding our products, 
+                <p class="text-blue">At <strong class="font-weight-bold text-pink logo">Drizzle and Shade</strong>, we
+                    respect your comments and questions,
+                    and our committed staff are here to help. We would love to hear from you if you have any inquiries
+                    regarding our products,
                     need help with an order, or just have some feedback.</p>
             </div>
             <div class="col-12 col-md-8 mx-auto mb-5">
                 <div class="prod-form">
-                    <form method="POST" action="{% url 'contact' %}" class="mb-2 prod-form"
-                        enctype="multipart/form-data">
+                    <form method="POST" action="{% url 'contact' %}" class="mb-2" enctype="multipart/form-data" class="mb-2 prod-form">
                         {% csrf_token %}
                         {{form|crispy}}
-                        <div class="">
+                        <div>
                             <a class="btn btn-orange" href="{% url 'home' %}">Cancel</a>
                             <button class="btn btn-blue " type="submit">Submit</button>
                         </div>

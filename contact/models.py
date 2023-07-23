@@ -1,4 +1,5 @@
 from django.db import models
+from djrichtextfield.models import RichTextField
 
 # Create your models here.
 
@@ -23,10 +24,7 @@ class Contact(models.Model):
     name = models.CharField(null=False, blank=False, max_length=50)
     email = models.EmailField(null=False, blank=False, max_length=254)
     subject = models.CharField(null=False, blank=False, max_length=50)
-    message = models.TextField(
-        null=False,
-        blank=False,
-    )
+    message = RichTextField(max_length=10000, null=False, blank=False)
     pending_reply = models.BooleanField(default=True)
     marked_as_done = models.BooleanField(default=False)
 

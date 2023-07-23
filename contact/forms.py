@@ -1,5 +1,5 @@
 from django import forms
-from django_summernote.widgets import SummernoteWidget
+from djrichtextfield.widgets import RichTextWidget
 from .models import Contact
 
 
@@ -26,7 +26,9 @@ class ContactForm(forms.ModelForm):
             "contact_reason": "Reason for Contact",
         }
 
-        widgets = {"message": SummernoteWidget()}
+        widgets = {
+            "message": RichTextWidget(),
+            }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
