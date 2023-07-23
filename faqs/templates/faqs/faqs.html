@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} | Frequently asked questions {% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Frequently asked questions</h2>
+            <hr>
+            <div>
+                <small class="text-pink">The following page outlines the FAQs for the Drizzle & Shade website.</small>
+            </div>
+            <p>
+                {% if request.user.is_superuser %}
+                <a class="text-decoration-none btn btn-blue border-2" href=""> Add FAQs</a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="accordion mb-3" id="faq-order-accordion">
+        <div>
+            <h3 class="mb-0 mt-3">Orders</h3>
+            <hr>
+            {% for f in faqs %}
+            {% if f.category == 'OR' %}
+            <div class="py-3" id="f-order-{{ faq.id }}">
+                <div class="">
+                    <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                        aria-expanded="true" aria-controls="f-{{f.id}}">
+                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                    </h4>
+                    {% if request.user.is_superuser %}
+                    <small><a class="faqs text-decoration-none btn btn-orange border-2" href=""> Edit FAQ</a></small>
+                    |
+                    <small><a class="faqs text-decoration-none btn btn-blue border-2" href=""> Delete FAQ</a></small>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-order-{{ faq.id }}"
+                data-parent="#faq-order-accordion">
+                <div class="card-body">
+                    {{ f.answers }}
+                </div>
+            </div>
+            {% endif%}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="accordion mb-3" id="faq-delivery-accordion">
+        <div>
+            <h3 class="mb-0 mt-3">Delivery</h3>
+            <hr>
+            {% for f in faqs %}
+            {% if f.category == 'DL' %}
+            <div class="py-3" id="f-delivery-{{ faq.id }}">
+                <div class="py-3" id="f-order-{{ faq.id }}">
+                    <div class="">
+                        <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                            aria-expanded="true" aria-controls="f-{{f.id}}">
+                            {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                        </h4>
+                        {% if request.user.is_superuser %}
+                        <small><a class="faqs text-decoration-none btn btn-orange border-2" href=""> Edit FAQ</a></small>
+                        |
+                        <small><a class="faqs text-decoration-none btn btn-blue border-2" href=""> Delete FAQ</a></small>
+                        {% endif %}
+                    </div>
+                </div>
+
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-delivery-{{ faq.id }}"
+                data-parent="#faq-delivery-accordion">
+                <div class="card-body">
+                    {{ f.answers }}
+                </div>
+            </div>
+            {% endif%}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="accordion mb-3" id="faq-account-accordion">
+        <div>
+            <h3 class="mb-0 mt-3">Account</h3>
+            <hr>
+            {% for f in faqs %}
+            {% if f.category == 'AC' %}
+            <div class="py-3" id="f-account-{{ faq.id }}">
+                <div class="py-3" id="f-order-{{ faq.id }}">
+                    <div class="">
+                        <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                            aria-expanded="true" aria-controls="f-{{f.id}}">
+                            {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                        </h4>
+                        {% if request.user.is_superuser %}
+                        <small><a class="faqs text-decoration-none btn btn-orange border-2" href=""> Edit FAQ</a></small>
+                        |
+                        <small><a class="faqs text-decoration-none btn btn-blue border-2" href=""> Delete FAQ</a></small>
+                        {% endif %}
+                    </div>
+                </div>
+
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-account-{{ faq.id }}"
+                data-parent="#faq-account-accordion">
+                <div class="card-body">
+                    {{ f.answers }}
+                </div>
+            </div>
+            {% endif%}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="accordion mb-3" id="faq-product-accordion">
+        <div>
+            <h3 class="mb-0 mt-3">Product</h3>
+            <hr>
+            {% for f in faqs %}
+            {% if f.category == 'PR' %}
+            <div class="py-3" id="f-order-{{ faq.id }}">
+                <div class="">
+                    <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                        aria-expanded="true" aria-controls="f-{{f.id}}">
+                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                    </h4>
+                    {% if request.user.is_superuser %}
+                    <small><a class="faqs text-decoration-none btn btn-orange border-2" href=""> Edit FAQ</a></small>
+                    |
+                    <small><a class="faqs text-decoration-none btn btn-blue border-2" href=""> Delete FAQ</a></small>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-product-{{ faq.id }}"
+                data-parent="#faq-product-accordion">
+                <div class="card-body">
+                    {{ f.answers }}
+                </div>
+            </div>
+            {% endif%}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="accordion mb-3" id="faq-other-accordion">
+        <div>
+            <h3 class="mb-0 mt-3">Other</h3>
+            <hr>
+            {% for f in faqs %}
+            {% if f.category == 'OT' %}
+            <div class="py-3" id="f-other-{{ faq.id }}">
+                <div class="py-3" id="f-order-{{ faq.id }}">
+                    <div class="">
+                        <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                            aria-expanded="true" aria-controls="f-{{f.id}}">
+                            {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                        </h4>
+                        {% if request.user.is_superuser %}
+                        <small><a class="faqs text-decoration-none btn btn-orange border-2" href=""> Edit FAQ</a></small>
+                        |
+                        <small><a class="faqs text-decoration-none btn btn-blue border-2" href=""> Delete FAQ</a></small>
+                        {% endif %}
+                    </div>
+                </div>
+
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-other-{{ faq.id }}"
+                data-parent="#faq-other-accordion">
+                <div class="card-body">
+                    {{ f.answers }}
+                </div>
+            </div>
+            {% endif%}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

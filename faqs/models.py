@@ -21,6 +21,9 @@ class Faqs(models.Model):
         (OTHER, 'Other'),
     ]
 
+    class Meta:
+        verbose_name_plural = 'Faqs'
+
     category = models.CharField(max_length=2, choices=CATEGORY)
     questions = models.CharField(max_length=200)
     answers = models.TextField()
