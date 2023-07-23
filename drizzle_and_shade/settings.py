@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'marketing.apps.MarketingConfig',
 
     # Apps
     'home',
@@ -57,6 +56,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'wishlist',
+    'contact',
 
     # Other
     'djrichtextfield',
@@ -245,12 +245,6 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-
-# MAILCHIMP CREDENTIALS
-MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')
-MAILCHIMP_REGION = 'us19'
-MAILCHIMP_MARKETING_AUDIENCE_ID = ('MAILCHIMP_MARKETING_AUDIENCE_ID')
 
 
 # Default primary key field type

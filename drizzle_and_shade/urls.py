@@ -29,5 +29,5 @@ urlpatterns = [
     # path('profile/', include('profiles.urls')),
     path('profiles/', include('profiles.urls')),
     path('wishlist/', include('wishlist.urls')),
-    path('marketing/', include('marketing.urls')),
+    path('contact/', include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
