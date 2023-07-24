@@ -35,14 +35,13 @@
     <div class="accordion mb-3" id="faq-order-accordion">
         <div>
             <h3 class="mb-0 mt-3 text-pink">Orders</h3>
-            <hr>
             {% for f in faqs %}
             {% if f.category == 'OR' %}
             <div class="py-3" id="f-order-{{ faq.id }}">
                 <div class="mb-0">
-                    <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                    <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
-                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
                 </h4>
                     {% if request.user.is_superuser %}
                     <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
@@ -71,9 +70,9 @@
             {% if f.category == 'DL' %}
             <div class="py-3" id="f-order-{{ faq.id }}">
                 <div class="mb-0">
-                    <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                    <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
-                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
                 </h4>
                 {% if request.user.is_superuser %}
                     <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
@@ -102,9 +101,9 @@
             {% if f.category == 'AC' %}
             <div class="py-3" id="f-order-{{ faq.id }}">
                 <div class="mb-0">
-                    <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                    <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
-                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
                 </h4>
                 {% if request.user.is_superuser %}
                 <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
@@ -133,9 +132,9 @@
             {% if f.category == 'PR' %}
             <div class="py-3" id="f-order-{{ faq.id }}">
                 <div class="mb-0">
-                    <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                    <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
-                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
                 </h4>
                 {% if request.user.is_superuser %}
                     <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
@@ -164,9 +163,9 @@
             {% if f.category == 'OT' %}
             <div class="py-3" id="f-order-{{ faq.id }}">
                 <div class="mb-0">
-                    <h4 class="faqs" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
+                    <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
-                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
+                        {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
                 </h4>
                     {% if request.user.is_superuser %}
                     <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>

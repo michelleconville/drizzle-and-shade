@@ -386,3 +386,10 @@ input[name='q']::placeholder {
     border-color: var(--pink);
     border-radius: 0;
 }
+
+
+.faqs {
+    background-color: var(--main_blue);
+    color: white;
+    cursor: pointer;
+}
