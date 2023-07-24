@@ -82,7 +82,7 @@
                                             {% if product.rating %}
                                                 <small class="text-orange"><i class="fas fa-star mr-1"></i><strong>{{ product.rating }} / 5</strong></small>
                                             {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                                <small class="text-orange">No Rating</small>
                                             {% endif %}
                                             {% if request.user.is_superuser %}
                                             <small class="ml-3">

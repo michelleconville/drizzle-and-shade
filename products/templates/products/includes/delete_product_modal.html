@@ -1,0 +1,26 @@
+<!-- Model -->
+<div class="modal fade" id="product-modal-{{ product.id }}" tabindex="-1" role="dialog" aria-hidden="true"
+    data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <h3 class="modal-title text-uppercase w-100"><strong class="font-weight-bold text-pink logo">Drizzle and Shade</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body-delete">
+                <h4 class="mt-4">Are you sure you want to delete <br>
+                    <span class="font-weight-bold">{{product.name }}</span>
+                    ?
+                </h4>
+                <p class="text-pink mt-3">This action cannot be undone!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orange" data-dismiss="modal">Cancel</button>
+                <a href="{% url 'delete_product' product.id %}" class="btn btn-blue">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Model -->

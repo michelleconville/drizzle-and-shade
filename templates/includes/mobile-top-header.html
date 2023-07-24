@@ -8,15 +8,16 @@
     </a>
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'products' %}">
+            <label for="mobile-search" class="sr-only">Search our site</label>
             <div class="input-group w-100">
-                <input class="form-control border border-blue rounded-0" type="text" name="q"
-                    placeholder="Search our site">
+                <input id="mobile-search" class="form-control border border-blue rounded-2" type="text" name="q" placeholder="Search our site">
                 <div class="input-group-append">
-                    <button class="form-control form-control btn btn-blue border border-blue rounded-0" type="submit">
+                    <button class="btn btn-blue border border-blue rounded-0" type="submit">
+                        <span class="sr-only">Search</span>
                         <span class="icon">
-                            <i class="fas fa-search"></i>
+                          <i class="fas fa-search" aria-hidden="true"></i>
                         </span>
-                    </button>
+                      </button>
                 </div>
             </div>
         </form>
