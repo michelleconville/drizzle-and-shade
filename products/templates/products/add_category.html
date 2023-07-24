@@ -30,8 +30,8 @@
                     {% csrf_token %}
                     {{ form|crispy}}
                     <div class="text-right">
-                        <a class="btn btn-orange rounded-0" href="{% url 'product_management' %}">Canel</a>
-                        <button class="btn btn-blue rounded-0" type="submit">Add Category</button>
+                        <a class="btn btn-orange rounded-2" href="{% url 'product_management' %}">Canel</a>
+                        <button class="btn btn-blue rounded-2" type="submit">Add Category</button>
                     </div>
                 </form>
             </div>
@@ -58,7 +58,9 @@
         
                                             <a href="{% url 'edit_category' category.id %}" class="text-orange">Edit</a>
         
-                                            <a class="text-pink" href="{% url 'delete_category' category.id %}">Delete</a>
+                                            <button class="btn logo-font text-pink" data-toggle="modal" data-target="#deleteModal{{category.id}}">Delete</button>
+                                        <!-- Modal -->
+                                        {% include 'products/includes/delete_category_modal.html' %}
                                         </div>
         
                                     </td>

@@ -24,7 +24,7 @@
             </div>
             <p>
                 {% if request.user.is_superuser %}
-                <a class="text-decoration-none btn btn-blue border-2" href="{% url 'add_faqs' %}"> Add FAQs</a>
+                <a href="{% url 'add_faqs' %}" class="text-pink logo"><strong>Add a FAQ</strong></a>
                 {% endif %}
             </p>
         </div>
@@ -45,9 +45,10 @@
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
                 </h4>
                     {% if request.user.is_superuser %}
-                    <small><a class="faqs text-decoration-non btn btn-orange border-2" href="{% url 'edit_faqs' f.id %}"> Edit FAQs</a></small>
+                    <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
                     |
-                    <small><a class="faqs text-decoration-none btn btn-orange border-2" href="{% url 'delete_faqs' f.id %}"> Delete FAQs</a></small>
+                    <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
+                    {% include 'faqs/includes/delete_faqs_modal.html' %}
                     {% endif %}
                 </div>
             </div>
@@ -74,10 +75,11 @@
                         aria-expanded="true" aria-controls="f-{{f.id}}">
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
                 </h4>
-                    {% if request.user.is_superuser %}
-                    <small><a class="faqs text-decoration-non btn btn-orange border-2" href="{% url 'edit_faqs' f.id %}"> Edit FAQs</a></small>
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
                     |
-                    <small><a class="faqs text-decoration-none btn btn-orange border-2" href="{% url 'delete_faqs' f.id %}"> Delete FAQs</a></small>
+                    <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
+                    {% include 'faqs/includes/delete_faqs_modal.html' %}
                     {% endif %}
                 </div>
             </div>
@@ -104,11 +106,12 @@
                         aria-expanded="true" aria-controls="f-{{f.id}}">
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
                 </h4>
-                    {% if request.user.is_superuser %}
-                    <small><a class="faqs text-decoration-non btn btn-orange border-2" href="{% url 'edit_faqs' f.id %}"> Edit FAQs</a></small>
-                    |
-                    <small><a class="faqs text-decoration-none btn btn-orange border-2" href="{% url 'delete_faqs' f.id %}"> Delete FAQs</a></small>
-                    {% endif %}
+                {% if request.user.is_superuser %}
+                <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
+                |
+                <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
+                {% include 'faqs/includes/delete_faqs_modal.html' %}
+                {% endif %}
                 </div>
             </div>
 
@@ -134,10 +137,11 @@
                         aria-expanded="true" aria-controls="f-{{f.id}}">
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
                 </h4>
-                    {% if request.user.is_superuser %}
-                    <small><a class="faqs text-decoration-non btn btn-orange border-2" href="{% url 'edit_faqs' f.id %}"> Edit FAQs</a></small>
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
                     |
-                    <small><a class="faqs text-decoration-none btn btn-orange border-2" href="{% url 'delete_faqs' f.id %}"> Delete FAQs</a></small>
+                    <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
+                    {% include 'faqs/includes/delete_faqs_modal.html' %}
                     {% endif %}
                 </div>
             </div>
@@ -165,9 +169,10 @@
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-end"></i>
                 </h4>
                     {% if request.user.is_superuser %}
-                    <small><a class="faqs text-decoration-non btn btn-orange border-2" href="{% url 'edit_faqs' f.id %}"> Edit FAQs</a></small>
+                    <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
                     |
-                    <small><a class="faqs text-decoration-none btn btn-orange border-2" href="{% url 'delete_faqs' f.id %}"> Delete FAQs</a></small>
+                    <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
+                    {% include 'faqs/includes/delete_faqs_modal.html' %}
                     {% endif %}
                 </div>
             </div>

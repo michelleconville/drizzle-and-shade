@@ -1,5 +1,5 @@
-<div class="modal fade" id="reviewDeleteModal" tabindex="-1" aria-hidden="true" data-keyboard="false"
-    data-backdrop="static">
+<!-- Model -->
+<div id="deleteModal{{f.id}}" class="modal" tabindex="-1" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-center">
             <div class="modal-header logo-font">
@@ -8,15 +8,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body-delete p-2">
-                <h4 class="mt-4 text-blue">Hi <strong class="text-uppercase">{{ review.user}}, </strong> <br>Are you sure you want
-                    to delete your review?
+            <div class="modal-body-delete">
+                <h4 class="mt-4">Are you sure you want to delete <br> <strong>{{ f.questions }}</strong>
                 </h4>
+                <p class="text-pink mt-3">This action cannot be undone!</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-orange rounded-2" data-dismiss="modal">Canel</button>
-                <a class="btn btn-blue rounded-2" href="{% url 'delete_review' review.id %}">Delete</a>
+                <button type="button" class="btn btn-orange" data-dismiss="modal">Cancel</button>
+                <a href="{% url 'delete_faqs' f.id %}" class="btn btn-blue">Delete</a>
             </div>
         </div>
     </div>
 </div>
+<!-- End of Model -->
