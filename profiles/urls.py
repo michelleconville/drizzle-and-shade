@@ -8,4 +8,5 @@ urlpatterns = [
     path(
         'product_management/', views.product_management,
         name='product_management'),
+    path('admin_panel/', views.admin_panel, name='admin_panel'),
 ]

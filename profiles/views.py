@@ -61,3 +61,14 @@ def product_management(request):
         return redirect(reverse('home'))
     template = 'profiles/product_management.html'
     return render(request, template)
+
+
+@login_required
+def admin_panel(request):
+    """ Display admin account overview"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store owners can do that.')
+        return redirect(reverse('home'))
+
+    template = 'profiles/admin_panel.html'
+    return render(request, template)
