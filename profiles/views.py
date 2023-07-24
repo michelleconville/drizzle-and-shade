@@ -72,3 +72,10 @@ def admin_panel(request):
 
     template = 'profiles/admin_panel.html'
     return render(request, template)
+
+
+@login_required
+def account_overview(request):
+    """ Display the account overview"""
+    template = 'profiles/account_overview.html'
+    return render(request, template)

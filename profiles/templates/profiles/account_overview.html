@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %} | Admin panel{% endblock %} 
+{% block title %} | Account Overview{% endblock %} 
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
@@ -21,41 +21,42 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Admin panel</h2>
+                <h2 class="logo-font mb-4">Account Overview</h2>
                 <hr>
             </div>
         </div>
         
             <div class="row mt-5">
                 <div class="col text-center">
-                    <a href="{% url 'product_management' %}">
+                    <a href="{% url 'profile' %}">
                         <div class="btn logo-font btn-blue accounts-btns">
                             <span><i class="fa-solid fa-list pr-2"></i></span>
-                            Category and product management
+                            MY PROFILE
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col text-center">
-                    <a href="{% url 'faqs' %}">
+                    <a href="{% url 'wishlist' %}">
                         <div class="btn logo-font btn-blue accounts-btns">
                             <span><i class="fa-solid fa-umbrella pr-2"></i></span>
-                            Edit FAQs
+                            My Wishlist
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col text-center small mb-5">
-                    <a href="{% url 'home' %}">
+                    <a href="{% url 'account_change_password' %}">
                         <div class="btn logo-font btn-blue accounts-btns">
                             <span><i class="fas fa-arrow-left pr-2"></i></span>
-                            Back to home
+                            Change your password
                         </div>
                     </a>
                 </div>
             </div>
+            
     </div>
 {% endblock %}
 
