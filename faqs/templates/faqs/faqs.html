@@ -37,12 +37,12 @@
             <h3 class="mb-0 mt-3 text-pink">Orders</h3>
             {% for f in faqs %}
             {% if f.category == 'OR' %}
-            <div class="py-3" id="f-order-{{ faq.id }}">
+            <div class="py-3" id="f-order-{{ f.id }}">
                 <div class="mb-0">
                     <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
-                </h4>
+                    </h4>
                     {% if request.user.is_superuser %}
                     <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
                     |
@@ -51,13 +51,13 @@
                     {% endif %}
                 </div>
             </div>
-
-            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-order-{{ faq.id }}"
-                data-parent="#faq-order-accordion">
+            
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-order-{{ f.id }}" data-parent="#faq-order-accordion">
                 <div class="card-body">
                     {{ f.answers }}
                 </div>
             </div>
+            
             {% endif%}
             {% endfor %}
         </div>
@@ -68,13 +68,13 @@
             <hr>
             {% for f in faqs %}
             {% if f.category == 'DL' %}
-            <div class="py-3" id="f-order-{{ faq.id }}">
+            <div class="py-3" id="f-delivery-{{ f.id }}">
                 <div class="mb-0">
                     <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
-                </h4>
-                {% if request.user.is_superuser %}
+                    </h4>
+                    {% if request.user.is_superuser %}
                     <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
                     |
                     <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
@@ -82,9 +82,8 @@
                     {% endif %}
                 </div>
             </div>
-
-            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-delivery-{{ faq.id }}"
-                data-parent="#faq-delivery-accordion">
+            
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-delivery-{{ f.id }}" data-parent="#faq-delivery-accordion">
                 <div class="card-body">
                     {{ f.answers }}
                 </div>
@@ -99,23 +98,22 @@
             <hr>
             {% for f in faqs %}
             {% if f.category == 'AC' %}
-            <div class="py-3" id="f-order-{{ faq.id }}">
+            <div class="py-3" id="f-account-{{ f.id }}">
                 <div class="mb-0">
                     <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
-                </h4>
-                {% if request.user.is_superuser %}
-                <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
-                |
-                <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
-                {% include 'faqs/includes/delete_faqs_modal.html' %}
-                {% endif %}
+                    </h4>
+                    {% if request.user.is_superuser %}
+                    <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
+                    |
+                    <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
+                    {% include 'faqs/includes/delete_faqs_modal.html' %}
+                    {% endif %}
                 </div>
             </div>
-
-            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-account-{{faq.id}}"
-                data-parent="#faq-account-accordion">
+            
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-account-{{ f.id }}" data-parent="#faq-account-accordion">
                 <div class="card-body">
                     {{ f.answers }}
                 </div>
@@ -130,13 +128,13 @@
             <hr>
             {% for f in faqs %}
             {% if f.category == 'PR' %}
-            <div class="py-3" id="f-order-{{ faq.id }}">
+            <div class="py-3" id="f-product-{{ f.id }}">
                 <div class="mb-0">
                     <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
-                </h4>
-                {% if request.user.is_superuser %}
+                    </h4>
+                    {% if request.user.is_superuser %}
                     <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
                     |
                     <a href="#deleteModal{{f.id}}" class="logo text-pink" data-toggle="modal"><strong>Delete</strong></a>
@@ -144,9 +142,8 @@
                     {% endif %}
                 </div>
             </div>
-
-            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-product-{{faq.id}}"
-                data-parent="#faq-product-accordion">
+            
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-product-{{ f.id }}" data-parent="#faq-product-accordion">
                 <div class="card-body">
                     {{ f.answers }}
                 </div>
@@ -161,12 +158,12 @@
             <hr>
             {% for f in faqs %}
             {% if f.category == 'OT' %}
-            <div class="py-3" id="f-order-{{ faq.id }}">
+            <div class="py-3" id="f-other-{{ f.id }}">
                 <div class="mb-0">
                     <h4 class="faqs pl-2" data-bs-toggle="collapse" data-toggle="collapse" data-target="#f-{{f.id}}"
                         aria-expanded="true" aria-controls="f-{{f.id}}">
                         {{ f.questions }} <i class="fa-solid fa-arrow-down float-right pr-2"></i>
-                </h4>
+                    </h4>
                     {% if request.user.is_superuser %}
                     <a href="{% url 'edit_faqs' f.id %}" class="text-pink logo"><strong>Edit</strong></a>
                     |
@@ -175,9 +172,8 @@
                     {% endif %}
                 </div>
             </div>
-
-            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-other-{{ faq.id }}"
-                data-parent="#faq-other-accordion">
+            
+            <div id="f-{{f.id}}" class="collapse" aria-labelledby="f-other-{{ f.id }}" data-parent="#faq-other-accordion">
                 <div class="card-body">
                     {{ f.answers }}
                 </div>

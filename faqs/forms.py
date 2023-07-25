@@ -19,7 +19,6 @@ class FaqsForm(forms.ModelForm):
             "category": "Select a category",
             "questions": "Add your question",
             "answers": "Add your answer",
-
         }
 
     def __init__(self, *args, **kwargs):
@@ -43,3 +42,16 @@ class FaqsForm(forms.ModelForm):
             self.fields[field].label = False
             # add class to fields
             self.fields[field].widget.attrs['class'] = 'border-blue rounded-0'
+
+            # Set custom IDs for form fields
+            if field == 'category':
+                self.fields[field].widget.attrs['id'] = 'category-field'
+            elif field == 'questions':
+                self.fields[field].widget.attrs['id'] = 'questions-field'
+            elif field == 'answers':
+                self.fields[field].widget.attrs['id'] = 'answers-field'
+
+            # Set aria-labelledby attributes to use the custom IDs
+            self.fields[field].widget.attrs['aria-labelledby'] = (
+                f"{self.fields[field].widget.attrs['id']}-label"
+                )
