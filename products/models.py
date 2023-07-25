@@ -37,6 +37,7 @@ class Product(models.Model):
     )
     image = models.ImageField(null=True, blank=True)
     image_alt = models.CharField(max_length=100, null=False, blank=False)
+    quantity = models.IntegerField(blank=False, null=False, default=0)
 
     def __str__(self):
         return self.name

@@ -6,7 +6,7 @@ from django.db.models.functions import Lower
 from django.urls import reverse_lazy
 from profiles.models import UserProfile
 from .models import Product, Category, Review
-from .forms import ProductForm, CategoryForm, ReviewForm
+from .forms import ProductForm, CategoryForm, ReviewForm, UpdateStockForm
 from django.db.models import Avg
 from django.db import models
 from django.conf import settings
@@ -328,3 +328,45 @@ def delete_review(request, review_id):
     product.save()
     messages.success(request, 'Review successfully deleted!')
     return redirect(reverse('product_detail', args=[product.id]))
+
+
+@login_required
+def stock_levels(request):
+    """
+    View current stock levels
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Only store owners can do that.')
+        return redirect(reverse('home'))
+
+    stock_levels = Product.objects.all()
+    template = 'products/stock_levels.html'
+    context = {
+        'stock_levels': stock_levels,
+    }
+    return render(request, template, context)
+
+
+@login_required
+def update_stock(request, product_id):
+    """
+    View to update stock levels for store owners
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Only store owners can do that.')
+        return redirect(reverse('home'))
+
+    stock_level = Product.objects.get(id=product_id)
+    if request.method == 'POST':
+        form = UpdateStockForm(request.POST, instance=stock_level)
+        if form.is_valid():
+            form.save()
+            return redirect('stock_levels')
+    else:
+        form = UpdateStockForm(instance=stock_level)
+    template = 'products/update_stock.html'
+    context = {
+        'form': form,
+        'product': stock_level,
+        }
+    return render(request, template, context)

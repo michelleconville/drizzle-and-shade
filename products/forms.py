@@ -44,3 +44,9 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ['rating', 'body']
         labels = {'body': 'Please Write Your Review'}
+
+
+class UpdateStockForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['quantity']
