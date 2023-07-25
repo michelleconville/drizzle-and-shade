@@ -24,6 +24,11 @@ class Category(models.Model):
 class Product(models.Model):
     """ Product model """
 
+    STOCK_MESSAGE_POSITION_CHOICES = [
+        ('left', 'Top Left'),
+        ('right', 'Top Right'),
+    ]
+
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
@@ -38,11 +43,25 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     image_alt = models.CharField(max_length=100, null=False, blank=False)
     quantity = models.IntegerField(blank=False, null=False, default=0)
+    stock_message = models.CharField(max_length=100, blank=True, null=True)
+    stock_message_position = models.CharField(
+        max_length=5, choices=STOCK_MESSAGE_POSITION_CHOICES,
+        default='left'
+    )
+
+    # this is for the product page
+    def stock_message(self):
+        if self.stock <= 3:
+            return "Low Stock"
+        elif self.stock == 0:
+            return "Out of Stock"
+        return ""
 
     def is_low_stock(self):
         low_stock_threshold = 3  # Set your desired threshold value here
         return self.quantity <= low_stock_threshold
 
+    # this message is for the product_detail page
     def low_stock_message(self):
         if self.quantity <= 0:
             return "Out of Stock"

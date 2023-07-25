@@ -57,6 +57,9 @@ def all_products(request):
                 | Q(description__icontains=query)
             products = products.filter(queries)
 
+    for product in products:
+        product.stock_message = product.low_stock_message()
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
