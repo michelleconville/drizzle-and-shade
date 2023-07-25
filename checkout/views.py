@@ -166,6 +166,13 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
+    # Loop through order line items and reduce product quantities
+    for order_line_item in order.lineitems.all():  # Use the correct related_name here
+        product = order_line_item.product
+        quantity_sold = order_line_item.quantity
+        product.quantity -= quantity_sold
+        product.save()
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
