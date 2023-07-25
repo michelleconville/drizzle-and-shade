@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} | Update stock {% endblock %} 
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto">
+                    <hr>
+                    <h2 class="logo-font mb-4">Update stock</h2>
+                    <hr>
+                </div>
+        </div>
+
+        <div class="row pt-5 vh-100">
+            <div class="col-12 col-md-6 mx-auto">
+                <h3 class="text-pink">Update Stock Level: {{ product.name }} ({{ product.sku }})</h3>
+                <div class="stock-update py-3 px-3">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input type="submit" value="Update" class="btn btn-orange">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

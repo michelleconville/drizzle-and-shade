@@ -393,3 +393,11 @@ input[name='q']::placeholder {
     color: white;
     cursor: pointer;
 }
+
+
+.stock-update {
+    text-decoration: none;
+    color: var(--orange);
+    border-radius: 10px;
+    background-color: var(--main_blue);
+}
