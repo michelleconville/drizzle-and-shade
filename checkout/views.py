@@ -167,7 +167,7 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     # Loop through order line items and reduce product quantities
-    for order_line_item in order.lineitems.all():  # Use the correct related_name here
+    for order_line_item in order.lineitems.all():
         product = order_line_item.product
         quantity_sold = order_line_item.quantity
         product.quantity -= quantity_sold

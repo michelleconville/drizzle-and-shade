@@ -39,6 +39,18 @@ class Product(models.Model):
     image_alt = models.CharField(max_length=100, null=False, blank=False)
     quantity = models.IntegerField(blank=False, null=False, default=0)
 
+    def is_low_stock(self):
+        low_stock_threshold = 3  # Set your desired threshold value here
+        return self.quantity <= low_stock_threshold
+
+    def low_stock_message(self):
+        if self.quantity <= 0:
+            return "Out of Stock"
+        elif self.is_low_stock():
+            return f"Hurry up! Only {self.quantity} left in stock!"
+        else:
+            return None
+
     def __str__(self):
         return self.name
 
