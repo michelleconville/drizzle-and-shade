@@ -43,7 +43,7 @@
                                 <tr class="border-bottom text-blue">
                                     <th>Name</th>
                                     <th>Friendly Name</th>
-                                    <th></th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody class="text-blue">
@@ -55,9 +55,8 @@
                                     <td>{{ category.friendly_name }}</td>
                                     <td>
                                         <div class="btn logo-font d-inline">
-        
-                                            <a href="{% url 'edit_category' category.id %}" class="text-orange">Edit</a>
-        
+                                            <a href="{% url 'edit_category' category.id %}" class="text-pink">Edit </a>
+                                            |
                                             <button class="btn logo-font text-pink" data-toggle="modal" data-target="#deleteModal{{category.id}}">Delete</button>
                                         <!-- Modal -->
                                         {% include 'products/includes/delete_category_modal.html' %}
