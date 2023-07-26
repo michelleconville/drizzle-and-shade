@@ -96,6 +96,53 @@ Epic: Communication
 
 
 
+## Technology
+
+### Languages Used
+*   HTML - The structure of the Website was developed using HTML as the main language.
+*   CSS - The Website was styled using custom CSS in an external file.
+*   JavaScript - This was used to make the message automaticly close
+*   Python - The main programming language used for the application using the Django Framework.
+
+### Frameworks Used
+*   [Django](https://www.djangoproject.com/) - A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+*   [Bootstrap](https://getbootstrap.com/) - A framework for building responsive, mobile-first sites.
+
+### Libraries Used
+*   [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - is used for user authentication, registration & account management to the site.
+*   [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - is used to add bootstrap styling to the forms used.
+*   [Django Countries](https://pypi.org/project/django-countries/) - is used for the country CountryField in the checkout page.
+*   [jQuery](https://jquery.com/) - is used for styling components and also in some of the custom JS used throughout the site.
+*   [Google Fonts](https://fonts.google.com/) - is used for websites font
+*   [Font Awesome](https://fontawesome.com/) - is used for all the icons on the site.
+*   [Mailchimp](https://mailchimp.com/) - is used to create the newsletter signup form.
+*   [Facebook Pages](https://www.facebook.com/)
+*   [Stripe](https://stripe.com/gb) - is used for the processing of payments.
+*   [Heroku](https://dashboard.heroku.com/apps) - is used to deploy the site.
+*   [Gunicorn](https://gunicorn.org/) - is used as the server to run Django on Heroku.
+*   [Amazon AWS](https://aws.amazon.com/) - is used store the static and media files for the site.
+*   [PostgresSQL](https://www.postgresql.org/) - is used as the database for the site.
+*   [Git](https://git-scm.com/) - is used as version control 
+*   [Github](https://github.com/) - is used to store the project's code.
+*   [pillow](https://pypi.org/project/Pillow/) - Python imaging library
+*   [psycopg2](https://pypi.org/project/psycopg2/) - database adapter which allow us to connect with a postgres database
+*   [boto3](https://pypi.org/project/boto3/) - Allows connection to AWS S3 bucket
+
+### Database Used
+sqlite3 is used for development.
+
+[ElephantSQL](https://www.elephantsql.com/) for deployment to heroku.
+
+### Stripe
+[Stripe](https://stripe.com/gb) has been used for the payment for this website.
+
+The developer mode in Stripe allows us to use and process test payments.
+
+Type | card No | Expiry | CVC | ZIP
+--- | --- | --- | --- | ---
+Success | **4242 4242 4242 4242** | A date in the future | Any 3 digits| Any 3 digits
+Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 digits| Any 5 digits
+
 
 ## Security Features and Defensive Design
 For user authentication, Django's allauth was used for login and sign up functionality.
