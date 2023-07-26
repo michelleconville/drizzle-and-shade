@@ -12,7 +12,6 @@ If testing interactively, feel free to use card details below. Further informati
 * CVN = any 3 digits (Example: 132)
 * Zip code = any 5 digits (Example: 12345)
 
-
 ## Project goals
 
 The site will offer users a modern and user-friendly e-commerce website that sell umbrellas. The website aims to provide a seamless shopping experience for users looking to purchase high-quality umbrellas for protection against rain or sun. The site will incorporate essential e-commerce features, including product listings, shopping cart functionality, secure payments, and a user-friendly interface. The goal is to attract customers, generate sales, and establish a reputable online presence for umbrella sales.
@@ -91,6 +90,17 @@ Epic: Communication
 * As a shopper I can contact the store so that I can find out information that I require
 * As a shopper I can receive a contact confirmation email to let me know that my email has been sent
 
+
+Business Model
+The business model for this store would be a B2C (Business to Customer) model, as the business would be selling products directly from themselves to the customer.
+
+Search Engine Optimization
+
+The meta keywords and description in the site's base.html have been updated to reflect the researches keywords. Each page shows an extra title after the store name to assist help with SEO.
+
+For SEO purposes, I've also included an a sitemap.xml and robots.txt file to the website's root directory to aid in the search engines' ability to crawl the page.
+
+A sitemap is a method of classifying a website, indicating the URLs and the information contained within each section whereas The URLs on your website that a search engine crawler may visit are specified in a robots.txt file.
 
 
 
