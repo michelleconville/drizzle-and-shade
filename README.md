@@ -1,6 +1,10 @@
-# Project overview
+# Drizzle & Shade
+
+## Project overview
 
 Project for Code Institute Full-stack development program: E-commerce Applications
+
+![website mockup](docs/readme_screenshots/mockup.jpg) 
 
 View the [Live site](https://drizzleandshade-4e77ed93aac5.herokuapp.com/)
 
@@ -16,10 +20,17 @@ If testing interactively, feel free to use card details below. Further informati
 
 The site will offer users a modern and user-friendly e-commerce website that sell umbrellas. The website aims to provide a seamless shopping experience for users looking to purchase high-quality umbrellas for protection against rain or sun. The site will incorporate essential e-commerce features, including product listings, shopping cart functionality, secure payments, and a user-friendly interface. The goal is to attract customers, generate sales, and establish a reputable online presence for umbrella sales.
 
-## Target Audience
+## User Experience
+
+### Target Audience
 
 The target audience for the website includes individuals of all ages and demographics who require umbrellas for various purposes, such as protection from rain or sun. The website will cater to both individual customers and businesses seeking bulk orders for promotional or corporate purposes.
 
+### User Requirements and Expectations 
+
+* A visually appealing, accessible, and easy to use site 
+* An intuitive navigation with logical workflows for purchasing an umbrella
+* An ability to view information on products and manage personal data
 
 # Planning
 
@@ -27,7 +38,7 @@ The target audience for the website includes individuals of all ages and demogra
 
 This project was developed using agile methodologies by delivering features in sprints. There were 4 sprints in total, the work was carried out over four weeks.
 
-Initially user stories were developed, and acceptance criteria was created in order to define the functionality of the required feature. These user stories were assigned to epics (milestones) and prioritised under the labels, Must have, Should have, and Could have. Then they were assigned to sprints and story pointed, according to complexity. Must have user stories were completed first, followed by should haves and then finally could haves. This approach was taken to ensure that all core requirements were completed first, with the nice to have features being added should there be capacity.
+Initially user stories were developed, and acceptance criteria was created in order to define the functionality of the required feature. These user stories were assigned to epics (milestones) and prioritised under the labels, Must have, Should have, and Could have. Then they were assigned to sprints according to complexity. Must have user stories were completed first, followed by should haves and then finally could haves. This approach was taken to ensure that all core requirements were completed first, with the nice to have features being added should there be capacity.
 
 In GitHub projects, a Kanban board was used to track the progress of the project, the workflow started with To do then In Progress and Done.
 
@@ -89,6 +100,80 @@ Epic: Communication
 * As a logged-in shopper I can save selected products to my wishlist for later purchase
 * As a shopper I can contact the store so that I can find out information that I require
 * As a shopper I can receive a contact confirmation email to let me know that my email has been sent
+
+
+## Design 
+
+### Colour Scheme
+
+The color palette for this project was kept as simple as possible to maintain the contrast between the background and the foreground.
+
+![colour pallette](docs/readme_screenshots/drizzle-and-shade-colours.png) 
+
+### Typography
+
+The fonts used are IBM Plex and Pangolin. Fonts were imported from Google Fonts. The backup font of sans was used in case the fonts do not load for the user.
+
+### The structure
+
+The site was designed to be user-friendly and responsive, with the navigation bar along the top of the pages and a hamburger menu button for smaller screen.
+
+#### Features and Functionality
+
+User Registration and Authentication
+
+* User registration and login functionality for customers to create and manage their accounts.
+* User authentication and access control to ensure secure and personalised experiences.
+
+Product list
+
+* Display a comprehensive list of umbrellas.
+* Categorise products based on different criteria such as price, rating and category.
+* Provide detailed product information including images, description and price.
+
+Shopping bag and Checkout
+
+* Allow customers to add products to their shopping bag and manage quantities.
+* Implement a secure and intuitive checkout process, including address and payment information collection.
+* Integration with payment gateway to facilitate secure online transactions.
+
+Search and Filtering
+
+* Include a search functionality to allow customers to find products based on keywords or specific criteria.
+* Enable filtering options to refine product search results based on predetermined attributes.
+
+Responsive Design
+
+* Develop a user-friendly and responsive website that provides optimal user experience across different devices and screen sizes.
+* Ensure seamless navigation and readability on across all device types.
+
+Admin Panel
+
+* Implement an admin panel for site owners/staff to manage categories, products, stock levels and the FAQs.
+
+Account overview
+
+* Implement a ‘my profile’ page to update their delivery information for future purchases and track orders.
+* Ensure customers have the facility to change their password
+
+Wishlist
+
+* Provide customers with the ability to add products to their wishlist for future reference and easy access.
+* Allow customers to manage their wishlist, including adding and removing products via the account overview.
+
+Contact Us
+* Implement a contact form customers or future customers to reach out to the customer support.
+
+FAQs
+* Provide a means for site owners/staff to create FAQ and answers.
+
+
+
+
+
+
+
+
 
 
 Business Model
