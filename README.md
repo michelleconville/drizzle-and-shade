@@ -156,3 +156,32 @@ Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the pr
 ## Deployment
 
 The site was deployed via [Heroku]( https://id.heroku.com/login), details of the steps taken to deploy the project can be found [here](DEPLOYMENT.md)
+
+## Credits
+
+### Code
+
+* The Code Institute Boutique Ado walkthrough project provided a lot of the site's original functionality, which was then modified and expanded as needed.
+* The code institute I Think Therefore I Blog walkthrough were also consulted whenever needed.
+
+### Product content and images
+* The description of the umbrellas and the images on the product details pages are taken from [amazon](https://www.amazon.co.uk/Umbrellas/b?ie=UTF8&node=2723115031)
+
+### Media
+
+* The main image for this project: Image by [efes](https://pixabay.com/users/efes-18331/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3795636) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3795636)
+* The Favicon for this project was made from Favicon
+* The Icon for this project was taken from Font Awesome
+* The Font for this project was taken from Google Fonts
+
+### Others
+
+* [Django documents](https://docs.djangoproject.com/en/4.1/)
+* [Stack Overflow](https://stackoverflow.com/)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/)
+* [Medium](https://medium.com/all-about-django)
+
+##  Acknowledgements
+
+* Thanks to everybody from the Code Institute Slack community
+* Special thanks to my mentor Daisy for her assistance throughout this project.
