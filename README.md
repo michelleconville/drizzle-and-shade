@@ -28,9 +28,13 @@ The target audience for the website includes individuals of all ages and demogra
 
 This project was developed using agile methodologies by delivering features in sprints. There were 4 sprints in total, the work was carried out over four weeks.
 
-Initially user stories were developed, and a full set of acceptance criteria was created in order to define the functionality of the required feature. These user stories were assigned to epics (milestones) and prioritised under the labels, Must have, Should have, and Could have. Then they were assigned to sprints and story pointed, according to complexity. Must have user stories were completed first, followed by should haves and then finally could haves. This approach was taken to ensure that all core requirements were completed first, with the nice to have features being added should there be capacity.
+Initially user stories were developed, and acceptance criteria was created in order to define the functionality of the required feature. These user stories were assigned to epics (milestones) and prioritised under the labels, Must have, Should have, and Could have. Then they were assigned to sprints and story pointed, according to complexity. Must have user stories were completed first, followed by should haves and then finally could haves. This approach was taken to ensure that all core requirements were completed first, with the nice to have features being added should there be capacity.
 
-In GitHub projects, a Kanban board was used to track the progress of the project, the workflow started with To do then In Progress, Done and finally Closed.
+In GitHub projects, a Kanban board was used to track the progress of the project, the workflow started with To do then In Progress and Done.
+
+View the [Kanban board](https://github.com/users/michelleconville/projects/6/)
+
+![github project image](docs/readme_screenshots/project.jpg) 
 
 ## User stories 
 
@@ -88,6 +92,19 @@ Epic: Communication
 * As a shopper I can receive a contact confirmation email to let me know that my email has been sent
 
 
+
+
+
+
+
+## Security Features and Defensive Design
+For user authentication, Django's allauth was used for login and sign up functionality.
+
+Views were secured where needed using the Django decorator @login_required. Access to the views using the @login_decorator can only be accessed by registered users. This means that if a user tries to access a view that is decorated with @login_required, but they are not currently logged in, they will be redirected to the login page instead.
+
+Environment variables are stored in an env.py for security purposes to ensure no secret keys, api keys or sensitive information was added the repository. In production, these variables were added to the Heroku config vars within the project.
+
+Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the project.
 
 ## Deployment
 
