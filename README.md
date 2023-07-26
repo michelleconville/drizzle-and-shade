@@ -168,7 +168,73 @@ FAQs
 * Provide a means for site owners/staff to create FAQ and answers.
 
 
+#### Wireframes
 
+<details><summary>Homepage</summary>
+
+![homepage](docs/readme_screenshots/wireframes/homepage.png) 
+
+</details>
+
+<details><summary>Products page</summary>
+
+![Products page](docs/readme_screenshots/wireframes/products.png) 
+
+</details>
+
+<details><summary>Product detail page</summary>
+
+![Product detail page](docs/readme_screenshots/wireframes/product-detail.png) 
+
+</details>
+
+<details><summary>Shopping bag</summary>
+
+![Shopping bag](docs/readme_screenshots/wireframes/shopping-bag.png) 
+
+</details>
+
+<details><summary>Checkout</summary>
+
+![Checkout](docs/readme_screenshots/wireframes/checkout.png) 
+
+</details>
+
+<details><summary>Admin panel</summary>
+
+![Admin panel](docs/readme_screenshots/wireframes/admin-panel.png) 
+
+</details>
+
+<details><summary>Category management</summary>
+
+![Category management](docs/readme_screenshots/wireframes/category-management.png) 
+
+</details>
+
+<details><summary>Stock management</summary>
+
+![Stock management](docs/readme_screenshots/wireframes/stock-levels.png) 
+
+</details>
+
+<details><summary>Account overview</summary>
+
+![Account overview](docs/readme_screenshots/wireframes/account-overview.png) 
+
+</details>
+
+<details><summary>Wishlist</summary>
+
+![Wishlist](docs/readme_screenshots/wireframes/wishlist.png) 
+
+</details>
+
+<details><summary>Contact us</summary>
+
+![Contact us](docs/readme_screenshots/wireframes/contact.png) 
+
+</details>
 
 
 
