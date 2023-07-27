@@ -24,9 +24,11 @@
 
     <div>
         <div class="col pb-4">
-            <h3>Error 404 - Page Not Found</h3>
-            <p>Sorry, we cannot find the page you were looking</p>
-            <a href="{% url 'home' %}" class="btn btn-orange w-25">Home</a>
+            <h2 class="text-pink"><span class="font-weight-bold">Page Not Found</span></h2>
+            <p class="mb-2">The page you are trying to access does not exist!<br>Please return to the homepage.
+            </p>
+            <a href="{% url 'home' %}" class="btn btn-orange logo-font rounded-2">Home <span class="icon pt-1"><i
+                        class="fa-sm fa-solid fa-house"></i></span></a>
         </div>
     </div>    
 </div>

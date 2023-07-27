@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} | Error 500{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Error 500</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div>
+        <div class="col pb-4">
+            <h2 class="text-pink"><span class="font-weight-bold">Internal Server Error</span></h2>
+            <p class="mb-2">Something went wrong!<br>Please return to the homepage.
+            </p>
+            <a href="{% url 'home' %}" class="btn btn-orange logo-font rounded-2">Home <span class="icon pt-1"><i
+                        class="fa-sm fa-solid fa-house"></i></span></a>
+        </div>
+    </div>    
+</div>
+{% endblock %}
