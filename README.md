@@ -4,7 +4,7 @@
 
 Project for Code Institute Full-stack development program: E-commerce Applications
 
-![website mockup](docs/readme_screenshots/mockup.jpg) 
+![website mockup](docs/readme_screenshots/mockup-darkmode.jpg) 
 
 View the [Live site](https://drizzleandshade-4e77ed93aac5.herokuapp.com/)
 
@@ -106,7 +106,7 @@ Epic: Communication
 
 ### Colour Scheme
 
-The color palette for this project was kept as simple as possible to maintain the contrast between the background and the foreground.
+The color palette for this project was kept as simple as possible to maintain the contrast between the background and the foreground. These are vibrant colors that I think offset each other really and work together.
 
 ![colour pallette](docs/readme_screenshots/drizzle-and-shade-colours.png) 
 
@@ -129,7 +129,7 @@ Product list
 
 * Display a comprehensive list of umbrellas.
 * Categorise products based on different criteria such as price, rating and category.
-* Provide detailed product information including images, description and price.
+* Provide detailed product information including images, description and stock levels, if low or out of stock.
 
 Shopping bag and Checkout
 
@@ -167,8 +167,13 @@ Contact Us
 FAQs
 * Provide a means for site owners/staff to create FAQ and answers.
 
+Stock Management
+*   Implement a page to view sotck levels of each product and prove the site owners/staff the ability to update them.
+
 
 #### Wireframes
+
+These are the initial wireframes for the project to show the website's layout, during development some aspects may change. Each wireframe shows the desktop and mobile view.
 
 <details><summary>Homepage</summary>
 
@@ -218,6 +223,12 @@ FAQs
 
 </details>
 
+<details><summary>FAQS</summary>
+
+![FAQs](docs/readme_screenshots/wireframes/faqs.png) 
+
+</details>
+
 <details><summary>Account overview</summary>
 
 ![Account overview](docs/readme_screenshots/wireframes/account-overview.png) 
@@ -237,7 +248,11 @@ FAQs
 </details>
 
 
+#### Database
 
+ADD MORE TO THIS SECTION!!!!!!!!!!!!!!!!!!!!
+
+An entity relationship diagram was created and shows the schemas for each of the models and how they are related.
 
 
 
