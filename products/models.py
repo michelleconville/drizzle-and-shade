@@ -70,6 +70,10 @@ class Product(models.Model):
         else:
             return None
 
+    @property
+    def is_out_of_stock(self):
+        return self.quantity <= 0
+
     def __str__(self):
         return self.name
 

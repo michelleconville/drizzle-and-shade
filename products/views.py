@@ -126,6 +126,7 @@ def product_detail(request, product_id):
         'reviews': reviews,
         'review_count': review_count,
         'reviewed': reviewed,
+        'is_out_of_stock': product.is_out_of_stock,
     }
     return render(request, 'products/product_detail.html', context)
 
