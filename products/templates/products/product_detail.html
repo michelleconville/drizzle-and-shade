@@ -44,7 +44,8 @@
                     </a>
                     {% else %}
                     <div class="text-pink py-1"
-                        aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i> Add to list list</div>
+                        aria-label="Add to Wishlist" data-toggle="modal"
+                        data-target="#wishlist"><i class="fa-regular fa-heart"></i> Add to list list</div>
                     {% endif %}
                 </div>
                 {% if product.is_low_stock %}

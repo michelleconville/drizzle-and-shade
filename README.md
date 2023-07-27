@@ -8,12 +8,19 @@ Project for Code Institute Full-stack development program: E-commerce Applicatio
 
 View the [Live site](https://drizzleandshade-4e77ed93aac5.herokuapp.com/)
 
+<details><summary>or scan the QR code</summary>
+
+![QR code](docs/readme_screenshots/qrcode_drizzleandshade-4e77ed93aac5.herokuapp.com.png) 
+
+</details>
+
+
 This website is for educational purposes only and the credit card payment functionality is not set up to accept real payments. 
 
-If testing interactively, feel free to use card details below. Further information can be viewed via [Stripe documentation test page](https://stripe.com/docs/testing)
+For testing interactively, feel free to use card details below. Further information can be viewed via [Stripe documentation test page](https://stripe.com/docs/testing)
 * 4242424242424242 (Visa)
-* Expiration date = Any future date (Example: 12/24)
-* CVN = any 3 digits (Example: 132)
+* Expiration date = Any future date (Example: 10/24)
+* CVN = any 3 digits (Example: 123)
 * Zip code = any 5 digits (Example: 12345)
 
 ## Project goals
