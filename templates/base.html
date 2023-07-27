@@ -153,10 +153,15 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-        <div id="delivery-banner" class="row text-center delivery-banner">
+        <!-- <div id="delivery-banner" class="row text-center delivery-banner marquee">
             <div class="col text-blue">
-                <p class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</p>
+                <p class="logo-font my-1"><i class="fa-solid fa-truck"></i> Free delivery on orders over €{{ free_delivery_threshold }}!</p>
             </div>
+        </div> -->
+
+        <div id="delivery-banner" class="row text-center delivery-banner marquee">
+            <h5 class="fw-normal my-2 text-uppercase"><i class="fas fa-truck fa-flip-horizontal"></i> <span
+                class="logo-font my-1">Free</span> delivery on orders over €{{ free_delivery_threshold }}!</h5>
         </div>
     </header>
 
