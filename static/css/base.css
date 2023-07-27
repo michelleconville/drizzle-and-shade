@@ -454,3 +454,14 @@ input[name='q']::placeholder {
         transform: translateX(-100%);
     }
 }
+
+
+@media (max-width: 1200px) {
+    .footer-headers .col-md-3,
+    .footer-headers .col-md-2,
+    .fa-footer-icons .col-md-4 {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+  
