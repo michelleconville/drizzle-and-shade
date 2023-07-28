@@ -9,7 +9,7 @@ from .forms import ContactForm
 def contact(request):
     """A view to show the contact page"""
 
-    subject = "Thank you for contacting Drizzle and Shade"
+    subject = "Thank you for contacting Drizzle & Shade"
     from_email = "drizzleandshade.com"
 
     html_message = render_to_string(
