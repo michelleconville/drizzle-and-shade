@@ -186,3 +186,9 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+def view_order(request):
+    """ A view that renders the bag contents page """
+
+    return render(request, 'checkout/checkout.html')

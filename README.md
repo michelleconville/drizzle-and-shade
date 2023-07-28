@@ -262,6 +262,15 @@ ADD MORE TO THIS SECTION!!!!!!!!!!!!!!!!!!!!
 An entity relationship diagram was created and shows the schemas for each of the models and how they are related.
 
 
+## Features
+The Navbar contains links for Home, an All Products mega dropdown menu, All Umbrellas mega dropdown menu, Contact Us and FAQs. There is also a Search bar, a My Account link with Account related dropdown, and a link to the customer .
+
+The following navigation items are available on all pages:
+
+
+
+
+
 
 
 Business Model
