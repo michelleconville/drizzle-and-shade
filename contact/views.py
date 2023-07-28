@@ -10,7 +10,7 @@ def contact(request):
     """A view to show the contact page"""
 
     subject = "Thank you for contacting Drizzle & Shade"
-    from_email = "drizzleandshade.com"
+    from_email = "drizzleandshade@gmail.com"
 
     html_message = render_to_string(
         "contact/contact_email_confirmation.html",
