@@ -28,10 +28,20 @@
         <div class="row">
             <div class="col-12 col-lg-6 pb-4">
                 <div>
+                    <p class="text-pink">User Details</p>
+                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ userform|crispy }}
+                    <span><a href="{% url 'account_overview' %}" class="btn logo-font btn-orange"><i
+                        class="fas fa-chevron-left"></i>Account Overview</a></span>
+                    <button class="btn btn-blue rounded-2 text-uppercase float-right ">Update Details</button>
+                </form>
+                </div>
+                <div>
                     <p class="text-pink">Delivery Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    {{ profileform|crispy }}
                     <span><a href="{% url 'account_overview' %}" class="btn logo-font btn-orange"><i
                         class="fas fa-chevron-left"></i>Account Overview</a></span>
                     <button class="btn btn-blue rounded-2 text-uppercase float-right ">Update Details</button>

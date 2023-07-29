@@ -1,38 +1,76 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.contrib.auth.models import User
 
 from .models import UserProfile
-from .forms import UserProfileForm
+from .forms import UserProfileForm, UserForm
 
 from checkout.models import Order
 
 
-@login_required
+@login_required()
 def profile(request):
-    """ Display the user's profile. """
-    profile = get_object_or_404(UserProfile, user=request.user)
+    """
+    Display the User's profile
+    """
+    user = get_object_or_404(User, username=request.user)
+    profile = get_object_or_404(UserProfile, user=user)
 
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Profile updated successfully')
-        else:
-            messages.error(request, 'Update failed. \
-                Please ensure the form is valid.')
-    else:
-        form = UserProfileForm(instance=profile)
+    if request.method == "POST":
+        userform = UserForm(request.POST, instance=user)
+        profileform = UserProfileForm(request.POST, instance=profile)
+        if userform.is_valid() and profileform.is_valid():
+            userform.save()
+            profileform.save()
+            messages.success(request, "Profile updated successfully")
+            return redirect(("profile"))
+
+    userform = UserForm(instance=user)
+    profileform = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
-    template = 'profiles/profile.html'
+    template = "profiles/profile.html"
     context = {
-        'form': form,
-        'orders': orders,
-        'on_profile_page': True
+        "profile": profile,
+        "userform": userform,
+        "profileform": profileform,
+        "orders": orders,
+        "on_profile_page": True,
     }
 
     return render(request, template, context)
+
+
+@login_required()
+def delete_profile(request, username):
+    """
+    Querys the database for the User that matches profile user
+    and deletes user & profile
+    """
+    user = get_object_or_404(User, username=request.user)
+    profile = get_object_or_404(UserProfile, user=user)
+
+    if user != profile.user:
+        messages.success(
+            request, "You are not authorised to delete this Profile."
+        )
+        return redirect(("profile"))
+
+    if request.method == "POST":
+        logout(request)
+        user.delete()
+        messages.success(
+            request, "Sorry to see you go, your Account has been deleted."
+        )
+        return redirect(reverse("home"))
+
+    context = {"username": username}
+    return render(request, "profiles/profile.html", context)
 
 
 def order_history(request, order_number):
