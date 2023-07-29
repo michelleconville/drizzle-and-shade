@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-orange rounded-0 mt-2">
+                            <a href="{% url 'products' %}" class="btn btn-orange rounded-2 mt-2">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
@@ -105,9 +105,9 @@
                             </a>
                             {% if is_out_of_stock %}
                                 <p class="text-pink">Out of Stock</p>
-                                <span class="btn btn-secondary disabled rounded-0">Add to bag</span>
+                                <span class="btn btn-secondary disabled rounded-2">Add to bag</span>
                             {% else %}
-                            <input type="submit" class="btn btn-blue rounded-0 text-uppercase mt-2" value="Add to Bag">
+                            <input type="submit" class="btn btn-blue rounded-2 text-uppercase mt-2" value="Add to Bag">
                             {% endif %}
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
