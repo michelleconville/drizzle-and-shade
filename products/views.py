@@ -10,6 +10,7 @@ from .forms import ProductForm, CategoryForm, ReviewForm, UpdateStockForm
 from django.db.models import Avg
 from django.db import models
 from django.conf import settings
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from wishlist.models import Wishlist, WishlistItem
 
@@ -57,13 +58,25 @@ def all_products(request):
                 | Q(description__icontains=query)
             products = products.filter(queries)
 
-    for product in products:
+    paginator = Paginator(products, 8)
+    page = request.GET.get('page')
+
+    try:
+        paginated_products = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver the first page.
+        paginated_products = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range, deliver the last page of results.
+        paginated_products = paginator.page(paginator.num_pages)
+
+    for product in paginated_products:
         product.stock_message = product.low_stock_message()
 
     current_sorting = f'{sort}_{direction}'
 
     context = {
-        'products': products,
+        'products': paginated_products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,

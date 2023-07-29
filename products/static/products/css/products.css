@@ -1,0 +1,50 @@
+/* Set the root colors */
+:root {
+    --main_blue: #072446;
+    --white: #ffffff;
+    --orange: #ff9d5c;
+    --pink: #b2218d;
+}
+
+/* Center the pagination and add padding */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Style the pagination links */
+.pagination a {
+    color: var(--orange); 
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 4px;
+    background-color: var(--main_blue); 
+    border-radius: 4px;
+}
+
+/* Style the active page link */
+.pagination .current {
+    color: var(--pink); 
+
+}
+
+/* Style the previous and next links */
+.pagination a:hover:not(.current) {
+    background-color: var(--orange); 
+    border-color: var(--main_blue); 
+    color: var(--main_blue); 
+}
+
+/* Style the first and last page links */
+.pagination a:first-child,
+.pagination a:last-child {
+    background-color: var(--main_blue); 
+    border-color: var(--main_blue); 
+    color: var(--orange); 
+}
+
+/* Hide the page link when it's not clickable (e.g., "previous" on the first page) */
+.pagination .disabled {
+    display: none;
+}
