@@ -269,7 +269,11 @@ An entity relationship diagram was created and shows the schemas for each of the
 
 ### Common features 
 
+        As a shopper I can easily navigate through the site so that I can view desired content
+
 #### Navigation bar
+
+        As a shopper I can easily find a navigation bar and footer so that I can see what content there is on the website
 
 The Navigation bar contains the Drizzle & Shade logo which doubles as the link for the homepage, the other links are an All Products mega dropdown menu, All Umbrellas mega dropdown menu, Contact Us and FAQs. There is a Search bar, a My Account link with Account related dropdown, and a link to the customers shopping bag.
 
@@ -309,6 +313,11 @@ A marquee tag was included to to create scrolling text horizontally across the s
 
 #### Footer
 
+        As a shopper I can easily find a navigation bar and footer so that I can see what content there is on the website
+        As a shopper I can connect to the social media sites so that I can follow them and keep up to date with their products and promotions
+        As a shopper I can sign up for the website's newsletter so that I can keep up to date with new products and promotions
+        As a shopper I can contact the store so that I can find out information that I require
+
 The footer has been added to the bottom of the website, this contains 4 sections  - Subcribe, Products, Help and Contact.
 
 * The subscribe section contains a link to the sites newsletter signup form. The newsletter form is connected to a mailchimp so emails entered there will be saved.
@@ -319,6 +328,49 @@ The footer has been added to the bottom of the website, this contains 4 sections
 There is also a small portion of text for the Copyright/Disclaimer. A link to my Github repository is provided. 
 
 ![Footer](docs/features/footer.jpg) 
+
+#### Product Search
+
+        As a shopper I can search for products using the search form so that I can find the products I'm specifically looking for
+
+The product search input bar can be used on any page in the navigation bar, the user can enter a search query and then they will be brought to the Products Page where their search results will appear. If there are no results for the user's query text will display advising the User that 0 products found for that search query.
+
+* Search bar
+
+![Search bar](docs/features/search-bar.jpg) 
+
+* Search result found
+
+![Results found](docs/features/result-found.jpg) 
+
+* No search result found
+
+![Results found](docs/features/no-results-found.jpg) 
+
+
+### Homepage
+
+The Homepage was designed as a single landing page. It consists of a hero image and placed on the image is Drizzle & Shades slogan *Embrace the weather, unleash your style* and a call to action button to shop now. The call to action button links to the all product page.
+
+![homepage](docs/features/homepage.jpg)
+
+### All products page
+
+The Products page displays a list of all the Products that are sold by Drizzle & Shade. 
+
+        As a shopper I can easily see the products list so that I can see what the site has to offer
+
+* Products are presented in a grid format, allowing users to browse all products.
+* Each product card includes information such as product name, image, price and rating.
+* A badge appears in the product card to advise the user if the product is low in stock or out of stock.
+* Sorting Products is available to the user, products can be sorted by Price, Rating and Category.
+* There is a back to top button if users wish to get back to the top easily.
+* Pagination is enable to display 8 products per page.
+* Users can click on a product to view more details including a description of the product, a quantity input for however amount of items they want to puchase and add to wishlist and add to cart buttons. 
+* Edit and delete functionality is ability available for the site owners/staff only.
+
+![Products page](docs/features/products-page.jpg)
+
 
 
 
