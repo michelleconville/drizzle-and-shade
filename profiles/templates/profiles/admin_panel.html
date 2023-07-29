@@ -38,20 +38,30 @@
             </div>
             <div class="row mt-5">
                 <div class="col text-center">
-                    <a href="{% url 'faqs' %}">
+                    <a href="{% url 'stock_levels' %}">
                         <div class="btn logo-font btn-blue accounts-btns">
-                            <span><i class="fa-solid fa-circle-question pr-2"></i></span>
-                            Edit FAQs
+                            <span><i class="fa-solid fa-umbrella pr-2"></i></span>
+                            Stock Management
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col text-center small mb-5">
-                    <a href="{% url 'stock_levels' %}">
+                <div class="col text-center">
+                    <a href="{% url 'order_list' %}">
                         <div class="btn logo-font btn-blue accounts-btns">
-                            <span><i class="fa-solid fa-umbrella pr-2"></i></span>
-                            Stock Management
+                            <span><i class="fa-solid fa-truck-fast pr-2"></i></span>
+                            Manage Delivery
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center mb-5">
+                    <a href="{% url 'faqs' %}">
+                        <div class="btn logo-font btn-blue accounts-btns">
+                            <span><i class="fa-solid fa-circle-question pr-2"></i></span>
+                            Manage FAQs
                         </div>
                     </a>
                 </div>
