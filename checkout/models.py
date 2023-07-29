@@ -36,6 +36,9 @@ class Order(models.Model):
     stripe_pid = models.CharField(
         max_length=254, null=False, blank=False, default=''
         )
+    order_shipped = models.BooleanField(
+        null=False, blank=False, default=False
+        )
 
     def _generate_order_number(self):
         """

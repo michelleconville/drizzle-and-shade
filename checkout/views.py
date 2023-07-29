@@ -192,3 +192,9 @@ def view_order(request):
     """ A view that renders the bag contents page """
 
     return render(request, 'checkout/checkout.html')
+
+
+def order_list(request):
+    orders = Order.objects.all()
+    context = {'orders': orders}
+    return render(request, 'checkout/order_list.html', context)
