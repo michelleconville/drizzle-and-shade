@@ -175,7 +175,10 @@ FAQs
 * Provide a means for site owners/staff to create FAQ and answers.
 
 Stock Management
-*   Implement a page to view sotck levels of each product and prove the site owners/staff the ability to update them.
+*   Implement a page to view sotck levels of each product and provide the site owners/staff the ability to update them.
+
+Delivery Management
+*   Implement a page to view orders and provide the site owner/staff the ability to update the order once it has been shipped. 
 
 
 #### Wireframes
@@ -263,9 +266,59 @@ An entity relationship diagram was created and shows the schemas for each of the
 
 
 ## Features
-The Navbar contains links for Home, an All Products mega dropdown menu, All Umbrellas mega dropdown menu, Contact Us and FAQs. There is also a Search bar, a My Account link with Account related dropdown, and a link to the customer .
 
-The following navigation items are available on all pages:
+### Common features 
+
+#### Navigation bar
+
+The Navigation bar contains the Drizzle & Shade logo which doubles as the link for the homepage, the other links are an All Products mega dropdown menu, All Umbrellas mega dropdown menu, Contact Us and FAQs. There is a Search bar, a My Account link with Account related dropdown, and a link to the customers shopping bag.
+
+The navigation menu will display on all pages and changes into a hamburger menu on smaller devices. This will allow users to view the site from any device.
+
+The navigation options are different depending on whether the user is an end user or a staff user. If an end user chooses to register and/or login, the following navigation options are available:
+
+* Home
+* All Products  -> By Price
+                -> By Rating
+                -> By Category
+                -> All Products
+* All Umbrellas -> Beach Umbrellas
+                -> Childrens Umbrellas
+                -> Foldable Umbrelllas
+                -> Golf Umbrellas
+                -> All Umbrellas
+* Contact Us
+* FAQs
+* My Account -> Account Overview -> My Profile -> My Wishlist
+* Shopping Cart
+
+If a staff user chooses to register and/or login, additional options are available Shipping:
+
+* Admin Panel -> Category and Product Management -> Stock Management -> Shipping Management -> FAQ Management
+
+
+![Navigation bar](docs/features/navbar.jpg) 
+
+#### Informational banner
+
+An informaitonal banner is locationed under the navigation bar, it currently displays a message *Free delivery on order over €20!* 
+
+A marquee tag was included to to create scrolling text horizontally across the site.
+
+![Informational banner](docs/features/info-banner.jpg) 
+
+#### Footer
+
+The footer has been added to the bottom of the website, this contains 4 sections  - Subcribe, Products, Help and Contact.
+
+* The subscribe section contains a link to the sites newsletter signup form. The newsletter form is connected to a mailchimp so emails entered there will be saved.
+* The products section contains links to the various product categories.
+* The help sections contains links to the FAQs area, the Privacy Policy and the Terms And Conditions.
+* The contact area contains the contact information for Drizzle & Shade and a link to the sites Facebook page. The Facebook link is displayed with the Facebook icon provided by Font Awesome. 
+
+There is also a small portion of text for the Copyright/Disclaimer. A link to my Github repository is provided. 
+
+![Footer](docs/features/footer.jpg) 
 
 
 
