@@ -1,0 +1,44 @@
+<!-- edit_order.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} | Confirm shipping {% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+            <hr>
+            <h2 class="logo-font mb-4">Confirm shipping</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+                <h4>Has this order been shipped to <span class="text-pink">{{ order.full_name }}</span>?</h4>
+                <p>Please check the box if this order has been shipped</p>
+                <form method="post" class="pb-4">
+                    {% csrf_token %}
+                    {{ form|crispy}}
+                    <!-- {{ form.as_p }} -->
+                    <button class="btn btn-orange rounded-2" type="submit">Save and return to Order List</button>
+                </form>
+                <div class="pb-4">
+                    <a class="btn btn-blue rounded-2" href="{% url 'order_list' %}"><i class="fas fa-arrow-left pr-2"></i>Back to Order List</a>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

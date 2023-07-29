@@ -71,6 +71,10 @@ class Order(models.Model):
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
+    def set_order_shipped(self, shipped_status):
+        self.order_shipped = shipped_status
+        self.save()
+
     def __str__(self):
         return self.order_number
 

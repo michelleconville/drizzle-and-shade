@@ -1,56 +1,66 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %} | Order List {% endblock %} 
+{% block title %} | Order List {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-                <div class="col">
-                    <hr>
-                    <h2 class="logo-font mb-4">Order List</h2>
-                    <hr>
-                </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <h1>Order List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Order Number</th>
-                <th>Full Name</th>
-                <th>Grand Total</th>
-                <th>Order Shipped</th>
-                <th>Edit</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for order in orders %}
-            <tr>
-                <td>{{ order.order_number }}</td>
-                <td>{{ order.full_name }}</td>
-                <td>{{ order.grand_total }}</td>
-                <td>{{ order.order_shipped }}</td>
-                <td><a href="">Edit</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-                      
+<!-- Orders List -->
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+            <hr>
+            <h2 class="text-blue">Order List</h2>
+            <hr>
+            <p class="text-pink">Order that have been shipped are marked with a green dot, orders waiting to be shipped have a red dot!</p>
         </div>
     </div>
-
-
+    <div class="table-responsive rounded col-12 col-md-8 mx-auto">
+        <table class="table table-sm table-borderless">
+            <thead class="text-blue">
+                <tr>
+                    <th scope="col">Order number</th>
+                    <th scope="col">Full name</th>
+                    <th scope="col">Grand Total</th>
+                    <th scope="col">Order Shipped</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td><a class="text-pink" href="{% url 'order_history' order.order_number %}"
+                        title="{{ order.order_number }}">
+                            {{ order.order_number|truncatechars:6 }}
+                        </a>
+                    </td>
+                    <td class="text-blue">{{ order.full_name }}</td>
+                    <td class="text-blue">{{ order.grand_total }}</td>
+                    <td>
+                        {% if order.order_shipped %}
+                            <i class="fas fa-circle text-success text-logo"></i>
+                        {% else %}
+                            <i class="fas fa-circle text-danger"></i>
+                        {% endif %}
+                    </td>
+                    <td><a class="btn btn-blue" href="{% url 'edit_order' order.id %}">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="pb-4">
+            <a class="btn btn-orange rounded-2" href="{% url 'admin_panel' %}"><i
+                    class="fas fa-arrow-left pr-2"></i>Back to admin panel</a>
+        </div>
+    </div>
+</div>
+</div>
 {% endblock %}

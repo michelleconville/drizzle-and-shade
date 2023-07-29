@@ -5,7 +5,7 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
-from .forms import OrderForm
+from .forms import OrderForm, OrderShippedForm
 from .models import Order, OrderLineItem
 
 from products.models import Product
@@ -198,3 +198,19 @@ def order_list(request):
     orders = Order.objects.all()
     context = {'orders': orders}
     return render(request, 'checkout/order_list.html', context)
+
+
+def edit_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+
+    if request.method == 'POST':
+        form = OrderShippedForm(request.POST, instance=order)
+        if form.is_valid():
+            form.save()
+            return redirect('order_list')
+
+    else:
+        form = OrderShippedForm(instance=order)
+
+    context = {'form': form, 'order': order}
+    return render(request, 'checkout/edit_order.html', context)
