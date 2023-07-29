@@ -46,28 +46,24 @@ def profile(request):
     return render(request, template, context)
 
 
-@login_required()
+@login_required
 def delete_profile(request, username):
     """
-    Querys the database for the User that matches profile user
+    Query the database for the User that matches the profile user
     and deletes user & profile
     """
-    user = get_object_or_404(User, username=request.user)
+    user = get_object_or_404(User, username=username)
     profile = get_object_or_404(UserProfile, user=user)
 
     if user != profile.user:
-        messages.success(
-            request, "You are not authorised to delete this Profile."
-        )
-        return redirect(("profile"))
+        messages.success(request, "You are not authorized to delete this Profile.")
+        return redirect("profile")  # Redirect back to the profile page if not authorized.
 
     if request.method == "POST":
         logout(request)
         user.delete()
-        messages.success(
-            request, "Sorry to see you go, your Account has been deleted."
-        )
-        return redirect(reverse("home"))
+        messages.success(request, "Sorry to see you go, your Account has been deleted.")
+        return redirect("home")  # Redirect to the home page after successful deletion.
 
     context = {"username": username}
     return render(request, "profiles/profile.html", context)

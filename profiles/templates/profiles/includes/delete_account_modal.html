@@ -1,0 +1,27 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <h2 class="modal-title" id="deleteProfileModalLabel">Delete <strong class="font-weight-bold text-pink logo">{{ profile.user.username|safe }}</strong>
+                </h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body-delete pb-4">
+                {% if profile.user.is_authenticated and user == profile.user %}
+                <form method="post" action="{% url 'delete_profile' profile.user.username %}" role="form">
+                    {% csrf_token %}
+                    <p class="text-blue font-italic"><strong>Are you sure you want to Delete this profile?</strong></p>
+                    <p>This profile will be permanently removed and you will not be able
+                        to retrieve it. All user information/order history & wishlist data will be removed.</p>
+                    <button type="button" class="btn btn-orange" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    <button type="submit" name="action" value="delete" class="btn btn-blue">Delete</button>
+                </form>
+                {% else %}
+                <h3>You are not authorized to delete this product.</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
