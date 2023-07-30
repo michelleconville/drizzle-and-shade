@@ -275,7 +275,7 @@ An entity relationship diagram was created and shows the schemas for each of the
 
         As a shopper I can easily find a navigation bar and footer so that I can see what content there is on the website
 
-The Navigation bar contains the Drizzle & Shade logo which doubles as the link for the homepage, the other links are an All Products mega dropdown menu, All Umbrellas mega dropdown menu, Contact Us and FAQs. There is a Search bar, a My Account link with Account related dropdown, and a link to the customers shopping bag.
+The navigation bar, which can be found on all pages, enables users to quickly access the site's key pages without having to use their browser's navigation buttons. It contains the Drizzle & Shade logo which doubles as the link for the homepage, the other links are an All Products mega dropdown menu, All Umbrellas mega dropdown menu, Contact Us and FAQs. There is a Search bar, a My Account link with Account related dropdown, and a link to the customers shopping bag.
 
 The navigation menu will display on all pages and changes into a hamburger menu on smaller devices. This will allow users to view the site from any device.
 
@@ -348,13 +348,15 @@ The product search input bar can be used on any page in the navigation bar, the 
 ![Results found](docs/features/no-results-found.jpg) 
 
 
-### Homepage
+### Features For All Users
+
+#### Homepage
 
 The Homepage was designed as a single landing page. It consists of a hero image and placed on the image is Drizzle & Shades slogan *Embrace the weather, unleash your style* and a call to action button to shop now. The call to action button links to the all product page.
 
 ![homepage](docs/features/homepage.jpg)
 
-### All products page
+#### All products page
 
 The Products page displays a list of all the Products that are sold by Drizzle & Shade. 
 
@@ -371,7 +373,15 @@ The Products page displays a list of all the Products that are sold by Drizzle &
 
 ![Products page](docs/features/products-page.jpg)
 
+#### Products page
 
+The Product Details page contains all the information related to the Product. It contains:
+
+* Description area
+* An add to cart button, this button is disabled if the product is out of stock
+ and also update the quantity. 
+
+* Ratings - Registered users can click the ADD REVIEW button to add Product reviews and all current reviews will be be displayed in the Reviews tab area. If Product has not been reviewed the Customer Rating for the Product is set to 0. This will update with the average rating across all reviews.
 
 
 

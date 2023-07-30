@@ -8,6 +8,10 @@ from django.conf import settings
 from .forms import OrderForm, OrderShippedForm
 from .models import Order, OrderLineItem
 
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
@@ -207,6 +211,16 @@ def edit_order(request, order_id):
         form = OrderShippedForm(request.POST, instance=order)
         if form.is_valid():
             form.save()
+
+            # Send confirmation email with HTML template
+            subject = 'Order Shipped'
+            email_template = 'checkout/email/order_shipped_email.html'
+            context = {'order': order}
+            html_message = render_to_string(email_template, context)
+            plain_message = strip_tags(html_message)
+
+            send_mail(subject, plain_message, settings.DEFAULT_FROM_EMAIL, [order.email], html_message=html_message)
+
             return redirect('order_list')
 
     else:
