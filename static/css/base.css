@@ -308,7 +308,7 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content input {
-    border-color: var(--orange);
+    border-color: var(--main_blue);
     border-radius: 0;
 }
 
@@ -325,19 +325,19 @@ input[name='q']::placeholder {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
-    color: var(--orange);
+    color: var(--orange) !important;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: var(--main_blue);
-    border: 1px solid var(--orange);
+    background-color: var(--main_blue) !important;
+    border: 1px solid var(--main_blue) !important;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0;
+    border-radius: 5px;
 
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;

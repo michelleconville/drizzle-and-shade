@@ -11,11 +11,11 @@ class ContactAdmin(admin.ModelAdmin):
         "contact_reason",
         "name",
         "email",
-        "pending_reply",
+
         "marked_as_done",
     )
 
-    list_filter = ("pending_reply", "marked_as_done", "date_received")
+    list_filter = ("marked_as_done", "date_received")
 
     ordering = ("-date_received",)
 

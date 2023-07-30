@@ -51,7 +51,7 @@ def contact(request):
 
     context = {
         "form": form,
-        "on_contact_page": True
+        "on_contact_page": True,
     }
 
     return render(request, "contact/contact.html", context)

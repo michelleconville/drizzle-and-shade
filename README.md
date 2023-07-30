@@ -169,15 +169,19 @@ Wishlist
 * Allow customers to manage their wishlist, including adding and removing products via the account overview.
 
 Contact Us
+
 * Implement a contact form customers or future customers to reach out to the customer support.
 
 FAQs
+
 * Provide a means for site owners/staff to create FAQ and answers.
 
 Stock Management
+
 *   Implement a page to view sotck levels of each product and provide the site owners/staff the ability to update them.
 
 Delivery Management
+
 *   Implement a page to view orders and provide the site owner/staff the ability to update the order once it has been shipped. 
 
 
@@ -391,7 +395,8 @@ The product information section contains:
 * A quanity selector if the user would like to purchase more than one item.
 * An add to cart button, this button is disabled if the product is out of stock
 * An add to [wishlist](#my-wishlist) icon, users need to be logged in for this functionality to work, a modal will display if the user selects the button and is not logged in.
-* Toast message will display advising the user of any actions completed on this page either if they have added an item to the card or added or removed an item from the wishlist. 
+* Toast messages will display advising the user of any actions completed on this page either if they have added an item to the cart or added or removed an item from the wishlist. The success toast message 
+
 
 ##### Product in stock
 
@@ -448,6 +453,32 @@ The checkout page is broken into two sections, a form section and an order summa
  * Once the order has been completed a toast message will display advising that thr Order successfully processed!, once the order has been proceesed successful with Stripe and email confirmation will be sent to the user. 
 
 ![Checkout page](docs/features/checkout.jpg)
+
+#### Contact us
+
+                As a shopper I can contact the store so that I can find out information that I require
+                As a shopper I can receive a contact confirmation email to let me know that my email has been sent
+
+The Contact Us page is available to all users and can be accessed from the Contact Us link in the Navigation bar. Once clicked the user will be redirected to the Contact Us page where they can select their type of query and add their message.
+
+![Contact us form](docs/features/contact.jpg)
+
+Once a contact form is submitted an email will be sent to the email address confirming receipt of message. The contact email contains a link to the site and also a link to the sites Facebook page.
+
+**Managing the contact requests**
+
+When logged in to the admin panel I have added a boolean field *Marked as done*. This will make it assist the staff users to keep track of the queries that have been received. 
+
+![Managing contact messages view](docs/features/contact-replies.jpg)
+
+#### Toasts
+
+                As a shopper I am notified about any actions I have made so that I have a clear understanding of what has been completed/updated
+
+Custom toasts were implemented throughout the site, there are four different categories, error, info, success and warning. Each message will display be 3 second before disappearing.
+
+These are to provide feedback to the user when they act on the site. 
+
 
 ### Features For All Login Users
 
@@ -590,18 +621,99 @@ To update the order to confirm it has been shipped, the staff user clicks on the
 
 ![Confirm shipping page](docs/features/edit-shipping.jpg)
 
+#### Manage FAQs
+
+The FAQ page displays FAQs so that the user can easily find an answer.
+
+                As a site owner I can add FAQs to the site so that I can make sure that the shopper can find answer
+                As a shopper I can read the FAQ's so that I can find the answer to my question or concern before contacting the site
+
+Through the FAQ page, the staff user can add a question and its answer, and it will be displayed on the website straight away.
+
+Staff users can edit, update and delete a faqs.
+
+##### FAQ page
+
+![FAQ page](docs/features/manage-faqs.jpg)
+
+##### Add an FAQ 
+
+![Add an FAQ](docs/features/add-faqs.jpg)
+
+##### Edit an FAQ 
+
+![Edit an FAQ](docs/features/edit-faqs.jpg)
+
+##### Delete an FAQ 
+
+![Delete an FAQ](docs/features/delete-faq.jpg)
+
+### Site Authentication
+
+#### AllAuth
+
+The AllAuth pages have been styled in line with the site theme, included are Sign Up, Login, Logout, and email/password-related pages.
+
+##### Login page
+
+![Login page](docs/features/signin.jpg)
+
+##### Register page
+
+![Register page](docs/features/register.jpg)
+
+##### Logout page
+
+![Logout page](docs/features/logout.jpg)
+
+##### Forgot password page 
+
+![forgot password page](docs/features/password-reset.jpg)
+
+### Error messages
+
+#### 404 error
+
+A 404 page has been implemented and will display if a user navigates to a broken link / missing page.
+
+The 404 page will allow the user to easily navigate back to the main website if they direct to a broken link / missing page, without the need of the browsers back button.
+
+#### 403 error 
+
+A 403 error page has been implemented to provide feedback to the user when they try to access unauthorised content.
+
+Users will be directed to this page if they alter the URL's and attempt to edit, delete or access pages that are restricted.
+
+#### 500 error 
+
+A 500 error page has been displayed to alert users when an internal server error occurs.
+
+The message outlines to users that the problem is with the website not anything they have done.
+
+### Privacy Policy and Terms and Conditions
+
+In the help section in the footer, there are links to the site's Privacy Policy and Terms & Conditions.
+
+As the site collects some user data it made sense to add a Privacy Policy. This was created using the [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
+
+![Privacy Policy](/docs/features/privacy-policy.jpg)
+
+The Terms and Conditions page was built using [WebsitePolicies](https://www.websitepolicies.com/) and was added to provide further information to the user.
+
+![Terms And Conditions](/docs/features/terms.jpg)
+
+### Favicon
+
+A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
+
+![Favicon](docs/features/android-chrome-192x192.png)
 
 
+## Future Features
 
-
-
-
-
-
-
-
-
-
+* A more advanced stock management system
+* Add more payment options
+* Logging in with social media accounts
 
 
 
