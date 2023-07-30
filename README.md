@@ -375,7 +375,7 @@ The Products page displays a list of all the Products that are sold by Drizzle &
 
 ![Products page](docs/features/products-page.jpg)
 
-#### Products page
+#### Detailed Product page
 
 The Product Details page contains all the information related to the Product. The product page is broken down into two parts, the product information section and the review section. 
 
@@ -390,7 +390,7 @@ The product information section contains:
 * A badge appears under the price to advise the user if the product is low in stock or out of stock.
 * A quanity selector if the user would like to purchase more than one item.
 * An add to cart button, this button is disabled if the product is out of stock
-* An add to wishlist icon appears, users need to be logged in for this functionality to work, a modal will display if the user selects the button and is not logged in.
+* An add to [wishlist](#my-wishlist) icon, users need to be logged in for this functionality to work, a modal will display if the user selects the button and is not logged in.
 * Toast message will display advising the user of any actions completed on this page either if they have added an item to the card or added or removed an item from the wishlist. 
 
 ##### Product in stock
@@ -418,7 +418,7 @@ The review section will allow any user read reviews that have been written by ot
 
 ![Product detail reivew page when a User left a comment](docs/features/product-detail-page-reivew.jpg)
 
-### Shopping cart
+#### Shopping cart
 
                 As a shopper I can see the shopping bag summary and total cost so that I can see how much I will spend
 
@@ -433,7 +433,7 @@ The shopping cart page provides an overview of all of the items added by the use
 
 ![Bag page](docs/features/shopping-bag.jpg)
 
-### Checkout
+#### Checkout
 
                 As a shopper I can put in my card details so that I can pay for my umbrella
                 As a shopper I receive order confirmations so that I can be sure my order has been processed
@@ -448,6 +448,163 @@ The checkout page is broken into two sections, a form section and an order summa
  * Once the order has been completed a toast message will display advising that thr Order successfully processed!, once the order has been proceesed successful with Stripe and email confirmation will be sent to the user. 
 
 ![Checkout page](docs/features/checkout.jpg)
+
+### Features For All Login Users
+
+#### Account overview 
+
+                As a shopper I can register for an account so that I can use features for logged-in users
+
+When a user is logged in the account overview is displayed in the My Account dropdown. The account overview page displays information related to the user's account and provides links to various actions they can take.
+
+* Link to the users profile
+* Link to the users wishlist
+* Link for the user to chage their password
+
+![Account overview](docs/features/account-overview.jpg)
+
+#### My profile
+
+                As a logged-in shopper I can save my details so that I don't have to retype my address every time
+
+The Profile page contains 3 areas
+
+* User details
+* Order History
+* Delete your profile
+
+
+The User Details section contains all the Users' information like username, full name, phone number, and address. There is an Update details button available which allows the user to directly update their information from this page. 
+
+The Order History section provides the user with a history of all their Orders. Each Order is displayed with the contents of the Order and a link to the Order Complete page containing all the information of order including Billing/Shipping.
+
+The Delete button opens the Delete Profile modal where the user can choose to delete their Profile. Deleting Profile removes all Order History and Wishlist items also.
+
+![My profile](docs/features/my-profile.jpg)
+
+
+#### My Wishlist
+
+                As a logged-in shopper I can save selected products to my wishlist for later purchase
+
+The Wishlist section contains all the Products that the User has added to their Wishlist. The user can remove the Wishlist items by pressing the remove button.
+
+Users can add/remove products to their Wishlist by clicking the Heart icon on a Product from the Product Detail page. If the Heart icon is solid it means it is in the users' Wishlist, if they click the icon again it will remove the Product from their Wishlist. 
+
+Toasts will be displayed anytime a Product is added/removed from Wishlist. In the Wishlist section on the Profile page.
+
+![My wishlist](docs/features/wishlist.jpg)
+
+
+#### Change password
+
+The user can change their password at any time. This page was created using one of the django-all-auth templates. 
+
+![Change password](docs/features/changepassword.jpg)
+
+
+### Features For Staff Login Users
+
+#### Admin panel
+
+                As a site owner I can log in/out from the admin panel so that I have full access to the site back-end
+
+When logged in as an admin the Admin panel is displayed in the My Account dropdown, the admin panel displays links to additional functions available to staff to manage the website.
+
+* Category and product management
+* Stock management
+* Manage shipping
+* Manage FAQs
+
+![Admin panel](docs/features/admin-panel.jpg)
+
+
+#### Category and product management
+
+* Add a category
+* Add a product
+
+![Category and product management](docs/features/product-management.jpg)
+
+#### Category management
+
+The Adding/Editing/Deleting of categories is only available to staff and are all available on the category management page. 
+
+                As a site owner I can add new categories to the shop so that I can make sure the website is up to date
+                As a site owner I can edit/delete categories so that I can make sure the website is up to date
+
+A user can fill in category form and select the add category button, the category will then display in the cagegory list. From the category list there are edit and delete buttons. When staff members click the edit button they will be redirected to the Edit category page where they can update the category information or click the delete button and a model will open, the staff member will need to confirm they want to delete the cagegory.
+
+* Adding a category
+
+![Adding a category](docs/features/add-category.jpg)
+
+* Editing a category
+
+![Editing a category](docs/features/edit-category.jpg)
+
+
+* Deleting a category
+
+![Editing a category](docs/features/delete-category.jpg)
+
+#### Product management
+
+The Adding/Editing/Deleting of Products is only available to staff. Here the staff member can select a products category and add the products details.
+
+                As a site owner I can add new product to the shop so that I can make sure the website is up to date
+                As a site owner I can edit/delete products so that I can make sure the website is up to date
+
+When logged in as staff, on the Products page and Product Detail page a links are displayed on each Product card to either edit or delete. When staff members click the edit button they will be redirected to the Edit Product page where they can update the Product information or click the delete button and the product will be deleted. 
+
+##### Adding a product
+
+![Adding a product](docs/features/add-product.jpg)
+
+#### Stock management
+
+This page displays a list of all products and the number of that product that is are available, a staff user can see at a glance the stock numbers with the colour coding. To add or remove stock, click on the update stock button and the update stock page opens. 
+
+This is a basic stock management tool. When a customer purchases a product, the product is removed from stock. When a  product is low or out of stock, a badge will display on the product card on the product list page and on the detailed product page, the add to cart button is disabled when the product is out of stock.
+
+##### Stock level
+
+![Stock level](docs/features/stock-levels.jpg)
+
+##### Managing stock levels
+
+![Managing stock levels](docs/features/update-stock.jpg)
+
+
+#### Managing shipping
+
+This page displays a list of all orders, with the customers order number, full name and total and if the order has been shipped. 
+
+To update the order to confirm it has been shipped, the staff user clicks on the edit button and the confirm shipping page opens. Once the order has been confirmed that the order has been shipped an email is sent to the customer to confirm their order is on its way. 
+
+##### Order list page
+
+![Managing shipping page](docs/features/orders-list.jpg)
+
+##### Confirm shipping page
+
+![Confirm shipping page](docs/features/edit-shipping.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -478,7 +635,6 @@ The checkout page is broken into two sections, a form section and an order summa
 *   [Heroku](https://dashboard.heroku.com/apps) - is used to deploy the site.
 *   [Gunicorn](https://gunicorn.org/) - is used as the server to run Django on Heroku.
 *   [Amazon AWS](https://aws.amazon.com/) - is used store the static and media files for the site.
-*   [PostgresSQL](https://www.postgresql.org/) - is used as the database for the site.
 *   [Git](https://git-scm.com/) - is used as version control 
 *   [Github](https://github.com/) - is used to store the project's code.
 *   [pillow](https://pypi.org/project/Pillow/) - Python imaging library
