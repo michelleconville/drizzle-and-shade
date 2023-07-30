@@ -95,7 +95,7 @@ def checkout(request):
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(
-                request, "There's nothing in your bag at the moment"
+                request, "Your shopping cart is empty!"
                 )
             return redirect(reverse('products'))
 
@@ -219,7 +219,10 @@ def edit_order(request, order_id):
             html_message = render_to_string(email_template, context)
             plain_message = strip_tags(html_message)
 
-            send_mail(subject, plain_message, settings.DEFAULT_FROM_EMAIL, [order.email], html_message=html_message)
+            send_mail(
+                subject, plain_message, settings.DEFAULT_FROM_EMAIL,
+                [order.email], html_message=html_message
+                )
 
             return redirect('order_list')
 

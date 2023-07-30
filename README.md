@@ -77,7 +77,7 @@ Epic 2: Product Details and navigation
 * As a shopper I can search products by category so that I can easily find what I'm looking for
 * As a shopper I can sort products by rating, price and name so that I can easily find what I'm looking for
 * As a shopper I can search for products using the search form so that I can find the products I'm specifically looking for
-* As a shopper I can see the umbrella details page so that I can see the rating, price, short and description
+* As a shopper I can see the products details page so that I can see the rating, price, short and description
 * As a shopper I can read the FAQ's so that I can find the answer to my question or concern before contacting the site*
 
 Epic 3: Shopping and Checkout
@@ -335,15 +335,15 @@ There is also a small portion of text for the Copyright/Disclaimer. A link to my
 
 The product search input bar can be used on any page in the navigation bar, the user can enter a search query and then they will be brought to the Products Page where their search results will appear. If there are no results for the user's query text will display advising the User that 0 products found for that search query.
 
-* Search bar
+##### Search bar
 
 ![Search bar](docs/features/search-bar.jpg) 
 
-* Search result found
+##### Search result found
 
 ![Results found](docs/features/result-found.jpg) 
 
-* No search result found
+##### No search result found
 
 ![Results found](docs/features/no-results-found.jpg) 
 
@@ -361,6 +361,8 @@ The Homepage was designed as a single landing page. It consists of a hero image 
 The Products page displays a list of all the Products that are sold by Drizzle & Shade. 
 
         As a shopper I can easily see the products list so that I can see what the site has to offer
+        As a shopper I can search products by category so that I can easily find what I'm looking for
+        As a shopper I can sort products by rating, price and name so that I can easily find what I'm looking for
 
 * Products are presented in a grid format, allowing users to browse all products.
 * Each product card includes information such as product name, image, price and rating.
@@ -375,29 +377,77 @@ The Products page displays a list of all the Products that are sold by Drizzle &
 
 #### Products page
 
-The Product Details page contains all the information related to the Product. It contains:
+The Product Details page contains all the information related to the Product. The product page is broken down into two parts, the product information section and the review section. 
 
-* Description area
+                As a shopper I can see the products details page so that I can see the rating, price, short and description
+                As a shopper I can select the quantity of a product so that I can buy more 
+                As a shopper I can add an umbrella to the shopping bag so that I can keep track of what I am spending
+                As a logged-in shopper I can save selected products to my wishlist for later purchase
+
+The product information section contains:
+
+* The name of the product, the price, the catagory the product is in, the rating of product, a description and the product image.
+* A badge appears under the price to advise the user if the product is low in stock or out of stock.
+* A quanity selector if the user would like to purchase more than one item.
 * An add to cart button, this button is disabled if the product is out of stock
- and also update the quantity. 
+* An add to wishlist icon appears, users need to be logged in for this functionality to work, a modal will display if the user selects the button and is not logged in.
+* Toast message will display advising the user of any actions completed on this page either if they have added an item to the card or added or removed an item from the wishlist. 
 
-* Ratings - Registered users can click the ADD REVIEW button to add Product reviews and all current reviews will be be displayed in the Reviews tab area. If Product has not been reviewed the Customer Rating for the Product is set to 0. This will update with the average rating across all reviews.
+##### Product in stock
 
+![Product detail page when an item is in stock](docs/features/product-detail-page.jpg)
 
+##### Product out of stock
 
+![Product detail page when an item is not in stock](docs/features/product-detail-page-no-stock.jpg)
 
+                As a shopper I can see ratings and reviews so that I can read the opinions of other shoppers
+                As a logged-in shopper I can leave a rating and reviews so that I can share my experience with others
 
+The review section will allow any user read reviews that have been written by other users. Registered users can rate and add one review per product, they also have the ability to edit the review or delete it. If Product has not been reviewed the rating for the Product is set to 0. This will update with the average rating across all reviews.
 
-Business Model
-The business model for this store would be a B2C (Business to Customer) model, as the business would be selling products directly from themselves to the customer.
+##### Unregistered user
 
-Search Engine Optimization
+![Product detail reivew page for Unregistered user](docs/features/product-detail-page-reivew-logged-out.jpg)
 
-The meta keywords and description in the site's base.html have been updated to reflect the researches keywords. Each page shows an extra title after the store name to assist help with SEO.
+##### Registered user 
 
-For SEO purposes, I've also included an a sitemap.xml and robots.txt file to the website's root directory to aid in the search engines' ability to crawl the page.
+![Product detail reivew page for registered user](docs/features/product-detail-page-reivew-logged-in.jpg)
 
-A sitemap is a method of classifying a website, indicating the URLs and the information contained within each section whereas The URLs on your website that a search engine crawler may visit are specified in a robots.txt file.
+##### User left a comment
+
+![Product detail reivew page when a User left a comment](docs/features/product-detail-page-reivew.jpg)
+
+### Shopping cart
+
+                As a shopper I can see the shopping bag summary and total cost so that I can see how much I will spend
+
+The bag icon in the navigation bar displays the total price of all items in your shipping cart and the icon colour changes to pink. If you have no items in your shopping cart the icon is blue.
+
+![Product detail reivew page when a User left a comment](docs/features/bag-icon-nav.jpg)
+
+                As a shopper I can select the quantity of a product so that I can buy more 
+                As a shopper I can remove items from shopping bag so that I don't buy what I don't want
+
+The shopping cart page provides an overview of all of the items added by the user, from this page the user can easily make their final purchasing decisions because they have the opportunity to update or remove goods from the shopping cart, then either proceed to the checkout or to keep shopping.
+
+![Bag page](docs/features/shopping-bag.jpg)
+
+### Checkout
+
+                As a shopper I can put in my card details so that I can pay for my umbrella
+                As a shopper I receive order confirmations so that I can be sure my order has been processed
+                As a logged-in shopper I can save my details so that I don't have to retype my address every time
+
+The checkout page is broken into two sections, a form section and an order summary section. 
+
+ * The order form has all the necessary fields to handle the order. The required fields are marked with an asterisks. Below these fields there is a checkbox to save the information to your profile if you are logged in. 
+ * The payment field is from Stripe. 
+ * The order summary displays what the order contains. 
+ * At the bottom there is a button to complete the order or to go back to the shop. There is also a summary shown how much the card will be charged.
+ * Once the order has been completed a toast message will display advising that thr Order successfully processed!, once the order has been proceesed successful with Stripe and email confirmation will be sent to the user. 
+
+![Checkout page](docs/features/checkout.jpg)
 
 
 
