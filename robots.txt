@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /admin/
+Disallow: /profiles/
+Disallow: /checkout/
+Disallow: /bag/
+Sitemap: https://drizzleandshade-4e77ed93aac5.herokuapp.com/sitemap.xml
