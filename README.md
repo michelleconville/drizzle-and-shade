@@ -780,7 +780,11 @@ Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the pr
 
 ## Deployment
 
-The site was deployed via [Heroku]( https://id.heroku.com/login), details of the steps taken to deploy the project can be found [here](DEPLOYMENT.md)
+The final Deployed site can be found [here](https://drizzleandshade-4e77ed93aac5.herokuapp.com/). I have included details of the deployment process in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Testing
+
+I have included details of testing both during development and post-development in a separate document called [TESTING.md](TESTING.md)
 
 ## Credits
 
