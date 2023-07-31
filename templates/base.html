@@ -142,7 +142,6 @@
                 </ul>
             </div>
         </div>
-        </div>
         <!-- Main page navigation -->
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
@@ -155,9 +154,10 @@
             </nav>
         </div>
         <!-- Information banner -->
-         <div id="delivery-banner" class="row text-center delivery-banner marquee">
+        <div id="delivery-banner" class="row text-center delivery-banner marquee">
             <h5 class="fw-normal my-2 text-uppercase"><i class="fas fa-truck fa-flip-horizontal"></i> <span
                 class="logo-font my-1">Free</span> delivery on orders over €{{ free_delivery_threshold }}!</h5>
+        </div>
     </header>
 
     <!-- MESSAGES CONTAINER -->
@@ -191,12 +191,12 @@
 
     {% block postloadjs %}
     <!-- TOASTS -->
-    <script type="text/javascript">
+    <script>
         // Display toast messages
         $('.toast').toast('show');
     </script>
 
-    <script type="text/javascript">
+    <script>
         $(document).ready(function () {
             // Close toast messages after 3 seconds (3000 milliseconds)
             setTimeout(function () {

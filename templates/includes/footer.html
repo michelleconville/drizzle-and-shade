@@ -2,67 +2,77 @@
 
 <footer class="footer text-center text-lg-start">
     <section class="py-2">
-            <div class="footer-headers fa-footer-icons container text-center text-md-start mt-4">
-                <div class="row py-4">
-                    <div class=" col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <p class="text-uppercase fw-bold py-1"><i class="fa-solid fa-umbrella me-3 footer-fa-icon-colors"></i> Subscribe </p>
-                        <hr>
-                        <form action="https://oireachtas.us19.list-manage.com/subscribe/post?u=f1ae47876209890d38ac99ad6&amp;id=7063a654ec&amp;f_id=00b2aae4f0"
-                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" label="Email Mailchimp Form">
+        <div class="footer-headers fa-footer-icons container text-center text-md-start mt-4">
+            <div class="row py-4">
+                <div class=" col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold py-1"><i
+                            class="fa-solid fa-umbrella me-3 footer-fa-icon-colors"></i> Subscribe </h6>
+                    <hr>
+                    <form
+                        action="https://oireachtas.us19.list-manage.com/subscribe/post?u=f1ae47876209890d38ac99ad6&amp;id=7063a654ec&amp;f_id=00b2aae4f0"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                        target="_blank">
                         <div id="mc_embed_signup_scroll" class="text-left">
-                                <label for="mce-EMAIL">Email Address<span class="asterisk">*</span></label>
-                                <input type="email" name="EMAIL" class="required email form-control" id="mce-EMAIL"
-                                    required="required" style="width: 100%;" value="" autocomplete="email">
-                            </div>
-                            <div id="mce-responses" class="clear foot">
-                                <div class="response" id="mce-error-response" style="display: none;"></div>
-                                <div class="response" id="mce-success-response" style="display: none;"></div>
-                            </div>
-                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                                /* real people should not fill this in and expect good things - do not remove this
-                                or risk form bot signups */
-                                <input type="text" name="b_dc4fbe77087c2876bad77edc3_6d6e28245c" tabindex="-1" value="" aria-label="Hidden Input Box">
-                            </div>
-                            <div class="indicates-required pb-3 text-right">
-                                <span class="asterisk">*</span><em>Indicates Required</em></div>
-                            <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address<span class="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" class="required email form-control" id="mce-EMAIL"
+                                required="required" style="width: 100%;" value="" autocomplete="email">
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            /* real people should not fill this in and expect good things - do not remove this
+                            or risk form bot signups */
+                            <input type="text" name="b_dc4fbe77087c2876bad77edc3_6d6e28245c" tabindex="-1" value=""
+                                aria-label="Hidden Input Box">
+                        </div>
+                        <div class="indicates-required pb-3 text-right">
+                            <span class="asterisk">*</span><em>Indicates Required</em></div>
+                        <div class="mc-field-group">
                             <div>
                                 <div class="clear foot">
-                                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-orange rounded-2 text-uppercase pb-2" value="Subscribe">
+                                    <input type="submit" name="subscribe" id="mc-embedded-subscribe"
+                                        class="btn btn-orange rounded-2 text-uppercase pb-2" value="Subscribe">
                                 </div>
                             </div>
                         </div>
                     </form>
-                    </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <p class="text-uppercase fw-bold py-1"><i class="fa-brands fa-product-hunt"></i> Products </p>
-                        <hr>
-                        <p><a href="{% url 'products' %}?category=beach_umbrellas" class="text-reset">Beach Umbrellas</a></p>
-                        <p><a href="{% url 'products' %}?category=childrens_umbrellas" class="text-reset">Childrens Umbrellas</a></p>
-                        <p><a href="{% url 'products' %}?category=foldable_umbrellas" class="text-reset">Foldable Umbrellas</a></p>
-                        <p><a href="{% url 'products' %}?category=golf_umbrellas" class="text-reset">Golf Umbrellas</a></p>
-                    </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <p class="text-uppercase fw-bold py-1"><i class="fa-solid fa-circle-info"></i> Help </p>
-                        <hr>
-                        <p><a href="{% url 'faqs' %}" class="text-reset">FAQs</a></p>
-                        <p><a href="{% url 'privacy' %}" class="text-reset">Privacy Policy</a></p>
-                        <p><a href="{% url 'terms' %}" class="text-reset">Terms and Conditions</a></p>
-                    </div>
-                    <div class="fa-footer-icons col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <p class="text-uppercase fw-bold py-1"><i class="fa-solid fa-address-card"></i><strong></strong> Contact </p>
-                        <hr>
-                        <p><i class="fas fa-home me-3 footer-fa-icon-colors"></i> Dublin, Ireland</p>
-                        <p><i class="fas fa-envelope me-3 footer-fa-icon-colors"></i> info@drizzle&shade.com</p>
-                        <p><i class="fas fa-phone me-3 footer-fa-icon-colors"></i> + 01 234 567 88</p>
-                        <a href="#" class="btn btn-blue rounded-2" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i>Facebook</a>
-                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold py-1"><i class="fa-brands fa-product-hunt"></i> Products </h6>
+                    <hr>
+                    <p><a href="{% url 'products' %}?category=beach_umbrellas" class="text-reset">Beach Umbrellas</a>
+                    </p>
+                    <p><a href="{% url 'products' %}?category=childrens_umbrellas" class="text-reset">Childrens
+                            Umbrellas</a></p>
+                    <p><a href="{% url 'products' %}?category=foldable_umbrellas" class="text-reset">Foldable
+                            Umbrellas</a></p>
+                    <p><a href="{% url 'products' %}?category=golf_umbrellas" class="text-reset">Golf Umbrellas</a></p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold py-1"><i class="fa-solid fa-circle-info"></i> Help </h6>
+                    <hr>
+                    <p><a href="{% url 'faqs' %}" class="text-reset">FAQs</a></p>
+                    <p><a href="{% url 'privacy' %}" class="text-reset">Privacy Policy</a></p>
+                    <p><a href="{% url 'terms' %}" class="text-reset">Terms and Conditions</a></p>
+                </div>
+                <div class="fa-footer-icons col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold py-1"><i class="fa-solid fa-address-card"></i><strong></strong>
+                        Contact </h6>
+                    <hr>
+                    <p><i class="fas fa-home me-3 footer-fa-icon-colors"></i> Dublin, Ireland</p>
+                    <p><i class="fas fa-envelope me-3 footer-fa-icon-colors"></i> info@drizzle&shade.com</p>
+                    <p><i class="fas fa-phone me-3 footer-fa-icon-colors"></i> + 01 234 567 88</p>
+                    <a href="#" class="btn btn-blue rounded-2" rel="noopener noreferrer"><i
+                            class="fa-brands fa-facebook"></i>Facebook</a>
                 </div>
             </div>
         </div>
     </section>
     <div class="text-center small p-3" style="background-color: rgba(0, 0, 0, 0.1);">© 2023 Copyright:
-        <a class="text-reset font-weight-bold logo" href="https://drizzleandshade-4e77ed93aac5.herokuapp.com/" rel="noopener noreferrer">Drizzle & Shade - Michelle Conville</a> | For educational use only
+        <a class="text-reset font-weight-bold logo" href="https://drizzleandshade-4e77ed93aac5.herokuapp.com/"
+            rel="noopener noreferrer">Drizzle & Shade - Michelle Conville</a> | For educational use only
     </div>
 </footer>
 

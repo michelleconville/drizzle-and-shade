@@ -128,60 +128,48 @@ The site was designed to be user-friendly and responsive, with the navigation ba
 #### Features and Functionality
 
 User Registration and Authentication
-
 * User registration and login functionality for customers to create and manage their accounts.
 * User authentication and access control to ensure secure and personalised experiences.
 
 Product list
-
 * Display a comprehensive list of umbrellas.
 * Categorise products based on different criteria such as price, rating and category.
 * Provide detailed product information including images, description and stock levels, if low or out of stock.
 
 Shopping bag and Checkout
-
 * Allow customers to add products to their shopping bag and manage quantities.
 * Implement a secure and intuitive checkout process, including address and payment information collection.
 * Integration with payment gateway to facilitate secure online transactions.
 
 Search and Filtering
-
 * Include a search functionality to allow customers to find products based on keywords or specific criteria.
 * Enable filtering options to refine product search results based on predetermined attributes.
 
 Responsive Design
-
 * Develop a user-friendly and responsive website that provides optimal user experience across different devices and screen sizes.
 * Ensure seamless navigation and readability on across all device types.
 
 Admin Panel
-
 * Implement an admin panel for site owners/staff to manage categories, products, stock levels and the FAQs.
 
 Account overview
-
 * Implement a ‘my profile’ page to update their delivery information for future purchases and track orders.
 * Ensure customers have the facility to change their password
 
 Wishlist
-
 * Provide customers with the ability to add products to their wishlist for future reference and easy access.
 * Allow customers to manage their wishlist, including adding and removing products via the account overview.
 
 Contact Us
-
 * Implement a contact form customers or future customers to reach out to the customer support.
 
 FAQs
-
 * Provide a means for site owners/staff to create FAQ and answers.
 
 Stock Management
-
 *   Implement a page to view sotck levels of each product and provide the site owners/staff the ability to update them.
 
 Delivery Management
-
 *   Implement a page to view orders and provide the site owner/staff the ability to update the order once it has been shipped. 
 
 
@@ -714,12 +702,6 @@ A site wide favicon was implemented. This provides an image in the tabs header t
 * A more advanced stock management system
 * Add more payment options
 * Logging in with social media accounts
-
-
-
-
-
-
 
 
 ## Technology

@@ -57,6 +57,8 @@ To fork the repository by following these steps:
 1. Go to the GitHub repository
 2. Click on Fork button in upper right hand corner
 
+##### Back to [top](#table-of-contents)
+
 ## Django
 
 This project build using the Django framework. 
@@ -103,6 +105,7 @@ Add a username and password with an optional email address.
 
 Inside the django framework is a package called Allauth. This package handles all the registration and sign in processes. The steps to install Allauth can be found [here](https://django-allauth.readthedocs.io/en/latest/installation.html).
 
+##### Back to [top](#table-of-contents)
 
 ## Heroku
 
@@ -184,6 +187,8 @@ Heroku was used to deploy the project
 
 * To setup the project to automatically deployed to heroku when pushing your work to github you can. To do so, In heroku go to the deploy tab, and in the 'deployment method' section connect it to github. You will need to search for your repository and once found click 'connect'. Then scroll down and click 'Enable automatic deploys'. Now when you push to github your code will automatically deploy to Heroku as well. 
 
+##### Back to [top](#table-of-contents)
+
 ### Generate a SECRET KEY
 
 * When you start a project in Django, a secret key is immediately generated; however, we shouldn't utilize this key in our deployed version as it makes our website insecure.
@@ -203,6 +208,8 @@ Heroku was used to deploy the project
         DEBUG = 'DEVELOPMENT' in os.environ
 
 * Save, add, commit and push these changes.
+
+##### Back to [top](#table-of-contents)
 
 ## Setting up AWS
 
@@ -242,6 +249,8 @@ Amazon web services are used to store all our static and media files.
 * Once those changes are saved, scroll down to the Access control list (ACL) section and click 'edit'.
 * Next to 'Everyone (public access)', check the 'list' checkbox. This will pop up a warning box that you will also have to check. Once that's done click 'save'. 
 
+##### Back to [top](#table-of-contents)
+
 ### IAM
 
 * Now that your bucket is ready we need to create a user to access it. In the search bar at the top of the window, search for IAM and select it.
@@ -276,6 +285,8 @@ Amazon web services are used to store all our static and media files.
 * Give your user a user name, check 'Programmatic Access', then click 'Next: Permissions'. 
 * Select your group that has the policy attached and click 'Next: Tags', 'Next: Review', then 'Create user'.
 * On the next page, download the CSV file. This contains the user's access key and secret access key which you will need later. 
+
+##### Back to [top](#table-of-contents)
 
 ### Connecting AWS to django
 
@@ -355,6 +366,8 @@ Now that you have created a S3 bucket with its user group attached, we need to c
 * Under 'Permissions' select the option 'Grant public-read access' and click upload. You may need to also check an acknowledgment warning checkbox too. 
 * Once that is finished you're all set. All your static files and media files should be automatically linked from django to your S3 bucket.
 
+##### Back to [top](#table-of-contents)
+
 ## Stripe
 
 Stripe is needed to handle the checkout process when a payment is made. You will need a stripe account which you can sign up for [here](https://stripe.com/en-gb).
@@ -385,3 +398,7 @@ Stripe is needed to handle the checkout process when a payment is made. You will
         STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
         STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
         STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
+##### Back to [top](#table-of-contents)
+
+[Return to README.md](README.md)
