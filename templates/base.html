@@ -6,6 +6,7 @@
 <head>
 
     {% block meta %}
+    <!-- Meta tags -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -153,18 +154,14 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-        <!-- <div id="delivery-banner" class="row text-center delivery-banner marquee">
-            <div class="col text-blue">
-                <p class="logo-font my-1"><i class="fa-solid fa-truck"></i> Free delivery on orders over €{{ free_delivery_threshold }}!</p>
-            </div>
-        </div> -->
-
-        <div id="delivery-banner" class="row text-center delivery-banner marquee">
-            <h5 class="fw-normal my-2 text-uppercase"><i class="fas fa-truck fa-flip-horizontal"></i> <span
-                class="logo-font my-1">Free</span> delivery on orders over €{{ free_delivery_threshold }}!</h5>
+        <!-- Information banner -->
+        <div id="delivery-banner" class="row text-center delivery-banner marquee"> 
+            <span class="fw-normal my-2 text-uppercase"><i class="fas fa-truck fa-flip-horizontal"></i> <span
+                    class="logo-font my-1">Free</span> delivery on orders over €{{ free_delivery_threshold }}!</span>
         </div>
     </header>
 
+    <!-- MESSAGES CONTAINER -->
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -182,6 +179,8 @@
         {% endfor %}
     </div>
     {% endif %}
+
+    <!-- END MESSAGES CONTAINER -->
 
     {% block page_header %}
     {% endblock %}
