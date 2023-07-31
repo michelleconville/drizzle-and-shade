@@ -12,27 +12,104 @@ Finally, I asked friends to look at the site on their devices and report any iss
 
 
 ## Table of Contents 
- - [Manual Testing](#manual-testing)
  - [Automated testing](#automated-testing)
+ - [Manual Testing](#manual-testing)
  - [Validator Testing](#validator-testing)
  - [Testing Browser Compatibility](#testing-browser-compatibility)
  - [Bugs](#bugs)
 
 
 
- ## Manual Testing
+## Automated testing
 
- ##### Back to [top](#table-of-contents)
+### Unit Testing
 
- ## Automated testing
+Unit tests were created to test the functionality of the apps. These can be found in the tests.py files in the respective apps.
 
- ##### Back to [top](#table-of-contents)
+Running the test suite
+The tests are run in the terminal window by entering 
 
- ## Validator Testing
+        python3 manage.py test 
 
- ##### Back to [top](#table-of-contents)
+This will automatically run all test. If running tests in quick succession, it's recommended to add --keepdb at the end, so the database doesn't have to be rebuild for every test cycle. All tests passed, but if one failed, it would be displayed with a clear error message, so errors can be resolved.
 
- ## Testing Browser Compatibility
+
+<details><summary>Home tests</summary>
+
+![home](docs/testing/unit-test-results/coverage-home.jpg) 
+
+</details>
+
+<details><summary>Profiles tests</summary>
+
+![Profiles](docs/testing/unit-test-results/coverage-profiles.jpg) 
+
+</details>
+
+
+<details><summary>Products tests</summary>
+
+![Products](docs/testing/unit-test-results/coverage-products.jpg) 
+
+</details>
+
+<details><summary>Checkout tests</summary>
+
+![Checkout](docs/testing/unit-test-results/coverage-checkout.jpg) 
+
+</details>
+
+<details><summary>Contact tests</summary>
+
+![Contact](docs/testing/unit-test-results/coverage-contact.jpg) 
+
+</details>
+
+<details><summary>FAQs tests</summary>
+
+![Contact](docs/testing/unit-test-results/coverage-faqs.jpg) 
+
+</details>
+
+<details><summary>Bag tests</summary>
+
+![Bag](docs/testing/unit-test-results/coverage-bag.jpg) 
+
+</details>
+
+### Site Coverage Report
+
+Through my testing, I was able to get a total of 72% coverage across the site. The remaining 28% will be covered through the manual testing below.
+
+View the site wide coverage report [coverage-report](coverage.txt)
+
+
+## Manual Testing
+
+##### Back to [top](#table-of-contents)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### Back to [top](#table-of-contents)
+
+## Validator Testing
+
+##### Back to [top](#table-of-contents)
+
+## Testing Browser Compatibility
 
 The website was successfully opened and rendered correctly in Chrome (both desktop and mobile versions), Edge, Firefox and Safari.
 
