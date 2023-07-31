@@ -12,12 +12,9 @@ def wishlist(request):
     user = request.user
     wishlist_items = Wishlist.objects.filter(user__user=user)
 
-    on_wishlist_page = True
-
-    template = 'wishlist/wishlist.html'
     context = {
         'wishlist_items': wishlist_items,
-        "on_wishlist_page": True
+        "on_wishlist_page": True,
     }
     return render(request, template, context)
 

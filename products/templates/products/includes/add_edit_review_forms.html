@@ -7,8 +7,8 @@
     {% csrf_token %}
     {{ form | crispy }}
     <div class="text-right">
-        <a href="{% url 'product_detail' product.id %}#reviews-section" class="btn btn-outline-dark">Cancel</a>
-        <button class="btn btn-dark" type="submit">Update</button>
+        <a href="{% url 'product_detail' product.id %}#reviews-section" class="btn btn-orange">Cancel</a>
+        <button class="btn btn-blue" type="submit">Update</button>
     </div>
 </form>
 {% else %}
@@ -16,12 +16,12 @@
     {% csrf_token %}
     {{ form|crispy }}
     <div class="text-right">
-        <button class="btn btn-style logo-font mb-5" type="submit">Submit Review</button>
+        <button class="btn btn-blue logo-font mb-5" type="submit">Submit Review</button>
     </div>
 </form>
 {% endif %}
 {% else %}
-<p class="text-center">Please <a class="link-normal" href="{% url 'account_signup' %}">Register</a> or
-    <a class="link-normal" href="{% url 'account_login' %}">Login</a> to leave a review.</p>
+<p class="text-center text-blue">Please <a class="link-normal text-pink" href="{% url 'account_signup' %}">Register</a> or
+    <a class="link-normal text-pink" href="{% url 'account_login' %}">Login</a> to leave a review.</p>
 {% endif %}
 {% endif %}

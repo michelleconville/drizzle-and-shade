@@ -49,6 +49,11 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    # Other
+    'djrichtextfield',
+    'crispy_forms',
+    'storages',
+
     # Apps
     'home',
     'products',
@@ -59,10 +64,6 @@ INSTALLED_APPS = [
     'contact',
     'faqs',
 
-    # Other
-    'djrichtextfield',
-    'crispy_forms',
-    'storages',
 ]
 
 DJRICHTEXTFIELD_CONFIG = {

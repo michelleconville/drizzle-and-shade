@@ -180,7 +180,7 @@ View the site wide coverage report [coverage-report](coverage.txt)
 
 
 **Expected**
-I
+
 * The name of the product, the price, the catagory the product is in, the rating of product, a description and the product image displays
 * A badge appears under the price to advise the user if the product is low in stock or out of stock
 * A quanity selector so the user can change the quanity
@@ -211,14 +211,165 @@ I
 * When a producted is rated, the rating will update with the average rating across all reviews
 
 **Outcome**
+
 All review fucntionality working as expected
 
 
+### Shopping cart
+
+                As a shopper I can see the shopping bag summary and total cost so that I can see how much I will spend
+                As a shopper I can select the quantity of a product so that I can buy more 
+                As a shopper I can remove items from shopping bag so that I don't buy what I don't want
 
 
+**Expected**
+
+* Information and images display correctly
+* Have the ability to change quantity in the bag of a product
+* Have the ability to remove a product
+* Calculations are correct
+* Buttons link to the correct pages
+
+**Outcome**
+
+* Everything renders as it should
+* Calculations are working as expected
+* Delivery charge is being applied correctly
+* Buttons working as expected
+* Remove and Update woeking as expected
+
+### Checkout
+
+                As a shopper I can put in my card details so that I can pay for my umbrella
+                As a shopper I receive order confirmations so that I can be sure my order has been processed
+                As a logged-in shopper I can save my details so that I don't have to retype my address every time
+
+**Expected**
+
+* Show the correct order summary
+* Display all form fields
+* Required fields are marked with an asterisk
+* The payment field from Stripe works and gives error messages when card details are not correct
+* After a successful order, a toast message confirms order and user recieves an email
+
+**Outcome**
+
+* Order summary displays correctly
+* All form fields working as expected
+* Payment field working as expected 
+* Toast message working as expected
+* Email confirmation working as expected
 
 
+### Contact us
 
+                As a shopper I can contact the store so that I can find out information that I require
+                As a shopper I can receive a contact confirmation email to let me know that my email has been sent
+
+**Expected**
+
+* Display all form fields
+* Required fields are marked with an asterisk
+* Buttons link to the correct pages
+* After successfully submitting a query, a toast message confirms and user recieves an email
+
+**Outcome**
+
+* All form fields working as expected
+* Toast message working as expected
+* Buttons working as expected
+* Email confirmation working as expected
+
+### Toasts
+
+                As a shopper I am notified about any actions I have made so that I have a clear understanding of what has been completed/updated
+
+
+**Expected**
+
+Displays four different types of toast messages
+Toast meesages display the text from the respective view
+Toast message has a close button 
+Each message will display be 3 second before disappearing.
+
+**Outcome**
+
+Toast messages display as expected
+
+### Account overview 
+                As a shopper I can register for an account so that I can use features for logged-in users
+
+**Expected**
+
+* Buttons link to the correct pages
+
+**Outcome**
+
+* Buttons working as expected
+
+### My Profile
+                As a logged-in shopper I can save my details so that I don't have to retype my address every time
+
+**Expected**
+
+* Display the order history
+* Links to the order work
+* Display all form fields
+* Update information works
+* Delete button deletes the users account
+
+**Outcome**
+
+* All form fields working as expected
+* Information updating as expected
+* Delete button working as expected
+* Order history display and works as expected
+
+### My Wishlist
+
+                As a logged-in shopper I can save selected products to my wishlist for later purchase
+
+
+**Expected**
+
+* On the product detail page only allows registered users to add to the wishlist, you are redirected to a model if you are not logged in
+* Displays a small product image, product name and price.
+* The Remove button, removes the item
+
+**Outcome**
+* Adding item to wishlist is working as expected
+* Page displaying as expected
+* Remove button working as expected
+
+### Admin Panel
+
+                As a site owner I can log in/out to an admin panel so that I have full access to staff area
+
+**Expected**
+
+* Buttons link to the correct pages
+
+**Outcome**
+
+* Buttons working as expected
+
+### Category and product management
+
+**Expected**
+
+* Buttons link to the correct pages
+
+**Outcome**
+
+* Buttons working as expected
+
+#### Category management
+                As a site owner I can add new categories to the shop so that I can make sure the website is up to date
+                As a site owner I can edit/delete categories so that I can make sure the website is up to date
+
+**Expected**
+
+**Outcome**
 
 
 
@@ -258,6 +409,10 @@ In addition to the above listed devices, the Google Chrome Developer Tools devic
 ##### Back to [top](#table-of-contents)
 
 ## Bugs
+
+1. Products changing order on stock level page after clicking update stock
+
+* Update the stock_level view to include .order_by('-name') to prevent this from happening
 
 ##### Back to [top](#table-of-contents)
 

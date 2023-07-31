@@ -356,7 +356,7 @@ def stock_levels(request):
         messages.error(request, 'Only store owners can do that.')
         return redirect(reverse('home'))
 
-    stock_levels = Product.objects.all()
+    stock_levels = Product.objects.all().order_by('-name')
     template = 'products/stock_levels.html'
     context = {
         'stock_levels': stock_levels,

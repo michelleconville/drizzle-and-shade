@@ -164,12 +164,12 @@
                         <!-- User and admin edit btn -->
                         {% if review.user.user.id == user.id or request.user.is_superuser %}
                         <a href="{% url 'edit_review' review.id %}#reviews-section"
-                            aria-label="Edit review from {{ review.user }}" class="text-secondary text-decoration-none">
+                            aria-label="Edit review from {{ review.user }}" class="text-blue text-decoration-none">
                             <span class="icon mr-2">
                                 <i class="fa-regular fa-pen-to-square"></i>
                             </span>
                         </a>
-                        <a class="text-danger text-decoration-none btn" data-toggle="modal"
+                        <a class="text-pink text-decoration-none btn" data-toggle="modal"
                             data-target="#reviewDeleteModal" aria-label="Delete review from {{ review.user }}">
                             <span class="icon">
                                 <i class="fa-regular fa-trash-can"></i>
