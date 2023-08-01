@@ -293,7 +293,7 @@ These are the initial wireframes for the project to show the website's layout, d
 
 #### Database
 
-ADD MORE TO THIS SECTION!!!!!!!!!!!!!!!!!!!!
+Two relational databases were used to create the site. The built in Django SQLite database was used for development and then Postgres for the deployed version.
 
 An entity relationship diagram was created and shows the schemas for each of the models and how they are related.
 

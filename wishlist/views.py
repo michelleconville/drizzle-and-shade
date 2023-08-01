@@ -12,6 +12,8 @@ def wishlist(request):
     user = request.user
     wishlist_items = Wishlist.objects.filter(user__user=user)
 
+    template = 'wishlist/wishlist.html'
+
     context = {
         'wishlist_items': wishlist_items,
         "on_wishlist_page": True,
