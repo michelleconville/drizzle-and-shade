@@ -213,20 +213,8 @@
 
 {% block postloadjs %}
     {{ block.super }}
+    {% include 'products/includes/button_validation_script.html' %}
     {% include 'products/includes/quantity_input_script.html' %}
-    <script>
-        document.getElementById('add-to-bag-btn').addEventListener('click', function (event) {
-            var quantityInput = document.getElementById('id_qty_{{ product.id }}');
-            var maxQuantity = {{ product.quantity }};
-            var requestedQuantity = parseInt(quantityInput.value);
 
-            if (requestedQuantity > maxQuantity) {
-                event.preventDefault();
-                var stockValidationModal = new bootstrap.Modal(document.getElementById('stockValidationModal'));
-                var stockValidationMessage = document.getElementById('stockValidationMessage');
-                stockValidationMessage.textContent = `Sorry, there are only ${maxQuantity} items left in stock.`;
-                stockValidationModal.show();
-            }
-        });
-    </script>
+    
 {% endblock %}
