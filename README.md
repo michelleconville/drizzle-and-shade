@@ -703,6 +703,45 @@ A site wide favicon was implemented. This provides an image in the tabs header t
 * Add more payment options
 * Logging in with social media accounts
 
+## Ecommerce Business Model
+
+The business model for this site would be a B2C (Business to Customer) model, as the business will be selling products directly from themselves to the customer.
+
+## Marketing Strategy
+### Social Media Marketing
+
+A Facebook Business page has been created and deployed. The Facebook platform provides a vast audience base, allowing [Drizzle and Shade](https://www.facebook.com/Drizzleandshade/) to reach and engage with potential customers worldwide. It helps create brand visibility and recognition.
+
+The page includes a link to the website and contact details. I have posted a welcome message introducing potential customers to the brand, which has been pinned, and an additional post promoting back to school products.
+
+**Facebook page**
+
+![Facebook page](docs/readme_screenshots/facebook-page.jpg)
+
+**First Facebook post**
+
+![First facebook post](docs/readme_screenshots/facebook-post.jpg)
+
+### Newsletter Marketing
+
+A business newsletter will build brand awareness and visibility while also serving as a platform to highlight new products, services, or promotions. 
+
+I have used Mailchimp to set up a subscription to a newsletter by way of an embedded form in the footer. This allows users to supply their email addresses if they are interested in learning more about the site. 
+
+Regular newsletters with new products and promotions will issue to all customers subscribed. 
+
+![Subscribe form](docs/readme_screenshots/subscribe.jpg)
+
+## Search Engine Optimization - SEO
+
+### Sitemap and Robots files
+
+I have created a [SitemapXML](https://github.com/michelleconville/drizzle-and-shade/) and [robots.txt](https://github.com/michelleconville/drizzle-and-shade/blob/main/robots.txt) file to help aid search engines locate the site. To keep user's information safe, any pages that could contain sensitive information has been disallowed in the robots.txt.
+
+### Meta Descriptions
+
+Where possible in the project I have supplied relevant information regarding the website to be crawlable well by the search engines, providing the correct meta keywords and description.
+
 
 ## Technology
 
