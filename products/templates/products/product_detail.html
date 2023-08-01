@@ -107,12 +107,14 @@
                                 <p class="text-pink">Out of Stock</p>
                                 <span class="btn btn-secondary disabled rounded-2">Add to bag</span>
                             {% else %}
-                            <input type="submit" class="btn btn-blue rounded-2 text-uppercase mt-2" value="Add to Bag">
+                            <input type="submit" class="btn btn-blue rounded-2 text-uppercase mt-2" value="Add to Bag" id="add-to-bag-btn">
                             {% endif %}
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
+                {% include 'products/includes/product_validation_modal.html' %}
+                
             </div>
         </div>
         {% include 'products/includes/wishlist_modal.html' %}
@@ -208,7 +210,23 @@
 </section>
 {% endblock %}
 
+
 {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+    {{ block.super }}
+    {% include 'products/includes/quantity_input_script.html' %}
+    <script>
+        document.getElementById('add-to-bag-btn').addEventListener('click', function (event) {
+            var quantityInput = document.getElementById('id_qty_{{ product.id }}');
+            var maxQuantity = {{ product.quantity }};
+            var requestedQuantity = parseInt(quantityInput.value);
+
+            if (requestedQuantity > maxQuantity) {
+                event.preventDefault();
+                var stockValidationModal = new bootstrap.Modal(document.getElementById('stockValidationModal'));
+                var stockValidationMessage = document.getElementById('stockValidationMessage');
+                stockValidationMessage.textContent = `Sorry, there are only ${maxQuantity} items left in stock.`;
+                stockValidationModal.show();
+            }
+        });
+    </script>
 {% endblock %}

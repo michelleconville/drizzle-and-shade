@@ -85,10 +85,11 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
+@login_required
 def product_detail(request, product_id):
     """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id)
-    reviews = Review.objects.all().filter(name=product).order_by('-created_on')
+    reviews = Review.objects.all().filter(product=product).order_by('-created_on')
     review_count = len(reviews)
     is_in_wishlist = False
 
@@ -99,38 +100,51 @@ def product_detail(request, product_id):
         ).exists()
         is_in_wishlist = wishlist_exists
 
-    if request.user.is_authenticated:
         user_profile = get_object_or_404(UserProfile, user=request.user)
 
-    if request.method == 'POST':
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.user = request.user
-            review.product = product
-            review.name = product.name
-            review.save()
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.user = request.user
+                review.product = product
+                review.name = product.name
+                review.save()
 
-            # Update the product's rating and review count
-            reviews = Review.objects.filter(product=product)
-            rating = reviews.aggregate(Avg('rating'))['rating__avg']
-            product.rating = rating
-            product.review_count = reviews.count()
-            product.save()
+                # Update the product's rating and review count
+                reviews = Review.objects.filter(product=product)
+                rating = reviews.aggregate(Avg('rating'))['rating__avg']
+                product.rating = rating
+                product.review_count = reviews.count()
+                product.save()
 
-            messages.success(request, 'Review successfully added')
-            return redirect(reverse('product_detail', args=[product.id]))
+                messages.success(request, 'Review successfully added')
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                messages.error(request, 'Failed to add review. \
+                    Please ensure the form is valid.')
+
         else:
-            messages.error(request, 'Failed to add review. \
-                Please ensure the form is valid.')
+            form = ReviewForm()
 
     else:
         form = ReviewForm()
-        if request.user.is_authenticated:
-            reviewed = Review.objects.all().filter(
-                name=product).filter(user=user_profile.id)
+
+    # Get the current stock quantity of the product
+    stock_quantity = product.quantity
+
+    if request.method == 'POST':
+        # Get the quantity requested by the user from the form
+        quantity_requested = int(request.POST.get('quantity', 1))
+
+        # Check if the requested quantity is greater than the available stock
+        if quantity_requested > stock_quantity:
+            messages.error(request, 'Sorry, there is not enough stock available for this quantity.')
+            # You can redirect the user back to the product detail page or handle the error as needed.
         else:
-            reviewed = False
+            # Quantity requested is valid, add the product to the bag
+            # Implement the code to add the product to the bag here
+            pass  # Replace 'pass' with your code for adding the product to the bag
 
     context = {
         'product': product,
@@ -138,10 +152,14 @@ def product_detail(request, product_id):
         'is_in_wishlist': is_in_wishlist,
         'reviews': reviews,
         'review_count': review_count,
-        'reviewed': reviewed,
         'is_out_of_stock': product.is_out_of_stock,
     }
     return render(request, 'products/product_detail.html', context)
+
+
+
+
+
 
 
 @login_required
