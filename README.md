@@ -23,6 +23,35 @@ For testing interactively, feel free to use card details below. Further informat
 * CVN = any 3 digits (Example: 123)
 * Zip code = any 5 digits (Example: 12345)
 
+
+## Table of Contents
+
+* [Project goals](#project-goals)
+* [User Experience](#user-experience)
+    * [Target Audience](#target-audience)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
+* [Planning](#planning)
+    * [Agile Planning](#agile-planning)
+    * [User stories](#user-stories)
+* [Design](#design)
+    * [Colour Scheme](#colour-scheme)
+    * [Typography](#typography)
+	* [Structure](#the-structure)
+		* [Features and Functionality](#features-and-functionality)
+		* [Wireframes](#wireframes)
+		* [Database](#database)		
+* [Features](#features)
+* [Future Features](#future-features)
+* [Ecommerce Business Model](#ecommerce-business-model)
+* [Marketing Strategy](#marketing-strategy)
+* [Search Engine Optimization - SEO](#search-engine-optimization---seo)
+* [Technologies Used](#technologies-used)
+* [Security Features and Defensive Design](#security-features-and-defensive-design)
+* [Deployment](#deployment)
+* [Testing](#testing)
+* [Credits](#credits)
+* [Acknowledgements](#acknowledgements)
+
 ## Project goals
 
 The site will offer users a modern and user-friendly e-commerce website that sell umbrellas. The website aims to provide a seamless shopping experience for users looking to purchase high-quality umbrellas for protection against rain or sun. The site will incorporate essential e-commerce features, including product listings, shopping cart functionality, secure payments, and a user-friendly interface. The goal is to attract customers, generate sales, and establish a reputable online presence for umbrella sales.
@@ -39,6 +68,8 @@ The target audience for the website includes individuals of all ages and demogra
 * An intuitive navigation with logical workflows for purchasing an umbrella
 * An ability to view information on products and manage personal data
 
+##### Back to [top](#table-of-contents)
+
 # Planning
 
 ## Agile Planning
@@ -52,6 +83,8 @@ In GitHub projects, a Kanban board was used to track the progress of the project
 View the [Kanban board](https://github.com/users/michelleconville/projects/6/)
 
 ![github project image](docs/readme_screenshots/project.jpg) 
+
+##### Back to [top](#table-of-contents)
 
 ## User stories 
 
@@ -108,6 +141,7 @@ Epic: Communication
 * As a shopper I can contact the store so that I can find out information that I require
 * As a shopper I can receive a contact confirmation email to let me know that my email has been sent
 
+##### Back to [top](#table-of-contents)
 
 ## Design 
 
@@ -117,9 +151,13 @@ The color palette for this project was kept as simple as possible to maintain th
 
 ![colour pallette](docs/readme_screenshots/drizzle-and-shade-colours.png) 
 
+##### Back to [top](#table-of-contents)
+
 ### Typography
 
 The fonts used are IBM Plex and Pangolin. Fonts were imported from Google Fonts. The backup font of sans was used in case the fonts do not load for the user.
+
+##### Back to [top](#table-of-contents)
 
 ### The structure
 
@@ -172,6 +210,7 @@ Stock Management
 Delivery Management
 *   Implement a page to view orders and provide the site owner/staff the ability to update the order once it has been shipped. 
 
+##### Back to [top](#table-of-contents)
 
 #### Wireframes
 
@@ -249,6 +288,8 @@ These are the initial wireframes for the project to show the website's layout, d
 
 </details>
 
+##### Back to [top](#table-of-contents)
+
 
 #### Database
 
@@ -256,6 +297,7 @@ ADD MORE TO THIS SECTION!!!!!!!!!!!!!!!!!!!!
 
 An entity relationship diagram was created and shows the schemas for each of the models and how they are related.
 
+##### Back to [top](#table-of-contents)
 
 ## Features
 
@@ -295,6 +337,8 @@ If a staff user chooses to register and/or login, additional options are availab
 
 ![Navigation bar](docs/features/navbar.jpg) 
 
+##### Back to [top](#table-of-contents)
+
 #### Informational banner
 
 An informaitonal banner is locationed under the navigation bar, it currently displays a message *Free delivery on order over €20!* 
@@ -302,6 +346,8 @@ An informaitonal banner is locationed under the navigation bar, it currently dis
 A marquee tag was included to to create scrolling text horizontally across the site.
 
 ![Informational banner](docs/features/info-banner.jpg) 
+
+##### Back to [top](#table-of-contents)
 
 #### Footer
 
@@ -320,6 +366,8 @@ The footer has been added to the bottom of the website, this contains 4 sections
 There is also a small portion of text for the Copyright/Disclaimer. A link to my Github repository is provided. 
 
 ![Footer](docs/features/footer.jpg) 
+
+##### Back to [top](#table-of-contents)
 
 #### Product Search
 
@@ -340,6 +388,8 @@ The product search input bar can be used on any page in the navigation bar, the 
 ![Results found](docs/features/no-results-found.jpg) 
 
 
+##### Back to [top](#table-of-contents)
+
 ### Features For All Users
 
 #### Homepage
@@ -347,6 +397,8 @@ The product search input bar can be used on any page in the navigation bar, the 
 The Homepage was designed as a single landing page. It consists of a hero image and placed on the image is Drizzle & Shades slogan *Embrace the weather, unleash your style* and a call to action button to shop now. The call to action button links to the all product page.
 
 ![homepage](docs/features/homepage.jpg)
+
+##### Back to [top](#table-of-contents)
 
 #### All products page
 
@@ -367,6 +419,8 @@ The Products page displays a list of all the Products that are sold by Drizzle &
 
 ![Products page](docs/features/products-page.jpg)
 
+##### Back to [top](#table-of-contents)
+
 #### Detailed Product page
 
 The Product Details page contains all the information related to the Product. The product page is broken down into two parts, the product information section and the review section. 
@@ -381,6 +435,7 @@ The product information section contains:
 * The name of the product, the price, the catagory the product is in, the rating of product, a description and the product image.
 * A badge appears under the price to advise the user if the product is low in stock or out of stock.
 * A quanity selector if the user would like to purchase more than one item.
+* A model will appear if the user has selected more products than available.
 * An add to cart button, this button is disabled if the product is out of stock
 * An add to [wishlist](#my-wishlist) icon, users need to be logged in for this functionality to work, a modal will display if the user selects the button and is not logged in.
 * Toast messages will display advising the user of any actions completed on this page either if they have added an item to the cart or added or removed an item from the wishlist. The success toast message 
@@ -411,6 +466,8 @@ The review section will allow any user read reviews that have been written by ot
 
 ![Product detail reivew page when a User left a comment](docs/features/product-detail-page-reivew.jpg)
 
+##### Back to [top](#table-of-contents)
+
 #### Shopping cart
 
                 As a shopper I can see the shopping bag summary and total cost so that I can see how much I will spend
@@ -425,6 +482,8 @@ The bag icon in the navigation bar displays the total price of all items in your
 The shopping cart page provides an overview of all of the items added by the user, from this page the user can easily make their final purchasing decisions because they have the opportunity to update or remove goods from the shopping cart, then either proceed to the checkout or to keep shopping.
 
 ![Bag page](docs/features/shopping-bag.jpg)
+
+##### Back to [top](#table-of-contents)
 
 #### Checkout
 
@@ -441,6 +500,8 @@ The checkout page is broken into two sections, a form section and an order summa
  * Once the order has been completed a toast message will display advising that thr Order successfully processed!, once the order has been proceesed successful with Stripe and email confirmation will be sent to the user. 
 
 ![Checkout page](docs/features/checkout.jpg)
+
+##### Back to [top](#table-of-contents)
 
 #### Contact us
 
@@ -459,6 +520,8 @@ When logged in to the admin panel I have added a boolean field *Marked as done*.
 
 ![Managing contact messages view](docs/features/contact-replies.jpg)
 
+##### Back to [top](#table-of-contents)
+
 #### Toasts
 
                 As a shopper I am notified about any actions I have made so that I have a clear understanding of what has been completed/updated
@@ -466,6 +529,8 @@ When logged in to the admin panel I have added a boolean field *Marked as done*.
 Custom toasts were implemented throughout the site, there are four different categories, error, info, success and warning. Each message will display be 3 second before disappearing.
 
 These are to provide feedback to the user when they act on the site. 
+
+##### Back to [top](#table-of-contents)
 
 
 ### Features For All Login Users
@@ -481,6 +546,8 @@ When a user is logged in the account overview is displayed in the My Account dro
 * Link for the user to chage their password
 
 ![Account overview](docs/features/account-overview.jpg)
+
+##### Back to [top](#table-of-contents)
 
 #### My profile
 
@@ -501,6 +568,8 @@ The Delete button opens the Delete Profile modal where the user can choose to de
 
 ![My profile](docs/features/my-profile.jpg)
 
+##### Back to [top](#table-of-contents)
+
 
 #### My Wishlist
 
@@ -514,12 +583,16 @@ Toasts will be displayed anytime a Product is added/removed from Wishlist. In th
 
 ![My wishlist](docs/features/wishlist.jpg)
 
+##### Back to [top](#table-of-contents)
+
 
 #### Change password
 
 The user can change their password at any time. This page was created using one of the django-all-auth templates. 
 
 ![Change password](docs/features/changepassword.jpg)
+
+##### Back to [top](#table-of-contents)
 
 
 ### Features For Staff Login Users
@@ -536,6 +609,8 @@ When logged in as an admin the Admin panel is displayed in the My Account dropdo
 * Manage FAQs
 
 ![Admin panel](docs/features/admin-panel.jpg)
+
+##### Back to [top](#table-of-contents)
 
 
 #### Category and product management
@@ -567,6 +642,8 @@ A user can fill in category form and select the add category button, the categor
 
 ![Editing a category](docs/features/delete-category.jpg)
 
+##### Back to [top](#table-of-contents)
+
 #### Product management
 
 The Adding/Editing/Deleting of Products is only available to staff. Here the staff member can select a products category and add the products details.
@@ -579,6 +656,8 @@ When logged in as staff, on the Products page and Product Detail page a links ar
 ##### Adding a product
 
 ![Adding a product](docs/features/add-product.jpg)
+
+##### Back to [top](#table-of-contents)
 
 #### Stock management
 
@@ -594,6 +673,7 @@ This is a basic stock management tool. When a customer purchases a product, the 
 
 ![Managing stock levels](docs/features/update-stock.jpg)
 
+##### Back to [top](#table-of-contents)
 
 #### Managing shipping
 
@@ -608,6 +688,8 @@ To update the order to confirm it has been shipped, the staff user clicks on the
 ##### Confirm shipping page
 
 ![Confirm shipping page](docs/features/edit-shipping.jpg)
+
+##### Back to [top](#table-of-contents)
 
 #### Manage FAQs
 
@@ -636,6 +718,8 @@ Staff users can edit, update and delete a faqs.
 
 ![Delete an FAQ](docs/features/delete-faq.jpg)
 
+##### Back to [top](#table-of-contents)
+
 ### Site Authentication
 
 #### AllAuth
@@ -658,6 +742,8 @@ The AllAuth pages have been styled in line with the site theme, included are Sig
 
 ![forgot password page](docs/features/password-reset.jpg)
 
+##### Back to [top](#table-of-contents)
+
 ### Error messages
 
 #### 404 error
@@ -678,6 +764,8 @@ A 500 error page has been displayed to alert users when an internal server error
 
 The message outlines to users that the problem is with the website not anything they have done.
 
+##### Back to [top](#table-of-contents)
+
 ### Privacy Policy and Terms and Conditions
 
 In the help section in the footer, there are links to the site's Privacy Policy and Terms & Conditions.
@@ -690,11 +778,15 @@ The Terms and Conditions page was built using [WebsitePolicies](https://www.webs
 
 ![Terms And Conditions](/docs/features/terms.jpg)
 
+##### Back to [top](#table-of-contents)
+
 ### Favicon
 
 A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
 ![Favicon](docs/features/android-chrome-192x192.png)
+
+##### Back to [top](#table-of-contents)
 
 
 ## Future Features
@@ -703,9 +795,13 @@ A site wide favicon was implemented. This provides an image in the tabs header t
 * Add more payment options
 * Logging in with social media accounts
 
+##### Back to [top](#table-of-contents)
+
 ## Ecommerce Business Model
 
 The business model for this site would be a B2C (Business to Customer) model, as the business will be selling products directly from themselves to the customer.
+
+##### Back to [top](#table-of-contents)
 
 ## Marketing Strategy
 ### Social Media Marketing
@@ -732,6 +828,8 @@ Regular newsletters with new products and promotions will issue to all customers
 
 ![Subscribe form](docs/readme_screenshots/subscribe.jpg)
 
+##### Back to [top](#table-of-contents)
+
 ## Search Engine Optimization - SEO
 
 ### Sitemap and Robots files
@@ -742,6 +840,7 @@ I have created a [SitemapXML](https://github.com/michelleconville/drizzle-and-sh
 
 Where possible in the project I have supplied relevant information regarding the website to be crawlable well by the search engines, providing the correct meta keywords and description.
 
+##### Back to [top](#table-of-contents)
 
 ## Technology
 
@@ -789,6 +888,7 @@ Type | card No | Expiry | CVC | ZIP
 Success | **4242 4242 4242 4242** | A date in the future | Any 3 digits| Any 3 digits
 Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 digits| Any 5 digits
 
+##### Back to [top](#table-of-contents)
 
 ## Security Features and Defensive Design
 For user authentication, Django's allauth was used for login and sign up functionality.
@@ -799,13 +899,19 @@ Environment variables are stored in an env.py for security purposes to ensure no
 
 Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the project.
 
+##### Back to [top](#table-of-contents)
+
 ## Deployment
 
 The final Deployed site can be found [here](https://drizzleandshade-4e77ed93aac5.herokuapp.com/). I have included details of the deployment process in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
 
+##### Back to [top](#table-of-contents)
+
 ## Testing
 
 I have included details of testing both during development and post-development in a separate document called [TESTING.md](TESTING.md)
+
+##### Back to [top](#table-of-contents)
 
 ## Credits
 
@@ -831,7 +937,11 @@ I have included details of testing both during development and post-development 
 * [GeeksforGeeks](https://www.geeksforgeeks.org/)
 * [Medium](https://medium.com/all-about-django)
 
+##### Back to [top](#table-of-contents)
+
 ##  Acknowledgements
 
 * Thanks to everybody from the Code Institute Slack community
 * Special thanks to my mentor Daisy for her assistance throughout this project.
+
+##### Back to [top](#table-of-contents)
