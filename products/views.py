@@ -14,8 +14,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from wishlist.models import Wishlist, WishlistItem
 
-# Create your views here.
-
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -64,10 +62,8 @@ def all_products(request):
     try:
         paginated_products = paginator.page(page)
     except PageNotAnInteger:
-        # If page is not an integer, deliver the first page.
         paginated_products = paginator.page(1)
     except EmptyPage:
-        # If page is out of range, deliver the last page of results.
         paginated_products = paginator.page(paginator.num_pages)
 
     for product in paginated_products:
@@ -87,9 +83,9 @@ def all_products(request):
 
 @login_required
 def product_detail(request, product_id):
-    """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id)
-    reviews = Review.objects.all().filter(product=product).order_by('-created_on')
+    reviews = Review.objects.all().filter(
+        product=product).order_by('-created_on')
     review_count = len(reviews)
     is_in_wishlist = False
 
@@ -111,7 +107,6 @@ def product_detail(request, product_id):
                 review.name = product.name
                 review.save()
 
-                # Update the product's rating and review count
                 reviews = Review.objects.filter(product=product)
                 rating = reviews.aggregate(Avg('rating'))['rating__avg']
                 product.rating = rating
@@ -130,21 +125,19 @@ def product_detail(request, product_id):
     else:
         form = ReviewForm()
 
-    # Get the current stock quantity of the product
     stock_quantity = product.quantity
 
     if request.method == 'POST':
-        # Get the quantity requested by the user from the form
+
         quantity_requested = int(request.POST.get('quantity', 1))
 
-        # Check if the requested quantity is greater than the available stock
         if quantity_requested > stock_quantity:
-            messages.error(request, 'Sorry, there is not enough stock available for this quantity.')
-            # You can redirect the user back to the product detail page or handle the error as needed.
+            messages.error(
+                request, 'Sorry, there is not enough \
+                    stock available for this quantity.')
+
         else:
-            # Quantity requested is valid, add the product to the bag
-            # Implement the code to add the product to the bag here
-            pass  # Replace 'pass' with your code for adding the product to the bag
+            pass
 
     context = {
         'product': product,
@@ -155,11 +148,6 @@ def product_detail(request, product_id):
         'is_out_of_stock': product.is_out_of_stock,
     }
     return render(request, 'products/product_detail.html', context)
-
-
-
-
-
 
 
 @login_required
@@ -245,7 +233,7 @@ def add_category(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully added category!')
-            form = CategoryForm()  # Reset the form after saving the category
+            form = CategoryForm()
         else:
             messages.error(request, 'Failed to add a new category. \
                 Please ensure the form is valid.')

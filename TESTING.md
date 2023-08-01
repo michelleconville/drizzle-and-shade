@@ -412,11 +412,17 @@ In addition to the above listed devices, the Google Chrome Developer Tools devic
 
 1. Products changing order on stock level page after clicking update stock
 
-* Update the stock_level view to include .order_by('-name') to prevent this from happening
+        Updates the stock_level view to include .order_by('-name') to prevent this from happening
+
+2. Low or no stock badges were added to the product pages and the add to cart button was disabled for no stock but on the product page user could more items then were available in stock
+
+        Added some js and a model to advise the user if they tried to add more products than available to the shopping cart
 
 ##### Back to [top](#table-of-contents)
 
 ## Unfixed 
+
+
 
 [Return to README.md](README.md)
 

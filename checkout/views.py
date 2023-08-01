@@ -108,7 +108,6 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill form with info the user maintains in profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -151,11 +150,9 @@ def checkout_success(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
-        # Save the user's info
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,
@@ -170,7 +167,6 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    # Loop through order line items and reduce product quantities
     for order_line_item in order.lineitems.all():
         product = order_line_item.product
         quantity_sold = order_line_item.quantity
@@ -212,7 +208,6 @@ def edit_order(request, order_id):
         if form.is_valid():
             form.save()
 
-            # Send confirmation email with HTML template
             subject = 'Order Shipped'
             email_template = 'checkout/email/order_shipped_email.html'
             context = {'order': order}
