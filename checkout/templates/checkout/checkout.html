@@ -43,9 +43,9 @@
                         <div class="col-2 mb-1">
                             <a href="{% url 'product_detail' item.product.id %}">
                                 {% if item.product.image %}
-                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.image_alt }}">
                                 {% else %}
-                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.image_alt }}">
                                 {% endif %}
                             </a>
                         </div>
@@ -82,8 +82,8 @@
                         {{ order_form.email | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
 							{% if user.is_authenticated %}
-								<label class="form-check-label" for="id-save-info">Save this information to my profile</label>
-                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+								<label class="form-check-label" for="id-save-info-details">Save this information to my profile</label>
+                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info-details" name="save-info" checked>
 							{% else %}
 								<label class="form-check-label" for="id-save-info">
                                     <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
@@ -148,11 +148,11 @@
     </div>
     <!-- Spinner -->
     <div id="loading-overlay">
-        <h1 class="text-light logo-font loading-spinner">
+        <div class="text-light logo-font loading-spinner">
             <span class="icon">
                 <i class="fas fa-3x fa-sync-alt fa-spin"></i>
             </span>
-        </h1>
+        </div>
     </div>
 {% endblock %}
 

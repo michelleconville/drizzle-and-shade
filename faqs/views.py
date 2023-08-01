@@ -15,6 +15,7 @@ def faqs(request):
 
     context = {
         'faqs': faqs,
+        "on_faqs_page": True,
     }
 
     return render(request, template, context)
@@ -46,6 +47,7 @@ def add_faqs(request):
     template = 'faqs/add_faqs.html'
     context = {
         'form': form,
+        "on_faqs_page": True,
     }
 
     return render(request, template, context)
@@ -78,6 +80,7 @@ def edit_faqs(request, item_id):
     context = {
         'form': form,
         'item': item,
+        "on_faqs_page": True,
     }
 
     return render(request, template, context)

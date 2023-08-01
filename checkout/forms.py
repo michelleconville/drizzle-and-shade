@@ -3,12 +3,27 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """
+    Create the layout of the Order Form
+    """
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
                   'town_or_city', 'postcode', 'country',
                   'county', 'order_shipped',)
+
+        labels = {
+            'full_name': 'Full Name',
+            'email': 'Email Address',
+            'phone_number': 'Phone Number',
+            'postcode': 'Eircode',
+            'town_or_city': 'Town or City',
+            'street_address1': 'Street Address 1',
+            'street_address2': 'Street Address 2',
+            'county': 'County',
+            'order_shipped': 'Order Shipped',
+        }
 
     def __init__(self, *args, **kwargs):
         """
@@ -36,7 +51,7 @@ class OrderForm(forms.ModelForm):
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
+            # self.fields[field].label = False
 
 
 class OrderShippedForm(forms.ModelForm):

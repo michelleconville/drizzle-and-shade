@@ -123,8 +123,10 @@ View the site wide coverage report [coverage-report](coverage.txt)
 **Outcome**
 
 * All links open as expected
-* Subscribe email working as expected
 
+* Subscribe form working as expected
+
+![Subscribe form](docs/testing/manual-testing/subscribe-message.jpg)
 
 ### Product Search
 
@@ -138,7 +140,12 @@ View the site wide coverage report [coverage-report](coverage.txt)
 **Outcome**
 
 * Search result page works as expected
+
+![Subscribe form](docs/testing/manual-testing/search-result.jpg)
+
 * Empty search gives a error message
+
+![Subscribe form](docs/testing/manual-testing/search-error.jpg)
 
 
 ### All Products page
@@ -164,10 +171,18 @@ View the site wide coverage report [coverage-report](coverage.txt)
 * All products displaying as expected
 * All the links working as expected
 * Sorting working as expected
+
+![Product sorting](docs/testing/manual-testing/product-filter.jpg)
+
 * Low or no stock badges diplaying as expected
+
+![Product sorting](docs/testing/manual-testing/no-or-low-stock.jpg)
+
 * Pagination working as expected 
 * Back to top button working as expected
 * Edit and delete button working as expected
+
+![Product sorting](docs/testing/manual-testing/product-features.jpg)
 
 ### Product Detail
 
@@ -191,11 +206,19 @@ View the site wide coverage report [coverage-report](coverage.txt)
 **Outcome**
 
 * Product information displays as expected
-* Low or no stock badges diplaying as expected
 * Quanity selector works as expected
+* Low or no stock badges diplaying as expected
+
+![Product sorting](docs/testing/manual-testing/product-detail-page-test.jpg)
+
 * The add to cart button works as expected
 * The wishlist works as expected
+
+![Product sorting](docs/testing/manual-testing/out-of-stock.jpg)
+
 * Toast messages display as expected
+
+![Product sorting](docs/testing/manual-testing/toast-message-success.jpg)
 
 ### Product detail - reviews
 
@@ -213,6 +236,18 @@ View the site wide coverage report [coverage-report](coverage.txt)
 **Outcome**
 
 All review fucntionality working as expected
+
+##### Unregistered user
+
+![Product detail reivew page for Unregistered user](docs/features/product-detail-page-reivew-logged-out.jpg)
+
+##### Registered user 
+
+![Product detail reivew page for registered user](docs/features/product-detail-page-reivew-logged-in.jpg)
+
+##### User left a comment
+
+![Product detail reivew page when a User left a comment](docs/features/product-detail-page-reivew.jpg)
 
 
 ### Shopping cart
@@ -238,6 +273,8 @@ All review fucntionality working as expected
 * Buttons working as expected
 * Remove and Update woeking as expected
 
+![Bag page](docs/features/shopping-bag.jpg)
+
 ### Checkout
 
                 As a shopper I can put in my card details so that I can pay for my umbrella
@@ -256,10 +293,17 @@ All review fucntionality working as expected
 
 * Order summary displays correctly
 * All form fields working as expected
+
+![Checkout page](docs/features/checkout.jpg)
+
 * Payment field working as expected 
 * Toast message working as expected
+
+![Checkout page](docs/testing/manual-testing/toast-message-checkout.jpg)
+
 * Email confirmation working as expected
 
+![Checkout page](docs/testing/manual-testing/email-confirmation-checkout.jpg)
 
 ### Contact us
 
