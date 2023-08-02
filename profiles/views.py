@@ -70,6 +70,9 @@ def delete_profile(request, username):
 
 
 def order_history(request, order_number):
+    """
+    Display order history
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -88,8 +91,10 @@ def order_history(request, order_number):
 
 @login_required
 def product_management(request):
-    """ Display product management page where admin
-    can choose to add category and umbrella """
+    """
+    Display product management page where admin
+    can choose to add category and umbrella
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only store owners can do that.')
         return redirect(reverse('home'))
@@ -99,7 +104,9 @@ def product_management(request):
 
 @login_required
 def admin_panel(request):
-    """ Display admin account overview"""
+    """
+    Display admin account overview
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only store owners can do that.')
         return redirect(reverse('home'))
@@ -110,6 +117,8 @@ def admin_panel(request):
 
 @login_required
 def account_overview(request):
-    """ Display the account overview"""
+    """
+    Display the account overview
+    """
     template = 'profiles/account_overview.html'
     return render(request, template)

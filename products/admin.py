@@ -3,6 +3,11 @@ from .models import Product, Category, Review
 
 
 class ProductAdmin(admin.ModelAdmin):
+    """
+    Admin registration and configuration for the Product model
+    Staff can see all products and filter them as
+    desired
+    """
     list_display = (
         'sku',
         'name',
@@ -18,6 +23,10 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """
+    Admin registration and configuration
+    for the Categories Group model
+    """
     list_display = (
         'friendly_name',
         'name',
@@ -25,6 +34,10 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
+    """
+    Admin registration and configuration
+    for the review model
+    """
     list_display = (
         'user', 'name',
         'rating', 'created_on',

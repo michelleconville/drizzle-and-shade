@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Define model, form fields
+    """
     class Meta:
         model = UserProfile
         exclude = ('user',)
@@ -44,13 +47,10 @@ class UserProfileForm(forms.ModelForm):
 
 class UserForm(forms.ModelForm):
     """
-    Form to Edit User-Username/Email
+    Form to edit Username and Email
     """
 
     class Meta:
-        """
-        Define model, form fields
-        """
 
         model = User
         fields = ["email", "first_name", "last_name"]

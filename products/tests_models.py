@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class CategoryModelTest(TestCase):
+    """ Testing Category Model """
     def test_category_str_method(self):
         category = Category(name='Test Category')
         self.assertEqual(str(category), 'Test Category')
@@ -15,6 +16,7 @@ class CategoryModelTest(TestCase):
 
 
 class ProductModelTest(TestCase):
+    """ Testing Product Model """
     def setUp(self):
         self.category = Category.objects.create(name='Test Category')
         self.product = Product.objects.create(
@@ -49,6 +51,7 @@ class ProductModelTest(TestCase):
 
 
 class ReviewModelTest(TestCase):
+    """ Testing Review Model """
     def setUp(self):
         self.category = Category.objects.create(name='Test Category')
         self.product = Product.objects.create(

@@ -4,6 +4,7 @@ from .models import Product
 
 
 class CategoryFormTest(TestCase):
+    """Testing Category Form"""
     def test_category_form_valid_data(self):
         form_data = {
             'name': 'Test Category',
@@ -19,6 +20,7 @@ class CategoryFormTest(TestCase):
 
 
 class ReviewFormTest(TestCase):
+    """Testing Review Form"""
     def test_review_form_valid_data(self):
         product = Product.objects.create(
             name='Test Product',
@@ -39,6 +41,7 @@ class ReviewFormTest(TestCase):
 
 
 class UpdateStockFormTest(TestCase):
+    """Testing Update stock Form"""
     def test_update_stock_form_valid_data(self):
         product = Product.objects.create(
             name='Test Product',

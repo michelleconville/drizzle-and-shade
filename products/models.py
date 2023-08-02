@@ -58,7 +58,7 @@ class Product(models.Model):
         return ""
 
     def is_low_stock(self):
-        low_stock_threshold = 3  # Set your desired threshold value here
+        low_stock_threshold = 3
         return self.quantity <= low_stock_threshold
 
     # this message is for the product_detail page

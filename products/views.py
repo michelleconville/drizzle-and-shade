@@ -17,17 +17,16 @@ from wishlist.models import Wishlist, WishlistItem
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-
     products = Product.objects.all()
     query = None
     categories = None
-    sort = request.GET.get('sort', None)  # Get the sort parameter from the request
-    direction = request.GET.get('direction', None)  # Get the direction parameter from the request
+    sort = request.GET.get('sort', None)
+    direction = request.GET.get('direction', None)
 
-    valid_sort_fields = ['id', 'name', 'category', 'price']  # Add more valid fields as needed
+    valid_sort_fields = ['id', 'name', 'category', 'price']
 
     if sort is None or sort not in valid_sort_fields:
-        sort = 'id'  # Set a default sorting option (you can choose any field for default sorting)
+        sort = 'id'
 
     if direction == 'desc':
         sort = f'-{sort}'
@@ -42,13 +41,14 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter \
+                    any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
-    # Add the ordering based on the 'sort' parameter
     products = products.order_by(sort)
 
     paginator = Paginator(products, 8)
@@ -76,17 +76,15 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
-    # Add the selected category to the pagination links
     if selected_category:
         context['selected_category'] = selected_category
 
     return render(request, 'products/products.html', context)
 
 
-
-
 @login_required
 def product_detail(request, product_id):
+    """A view to show product details of a selected product"""
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.all().filter(
         product=product).order_by('-created_on')
@@ -226,6 +224,7 @@ def delete_product(request, product_id):
 
 @login_required
 def add_category(request):
+    """ Add a category on add category page """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

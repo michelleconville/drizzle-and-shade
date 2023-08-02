@@ -40,9 +40,7 @@ class UserProfileModelTestCase(TestCase):
         existing_user.userprofile.default_phone_number = '1234567890'
         existing_user.save()
 
-        # Retrieve the updated UserProfile from the database
         updated_user_profile = UserProfile.objects.get(user=existing_user)
 
-        # Assert the UserProfile was updated
         self.assertEqual(
             updated_user_profile.default_phone_number, '1234567890')

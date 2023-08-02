@@ -22,13 +22,13 @@ class ProfileViewsTestCase(TestCase):
         )
 
     def test_profile_view_get(self):
-        # Log in with a valid user
+        """
+        Unit tests for profile view
+        """
         self.client.login(username='michelle', password='password')
 
-        # Test GET request to profile view
         response = self.client.get(reverse('profile'))
 
-        # Now, the view should return 200 since the user is logged in
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'profiles/profile.html')
 
@@ -46,7 +46,10 @@ class ProfileViewsTestCase(TestCase):
         self.assertTrue(response.context["from_profile"])
 
     def test_product_management_view_superuser(self):
-        # Test product management view for superuser
+        """
+        Unit tests for product management page view
+        if staff user
+        """
         self.user.is_superuser = True
         self.user.save()
         self.client.login(username='michelle', password='password')
@@ -55,7 +58,11 @@ class ProfileViewsTestCase(TestCase):
         self.assertTemplateUsed(response, 'profiles/product_management.html')
 
     def test_product_management_view_non_superuser(self):
-        # Test product management view for non-superuser
+        """
+        Unit tests for product management page view
+        if regular user
+        """
+
         self.client.login(username='emma', password='password_non_superuser')
         response = self.client.get(reverse('product_management'))
         self.assertEqual(response.status_code, 302)
@@ -63,7 +70,9 @@ class ProfileViewsTestCase(TestCase):
         self.assertRedirects(response, expected_url)
 
     def test_account_overview_view(self):
-        # Test account overview view
+        """
+        Unit tests for account overview page view
+        """
         self.client.login(username='michelle', password='password')
         response = self.client.get(reverse('account_overview'))
         self.assertEqual(response.status_code, 200)

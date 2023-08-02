@@ -5,7 +5,9 @@ from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
-
+    """
+    Form to add new Products
+    """
     class Meta:
         model = Product
         fields = '__all__'
@@ -29,18 +31,20 @@ class ProductForm(forms.ModelForm):
 
 
 class CategoryForm(forms.ModelForm):
-    """ Category form"""
+    """
+    Form to add new Category
+    """
     class Meta:
-        """category model fields"""
         model = Category
         fields = '__all__'
 
 
 class ReviewForm(forms.ModelForm):
-    """ Form for leaving rating and review """
+    """
+    Form for leaving rating and review
+    """
 
     class Meta:
-        """review model fields"""
         model = Review
         fields = ['rating', 'body']
         labels = {'body': 'Please Write Your Review'}

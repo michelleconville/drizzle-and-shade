@@ -5,15 +5,14 @@ from .models import Product, Category, Review
 
 
 class ProductViewsTest(TestCase):
+    """ Testing Product View """
     def setUp(self):
-        # Create a test user
         self.user = User.objects.create_user(
             username='testuser',
             password='testpassword'
         )
-        # Create a test category
+
         self.category = Category.objects.create(name='Test Category')
-        # Create a test product
         self.product = Product.objects.create(
             name='Test Product',
             category=self.category,
@@ -21,7 +20,7 @@ class ProductViewsTest(TestCase):
             quantity=5,
             image_alt='Test Image Alt'
         )
-        # Create a test review
+
         self.review = Review.objects.create(
             user=self.user,
             product=self.product,
