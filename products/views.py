@@ -51,7 +51,7 @@ def all_products(request):
     # Add the ordering based on the 'sort' parameter
     products = products.order_by(sort)
 
-    paginator = Paginator(products, 4)
+    paginator = Paginator(products, 8)
     page = request.GET.get("page")
     paginated_products = paginator.get_page(page)
     current_sorting = f"{sort}_{direction}"
