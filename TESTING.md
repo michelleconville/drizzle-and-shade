@@ -624,11 +624,11 @@ CSS was validated using the W3C Markup Validation Service. This was done using t
 
 ### JavaScript
 
-[JSHint Static Code Analysis Tool](https://jshint.com/) for JavaScript was used to validate the Javascript files. No significant issues were found.
+[JSHint Static Code Analysis Tool](https://jshint.com/) for JavaScript was used to validate the Javascript files.
 
 <details><summary>JavaScript results</summary>
 
-![JavaScript validation results](docs/readme_images/test/javascript.jpg) 
+![JavaScript validation results]() 
 
 </details>
 
@@ -718,8 +718,6 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 ![Wishlist page](docs/testing/validation/lighthouse-wishlist.jpg)
 
 </details>
-
-
 
 <details>
 <summary>Admin panel page</summary>

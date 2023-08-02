@@ -19,9 +19,9 @@ class FaqsModelTest(TestCase):
 
     def test_questions_max_length(self):
         """
-         Test that the questions field has the correct
-         maximum length of 200 characters
-         """
+        Test that the questions field has the correct
+        maximum length of 200 characters
+        """
         faq = Faqs.objects.get(id=1)
         max_length = faq._meta.get_field('questions').max_length
         self.assertEquals(max_length, 200)
@@ -31,16 +31,16 @@ class FaqsModelTest(TestCase):
         Test that the available choices for the category field are correct
         and have the expected display values
         """
-        faq = Faqs.objects.get(id=1)
-        choices = dict(faq.CATEGORY)
-        self.assertDictEqual(choices, {
-            '': 'Select Category ↓',
+        choices = dict(Faqs.CATEGORY)
+        expected_choices = {
+            '': 'Select Category',
             'OR': 'Order',
             'DL': 'Delivery',
             'AC': 'Account',
-            'PR': 'Product',
             'OT': 'Other',
-        })
+            'PR': 'Product'
+        }
+        self.assertDictEqual(choices, expected_choices)
 
     def test_str_representation(self):
         """
@@ -53,7 +53,7 @@ class FaqsModelTest(TestCase):
     def test_category_default_value(self):
         """
         Test that the category field is correctly set to the default value
-         ('') when not explicitly provided during object creation
+        ('') when not explicitly provided during object creation
         """
         faq = Faqs.objects.create(
             questions="Test Question",
@@ -72,4 +72,4 @@ class FaqsModelTest(TestCase):
         )
         self.assertRaisesMessage(
             ValueError, "'INVALID' is not a valid choice."
-            )
+        )

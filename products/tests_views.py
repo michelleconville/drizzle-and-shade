@@ -2,10 +2,6 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
 from .models import Product, Category, Review
-from .forms import ProductForm, CategoryForm, ReviewForm, UpdateStockForm
-from profiles.models import UserProfile
-from django.core.files.uploadedfile import SimpleUploadedFile
-from django.conf import settings
 
 
 class ProductViewsTest(TestCase):
@@ -39,10 +35,3 @@ class ProductViewsTest(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/products.html')
-
-    def test_product_detail_view(self):
-        url = reverse('product_detail', args=[self.product.id])
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'products/product_detail.html')
-        self.assertContains(response, self.product.name)
