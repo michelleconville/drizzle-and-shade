@@ -820,7 +820,31 @@ A site wide favicon was implemented. This provides an image in the tabs header t
 
 ## Ecommerce Business Model
 
-The business model for this site would be a B2C (Business to Customer) model, as the business will be selling products directly from themselves to the customer.
+### Company Overview
+
+*Drizzle and Shade* is an online umbrella company that specializes in selling a wide range of high-quality umbrellas to individual customers and follows a B2C (Business to Customer) model.
+The company aims to offer stylish, durable, and innovative umbrella designs to cater to various customer preferences and needs.
+
+### Products
+
+*Drizzle and Shade* will maintain a comprehensive product catalogue showcasing a variety of umbrellas. The catalogue will include different types of umbrellas such as foldable umbrellas, golf umbrellas, children’s umbrellas, and more. The company will focus on providing superior quality products, ensuring customer satisfaction, and creating a loyal customer base.
+
+### Online Platform
+
+The company's primary sales channel will be a user-friendly and responsive e-commerce website. The website will feature an attractive design, intuitive navigation, and a seamless shopping experience. Customers can easily browse the products, view product descriptions, and add items to their shopping carts.
+
+### Payment Gateway
+
+*Drizzle and Shade* will integrate Stripe as its primary payment gateway. Stripe is a popular and secure online payment processing platform that allows customers to make payments using various methods, including credit/debit cards and digital wallets. The use of Stripe ensures a smooth and secure checkout process, enhancing customer trust and confidence in the brand.
+
+### Order Fulfilment
+
+Once the customer places an order and completes the payment through the Stripe payment gateway, *Drizzle and Shade* will initiate the order fulfilment process. 
+
+### Customer Support
+
+To provide exceptional customer service, *Drizzle and Shade* will have a responsive customer support team. Customers can reach out to the company through multiple channels, such as email, phone or online contact form to inquire about products, track orders, or resolve any issues they may encounter during their shopping experience.
+
 
 ##### Back to [top](#table-of-contents)
 
@@ -883,7 +907,6 @@ Where possible in the project I have supplied relevant information regarding the
 *   [Google Fonts](https://fonts.google.com/) - is used for websites font
 *   [Font Awesome](https://fontawesome.com/) - is used for all the icons on the site.
 *   [Mailchimp](https://mailchimp.com/) - is used to create the newsletter signup form.
-*   [Facebook Pages](https://www.facebook.com/)
 *   [Stripe](https://stripe.com/gb) - is used for the processing of payments.
 *   [Heroku](https://dashboard.heroku.com/apps) - is used to deploy the site.
 *   [Gunicorn](https://gunicorn.org/) - is used as the server to run Django on Heroku.
@@ -893,6 +916,13 @@ Where possible in the project I have supplied relevant information regarding the
 *   [pillow](https://pypi.org/project/Pillow/) - Python imaging library
 *   [psycopg2](https://pypi.org/project/psycopg2/) - database adapter which allow us to connect with a postgres database
 *   [boto3](https://pypi.org/project/boto3/) - Allows connection to AWS S3 bucket
+
+### Other
+* [Facebook Pages](https://www.facebook.com/)
+* Movavi video editor - To create a video of the application working
+* [convertio.co/](https://convertio.co/) - To create a gif
+* draw.io - to create the Enity Relationship Diagram
+
 
 ### Database Used
 sqlite3 is used for development.
@@ -924,7 +954,7 @@ Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the pr
 
 ## Deployment
 
-The final Deployed site can be found [here](https://drizzleandshade-4e77ed93aac5.herokuapp.com/). I have included details of the deployment process in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
+The final Deployed site can be found on [Heroku](https://drizzleandshade-4e77ed93aac5.herokuapp.com/). I have included details of the deployment process in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ##### Back to [top](#table-of-contents)
 

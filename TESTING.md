@@ -624,11 +624,21 @@ CSS was validated using the W3C Markup Validation Service. This was done using t
 
 ### JavaScript
 
-[JSHint Static Code Analysis Tool](https://jshint.com/) for JavaScript was used to validate the Javascript files.
+[JSHint Static Code Analysis Tool](https://jshint.com/) for JavaScript was used to validate the Javascript files. No significant issues were found.
 
-<details><summary>JavaScript results</summary>
+One item to note:
 
-![JavaScript validation results]() 
+When testing the button validation script in products, I did get a number of warnings but this was due to the templating variables included with the js, when I used the source code from the rendered page I no longer got these errors 
+
+<details><summary>button validation script - warnings</summary>
+
+![button validation script - warnings](docs/testing/validation/js-button-warning.jpg) 
+
+</details>
+
+<details><summary>button validation script</summary>
+
+![button validation script - clean](docs/testing/validation/js-button-noerrors.png) 
 
 </details>
 
@@ -820,7 +830,7 @@ In addition to the above listed devices, the Google Chrome Developer Tools devic
 
 ## Unfixed 
 
-There is no known bugs left to solve.
+* I have been unable to get richtextfield to appear on the frontend of the site, I can view it in django admin, I have reseached this issue online and I can not find an issue with my setup.
 
 [Return to README.md](README.md)
 

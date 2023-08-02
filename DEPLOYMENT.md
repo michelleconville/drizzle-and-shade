@@ -41,16 +41,16 @@ This command was used to push all committed code to the remote repository on git
 
 ### Clone the repository
 The steps to clone a repository are as follows:
-1.	Navigate to the GitHub repository you would like to clone
-2.	Click on the code drop down button
-3.	Select if you prefere to clone using HTTPS, SSH, or Github CLI 
-4.	Copy the repository link to the clipboard
-5.	Open Git Bash
-6.	Change the current working directory to the one where you want the cloned directory
-7.	Type git clone and then paste the URL from the clipboard 
-8.	Press Enter to create your local clone.
+1. Navigate to the GitHub repository you would like to clone
+2. Click on the code drop down button
+3. Select if you prefere to clone using HTTPS, SSH, or Github CLI 
+4. Copy the repository link to the clipboard
+5. Open Git Bash
+6. Change the current working directory to the one where you want the cloned directory
+7. Type git clone and then paste the URL from the clipboard 
+8. Press Enter to create the local clone.
 
-The repository will now be cloned on your local machine for use.
+The repository will now be cloned on the local machine for use.
 
 ### Fork Repository
 To fork the repository by following these steps:
@@ -61,7 +61,7 @@ To fork the repository by following these steps:
 
 ## Django
 
-This project build using the Django framework. 
+This project is build using the Django framework. 
 
 These are the steps I followed to install django:
 
@@ -71,7 +71,7 @@ These are the steps I followed to install django:
 
 * To name the project and add the django project folder to the file explorer, type the command 
 
-        django-admin startproject *Your project name here* 
+        django-admin startproject *the project name here* 
 
 * Add a gitignore file, type the command 
 
@@ -99,7 +99,7 @@ This should expose port 8000. Open that port and you should be welcomed by Djang
 
 Add a username and password with an optional email address.
 
-* Once these steps are completed, push your changes to github but using the above commands.
+* Once these steps are completed, push the changes to github but using the above commands.
 
 ### All Auth
 
@@ -122,13 +122,13 @@ Heroku was used to deploy the project
 
         pip3 install dj_database_url==0.5.0 psycopg2
 
-* Update your requirements.txt file
+* Update the requirements.txt file
 
         pip3 freeze > requirements.txt
 
 * In settings.py underneath import os, add import dj_database_url
 
-* Then scroll down the file till you find your database settings. Comment out the default configuration and underneath insert the code:  
+* Then scroll down the file till you find the database settings. Comment out the default configuration and underneath insert the code:  
 
         DATABASES = {
         'default': dj_database_url.parse('paste-elephantsql-db-url-here')
@@ -148,7 +148,7 @@ Heroku was used to deploy the project
 
 * You should now be able to go to the browser tab on the left of the page in elephantsql, click the table queries button and see the user you've just created by selecting the auth_user table.
 
-* Before you commit these changes, you will need to remove the Databases section in the settings.py and uncomment the original database. This is to stop your Postgres database URL from ending up in version control.
+* Before you commit these changes, you will need to remove the Databases section in the settings.py and uncomment the original database. This is to stop the Postgres database URL from ending up in version control.
 
 * Add an if statement in our settings.py to run the postgres database when using the app on heroku or sqlite if not. Scroll back to the database section and refactor the code to look like this:  
     ```
@@ -177,15 +177,15 @@ Heroku was used to deploy the project
 
 * Back in heroku, navigate to settings and in the config vars input the key DISABLE_COLLECTSTATIC with the value 1, and click 'Add'. This is to stop heroku from collecting any static files when you deploy.
 
-* Add heroku to your allowed hosts in your settings.py. Back in your project, in the settings file, scroll down to ALLOWED_HOSTS, and inside the brackets insert the url to your app, followed by 'localhost'. It should look something like this:     
+* Add heroku to the allowed hosts in the settings.py. Back in the project, in the settings file, scroll down to ALLOWED_HOSTS, and inside the brackets insert the url to the app, followed by 'localhost'. It should look something like this:     
 
-        ALLOWED_HOSTS = ['your-project-name.herokuapp.com', 'localhost']
+        ALLOWED_HOSTS = ['the-project-name.herokuapp.com', 'localhost']
 
 * Add, commit and push these changes, followed by a push to heroku with the below command. The app will now be deployed, without any static files, but this will be fixed when setting up AWS, documented below. 
 
         git push heroku main'
 
-* To setup the project to automatically deployed to heroku when pushing your work to github you can. To do so, In heroku go to the deploy tab, and in the 'deployment method' section connect it to github. You will need to search for your repository and once found click 'connect'. Then scroll down and click 'Enable automatic deploys'. Now when you push to github your code will automatically deploy to Heroku as well. 
+* To setup the project to automatically deployed to heroku when pushing the work to github you can. To do so, In heroku go to the deploy tab, and in the 'deployment method' section connect it to github. You will need to search for the repository and once found click 'connect'. Then scroll down and click 'Enable automatic deploys'. Now when you push to github the code will automatically deploy to Heroku as well. 
 
 ##### Back to [top](#table-of-contents)
 
@@ -220,7 +220,7 @@ Amazon web services are used to store all our static and media files.
 * First you will need to sign up to AWS which you can do [here](https://aws.amazon.com/).
 * Once you have created an account and logged in, under the All Services>Storage menu, navigate to S3
 * On the S3 page you will need to create a new bucket. To do this click the orange button that says 'Create Bucket'.
-* Name the bucket and select the closest region to you. To keep things simple it is recommended naming the bucket after your project.
+* Name the bucket and select the closest region to you. To keep things simple it is recommended naming the bucket after the project.
 * Under 'Object Ownership' select 'ACLs enabled' and leave the Object Ownership as Bucket owner preferred. 
 * Uncheck the 'Block all public access' checkbox and check the warning box to acknowledge that the bucket will be made public, then click create bucket. 
 * Once created, click the bucket's name and navigate to the properties tab. Scroll to the bottom and under 'Static website hosting' click 'edit' and change the Static website hosting option to 'enabled'. Copy the default values for the index and error documents and click 'save changes'.
@@ -245,7 +245,7 @@ Amazon web services are used to store all our static and media files.
 * From here under the 'select type of policy' dropdown menu, select 'S3 Bucket Policy'. Then inside 'Principle' allow all principals by typing a *.
 * From the 'Actions dropdown menu select 'Get object'. Then head back to the previous tab and locate the Bucket ARN number. Copy that, return to the policy generator and paste it in the field labelled Amazon Resource Name (ARN).
 * Once that's completed click 'Add statement', then 'Generate Policy'. Copy the policy that's been generated and paste it into the bucket policy editor.
-* Before you click save, add a '/*' at the end of your resource key. This is to allow access to all resources in this bucket.
+* Before you click save, add a '/*' at the end of the resource key. This is to allow access to all resources in this bucket.
 * Once those changes are saved, scroll down to the Access control list (ACL) section and click 'edit'.
 * Next to 'Everyone (public access)', check the 'list' checkbox. This will pop up a warning box that you will also have to check. Once that's done click 'save'. 
 
@@ -253,12 +253,12 @@ Amazon web services are used to store all our static and media files.
 
 ### IAM
 
-* Now that your bucket is ready we need to create a user to access it. In the search bar at the top of the window, search for IAM and select it.
+* Now that the bucket is ready we need to create a user to access it. In the search bar at the top of the window, search for IAM and select it.
 * Once on the IAM page, click 'User Groups' from the side bar, then click 'Create group'.
-* Name the group 'manage-*your-project-name*' and click 'Create group' at the bottom of the page. 
+* Name the group 'manage-*the-project-name*' and click 'Create group' at the bottom of the page. 
 * Then from the sidebar click 'Policies', then 'Create policy'.
 * Go to the JSON tab and click 'import managed policy'. Search for 'S3' and select 'AmazonS3FullAccess' and click import.
-* Once this is imported you will need to edit it slightly. Go back to your bucket and copy your ARN number. Head back to this policy and update the Resource key to include your ARN, and another line with your ARN followed by a /*. It should end up looking something like this: 
+* Once this is imported you will need to edit it slightly. Go back to the bucket and copy the ARN number. Head back to this policy and update the Resource key to include the ARN, and another line with the ARN followed by a /*. It should end up looking something like this: 
 
     {
         "Version": "2012-10-17",
@@ -270,21 +270,22 @@ Amazon web services are used to store all our static and media files.
                     "s3-object-lambda:*"
                 ],
                 "Resource": [
-                    "YOUR-ARN-NO-HERE",
-                    "YOUR-ARN-NO-HERE/*"
+                    "the-ARN-NO-HERE",
+                    "the-ARN-NO-HERE/*"
                 ]
             }
         ]
     }
 
-* Click 'Next: Tags', 'Next: Review', and on this page give the policy a name. This could be something as simple as the project name followed by the word policy, and then a short description eg: Access to S3 bucket for 'YOUR PROJECT' static files. Then click 'Create policy'. 
-* This will take you back to the policy page where you should be able to see your newly created policy. Now we need to attach it to the group we created.  
+* Click 'Next: Tags', 'Next: Review', and on this page give the policy a name. This could be something as simple as the project name followed by the word policy, and then a short description eg: Access to S3 bucket for 'the PROJECT' static files. Then click 'Create policy'. 
+* This will take you back to the policy page where you should be able to see the newly created policy. Now we need to attach it to the group we created.  
 * Click 'User groups', and click the group you created earlier. Go to the permissions tab and click 'Add permission' and from the dropdown click 'Attach policies'. 
 * Find the policy you just created, select it and click 'Add permissions'.
 * Finally, create a user to put in the group. Select users from the sidebar and click 'Add user'.  
-* Give your user a user name, check 'Programmatic Access', then click 'Next: Permissions'. 
-* Select your group that has the policy attached and click 'Next: Tags', 'Next: Review', then 'Create user'.
-* On the next page, download the CSV file. This contains the user's access key and secret access key which you will need later. 
+* Select the group that has the policy attached and click 'Next: Tags', 'Next: Review', then 'Create user'.
+* Give the user a user name, then click 'Next: Permissions'. 
+* On the user's page, select the Security credentials page. Then, under Access keys, select Create access key.
+* For Create access key, choose Command Line Interface (CLI), enter an optional tag and select Next, select Download .csv file to save a .csv file with your IAM user's access key and secret access key. You need this information for later.
 
 ##### Back to [top](#table-of-contents)
 
@@ -311,7 +312,7 @@ Now that you have created a S3 bucket with its user group attached, we need to c
                 'CacheControl': 'max-age=9460800',
             }
             
-            AWS_STORAGE_BUCKET_NAME = 'enter your bucket name here'
+            AWS_STORAGE_BUCKET_NAME = 'enter the bucket name here'
             AWS_S3_REGION_NAME = 'enter the region you selected here'
             AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
             AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
@@ -361,10 +362,10 @@ Now that you have created a S3 bucket with its user group attached, we need to c
 
 * Save everything, add, commit and push these changes to make a deployment to Heroku.
 
-* In S3 in AWS, go to your bucket and click 'Create folder'. Name the folder 'media' and click 'Save'. 
-* Inside the new media folder you just created, click 'Upload', 'Add files', and then select all the images that you are using on your site.
+* In S3 in AWS, go to the bucket and click 'Create folder'. Name the folder 'media' and click 'Save'. 
+* Inside the new media folder you just created, click 'Upload', 'Add files', and then select all the images that you are using on the site.
 * Under 'Permissions' select the option 'Grant public-read access' and click upload. You may need to also check an acknowledgment warning checkbox too. 
-* Once that is finished you're all set. All your static files and media files should be automatically linked from django to your S3 bucket.
+* Once that is finished you're all set. All the static files and media files should be automatically linked from django to the S3 bucket.
 
 ##### Back to [top](#table-of-contents)
 
@@ -378,22 +379,22 @@ Stripe is needed to handle the checkout process when a payment is made. You will
 
 ### Webhooks
 
-* To set up a webhook, sign into your stripe account and click 'Developers' located in the top right of the navbar.
+* To set up a webhook, sign into the stripe account and click 'Developers' located in the top right of the navbar.
 * Then in the side-nav under the Developers title, click on 'Webhooks', then 'Add endpoint'.
-* On the next page you will need to input the link to your heroku app followed by /checkout/wh/. It should look something like this:  
+* On the next page you will need to input the link to the heroku app followed by /checkout/wh/. It should look something like this:  
 
-        https://your-app-name.herokuapp.com/checkout/wh/
+        https://the-app-name.herokuapp.com/checkout/wh/
 
 * Then click '+ Select events' and check the 'Select all events' checkbox at the top before clicking 'Add events' at the bottom. Once this is done finish the form by clicking 'Add endpoint'.
-* Your webhook is now created and you should see that it has generated a secret key. You will need this to add to your heroku config vars.
-* Head over to your app in heroku and navigate to the config vars section under settings. You will need the secret key you just generated for your webhook, in addition to your Publishable key and secret key that you can find in the API keys section back in stripe.
+* the webhook is now created and you should see that it has generated a secret key. You will need this to add to the heroku config vars.
+* Head over to the app in heroku and navigate to the config vars section under settings. You will need the secret key you just generated for the webhook, in addition to the Publishable key and secret key that you can find in the API keys section back in stripe.
 * Add these values under these keys:  
 
-        STRIPE_PUBLIC_KEY = 'insert your stripe publishable key'
-        STRIPE_SECRET_KEY = 'insert your secret key'
-        STRIPE_WH_SECRET = 'insert your webhooks secret key'
+        STRIPE_PUBLIC_KEY = 'insert the stripe publishable key'
+        STRIPE_SECRET_KEY = 'insert the secret key'
+        STRIPE_WH_SECRET = 'insert the webhooks secret key'
 
-* In your setting.py file in django, insert the following near the bottom of the file:  
+* In the setting.py file in django, insert the following near the bottom of the file:  
 
         STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
         STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
