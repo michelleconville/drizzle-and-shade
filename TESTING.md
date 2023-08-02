@@ -415,12 +415,24 @@ Toast messages display as expected
 
 **Outcome**
 
+### Add Products
+
+**Expected**
+
+Page only accesible for superusers
+An image can be added 
+Price can not be 0 or negative
+
+**Outcome**
+
+Page is only accessible for superusers
+
+
+
 
 
 
 ##### Back to [top](#table-of-contents)
-
-## Validator Testing
 
 ## Validator Testing
 

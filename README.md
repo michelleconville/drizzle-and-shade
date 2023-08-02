@@ -293,9 +293,27 @@ These are the initial wireframes for the project to show the website's layout, d
 
 #### Database
 
-Two relational databases were used to create the site. The built in Django SQLite database was used for development and then Postgres for the deployed version.
+For this project I used a free database called [ElephantSQL](https://www.elephantsql.com/).
 
-An entity relationship diagram was created and shows the schemas for each of the models and how they are related.
+This is a list of the models I have created:
+
+* Product - A model for all the product details needed for a product, which includes a basic stock tracking in this model.
+* Product review - A model to reivew products.
+* Category - Complements the product model and makes it possible to sort the products in to categories.
+* UserProfile - This gives the logged in user the option to save their delivery information and have it pre filled to the next time.
+* Order - Stores all the order information and displayed to logged in user in their profile page.
+* OrderLineItems - Stores the products on the order and keep track of the quantity of each product in the order.
+* ProductReview - Stores reviews given by a logged in user for a specific product.
+* Wishlist - A model that makes it possible for a logged in user to create their own wishlist with products.
+* Contact - A model to allow all user contact the store.
+* FAQs - This gives the admin user the ability to write, edit and delete FAQs for the end user to read.
+
+Note: 
+
+1. Some of these models are similar to the models in Boutique Ado Walkthrough Project at Code Institute. But I have made some changes to the models and added more functionality.
+2. The entity relationship diagram also displays models that comes with Django and all-auth.
+
+![entity relationship diagram](docs/readme_screenshots/elephantsql.png)
 
 ##### Back to [top](#table-of-contents)
 
