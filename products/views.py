@@ -21,45 +21,37 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     categories = None
-    sort = None
-    direction = None
+    sort = request.GET.get('sort', None)  # Get the sort parameter from the request
+    direction = request.GET.get('direction', None)  # Get the direction parameter from the request
+
+    valid_sort_fields = ['id', 'name', 'category', 'price']  # Add more valid fields as needed
+
+    if sort is None or sort not in valid_sort_fields:
+        sort = 'id'  # Set a default sorting option (you can choose any field for default sorting)
+
+    if direction == 'desc':
+        sort = f'-{sort}'
 
     if request.GET:
-        if 'sort' in request.GET:
-            sortkey = request.GET['sort']
-            sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
-
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+            if categories:
+                products = products.filter(category__name__in=categories)
+                categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!"
-                )
+                messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(
-                description__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
-    if not sort:
-        products = products.order_by('id')
+    # Add the ordering based on the 'sort' parameter
+    products = products.order_by(sort)
 
-    paginator = Paginator(products, 8)
+    paginator = Paginator(products, 4)
     page = request.GET.get("page")
     paginated_products = paginator.get_page(page)
     current_sorting = f"{sort}_{direction}"
@@ -84,7 +76,13 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
+    # Add the selected category to the pagination links
+    if selected_category:
+        context['selected_category'] = selected_category
+
     return render(request, 'products/products.html', context)
+
+
 
 
 @login_required

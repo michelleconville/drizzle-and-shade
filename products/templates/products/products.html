@@ -138,23 +138,26 @@
     </div>
 
 
+    {% if products.has_other_pages %}
     <div class="pagination">
-        <span class="step-links">
-          {% if products.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ products.previous_page_number }}">previous</a>
-          {% endif %}
-      
-          <span class="current">
-            Page {{ products.number }} of {{ products.paginator.num_pages }}
-          </span>
-      
-          {% if products.has_next %}
-            <a href="?page={{ products.next_page_number }}">next</a>
-            <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
-          {% endif %}
+      <span class="step-links">
+        {% if products.has_previous %}
+          <a href="?page=1{% if current_sorting %}&sort={{ current_sorting }}{% endif %}{% if search_term %}&q={{ search_term }}{% endif %}{% if current_categories %}&category={{ current_categories|join:"," }}{% endif %}">&laquo; first</a>
+          <a href="?page={{ products.previous_page_number }}{% if current_sorting %}&sort={{ current_sorting }}{% endif %}{% if search_term %}&q={{ search_term }}{% endif %}{% if current_categories %}&category={{ current_categories|join:"," }}{% endif %}">&lsaquo; previous</a>
+        {% endif %}
+  
+        <span class="current">
+          Page {{ products.number }} of {{ products.paginator.num_pages }}.
         </span>
-      </div>
+  
+        {% if products.has_next %}
+          <a href="?page={{ products.next_page_number }}{% if current_sorting %}&sort={{ current_sorting }}{% endif %}{% if search_term %}&q={{ search_term }}{% endif %}{% if current_categories %}&category={{ current_categories|join:"," }}{% endif %}">next &rsaquo;</a>
+          <a href="?page={{ products.paginator.num_pages }}{% if current_sorting %}&sort={{ current_sorting }}{% endif %}{% if search_term %}&q={{ search_term }}{% endif %}{% if current_categories %}&category={{ current_categories|join:"," }}{% endif %}">last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+  {% endif %}
+  
 {% endblock %}
 
 {% block postloadjs %}
