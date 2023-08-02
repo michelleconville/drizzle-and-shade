@@ -324,6 +324,15 @@ All review fucntionality working as expected
 * Buttons working as expected
 * Email confirmation working as expected
 
+![Contact page](docs/testing/manual-testing/contact-form.jpg)
+
+
+![Contact - toast message](docs/testing/manual-testing/toast-message-contact.jpg)
+
+
+![Contact - email confirmation](docs/testing/manual-testing/email-confirmation-contact.jpg)
+
+
 ### Toasts
 
                 As a shopper I am notified about any actions I have made so that I have a clear understanding of what has been completed/updated
@@ -340,6 +349,20 @@ Each message will display be 3 second before disappearing.
 
 Toast messages display as expected
 
+**Selection of toat messages**
+
+![Contact - toast message](docs/testing/manual-testing/toast-message-contact.jpg)
+
+![Checkout - toast message](docs/testing/manual-testing/toast-message-checkout.jpg)
+
+![Success - toast message](docs/testing/manual-testing/toast-message-success.jpg)
+
+![error - toast message](docs/testing/manual-testing/toast-non-admin-access.jpg)
+
+![alert - toast message](docs/testing/manual-testing/toast-message-alert.jpg)
+
+
+
 ### Account overview 
                 As a shopper I can register for an account so that I can use features for logged-in users
 
@@ -350,6 +373,9 @@ Toast messages display as expected
 **Outcome**
 
 * Buttons working as expected
+
+![Account overview](docs/features/account-overview.jpg)
+
 
 ### My Profile
                 As a logged-in shopper I can save my details so that I don't have to retype my address every time
@@ -369,6 +395,8 @@ Toast messages display as expected
 * Delete button working as expected
 * Order history display and works as expected
 
+![My profile](docs/features/my-profile.jpg)
+
 ### My Wishlist
 
                 As a logged-in shopper I can save selected products to my wishlist for later purchase
@@ -385,6 +413,8 @@ Toast messages display as expected
 * Page displaying as expected
 * Remove button working as expected
 
+![wishlist](docs/testing/gif/wishlist.gif)
+
 ### Admin Panel
 
                 As a site owner I can log in/out to an admin panel so that I have full access to staff area
@@ -397,6 +427,8 @@ Toast messages display as expected
 
 * Buttons working as expected
 
+![Admin panel](docs/features/admin-panel.jpg)
+
 ### Category and product management
 
 **Expected**
@@ -407,29 +439,147 @@ Toast messages display as expected
 
 * Buttons working as expected
 
+![Category and product management](docs/features/product-management.jpg)
+
 #### Category management
                 As a site owner I can add new categories to the shop so that I can make sure the website is up to date
                 As a site owner I can edit/delete categories so that I can make sure the website is up to date
 
 **Expected**
 
+* A category can be added
+* A category can be edited 
+* A category can be deleted
+* Toast message is displaying
+
 **Outcome**
+
+* All Functionality working as expected
+
+![Category management](docs/testing/gif/category-management.gif)
 
 ### Add Products
 
+                As a site owner I can add new product to the shop so that I can make sure the website is up to date
+                As a site owner I can edit/delete products so that I can make sure the website is up to date
+
+The Adding/Editing/Deleting of Products is only available to staff. 
+
 **Expected**
 
-Page only accesible for superusers
-An image can be added 
-Price can not be 0 or negative
+* Here the staff member can select a products category and add the products details.
+* New product can be viewed and edited and deleted
 
 **Outcome**
 
-Page is only accessible for superusers
+* All Functionality working as expected
+
+![Product management](docs/testing/gif/product-management.gif)
 
 
+### Stock Management
+
+**Expected**
+
+* Displays a list of all products and the number of that product that is are available.
+* An admin user can add or remove stock
+
+**Outcome**
+
+* All Functionality working as expected
+
+![Product management](docs/testing/gif/stock-management.gif)
+
+#### Managing shipping
+
+**Expected**
+* Displays a list of all orders, with the customers order number, full name and total and if the order has been shipped. 
+* Edit button to allow order to me maked as shipped
+* Email confirmation test to user to advise order has been shipped
+
+**Outcome**
+
+* All Functionality working as expected
+
+##### Order list page
+
+![Managing shipping page](docs/features/orders-list.jpg)
+
+##### Confirm shipping page
+
+![Confirm shipping page](docs/features/edit-shipping.jpg)
+
+##### Confirmation email
+
+![Confirm shipping page](docs/testing/manual-testing/email-confirmation-shipping.jpg)
 
 
+#### Manage FAQs
+
+                As a site owner I can add FAQs to the site so that I can make sure that the shopper can find answer
+                As a shopper I can read the FAQ's so that I can find the answer to my question or concern before contacting the site
+
+**Expected**
+
+* Admin user can add a question and its answer, and it will be displayed on the website straight away.
+* Admin users can edit, update and delete a faqs.
+
+**Outcome**
+
+* All Functionality working as expected
+
+##### FAQ page
+
+![FAQ page](docs/features/manage-faqs.jpg)
+
+##### Add an FAQ 
+
+![Add an FAQ](docs/features/add-faqs.jpg)
+
+##### Edit an FAQ 
+
+![Edit an FAQ](docs/features/edit-faqs.jpg)
+
+##### Delete an FAQ 
+
+![Delete an FAQ](docs/features/delete-faq.jpg)
+
+
+#### AllAuth
+
+                As a shopper I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
+                As a shopper I can log in/out of my account if I wish so that I can connect or disconnect from the website
+
+**Expected**
+
+* A user can register for an account
+* A user can login
+* A user can log out
+* A user can change their password
+
+**Outcome**
+
+* All Functionality working as expected
+
+##### Login page
+
+![Login page](docs/features/signin.jpg)
+
+##### Register page
+
+![Register page](docs/features/register.jpg)
+
+##### Logout page
+
+![Logout page](docs/features/logout.jpg)
+
+##### Forgot password page 
+
+![forgot password page](docs/features/password-reset.jpg)
+
+##### Change password page 
+
+![Change password](docs/features/changepassword.jpg)
 
 
 ##### Back to [top](#table-of-contents)
@@ -442,10 +592,204 @@ All HTML pages were run though the [html-checker](https://validator.w3.org/nu/).
 
 Due to the django templating language code used in the HTML files and pages with login required, these pages could not be copy and pasted into the validator. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw html code into the validator as this will be only the HTML rendered code.
 
+#### CSS
 
+CSS was validated using the W3C Markup Validation Service. This was done using the 'Validate by Direct Input' option.
 
+<details><summary>CSS results - base</summary>
+
+![CSS validation results base](docs/testing/validation/css-base-page.jpg) 
+
+</details>
+
+<details><summary>CSS results - checkout</summary>
+
+![CSS validation results checkout](docs/testing/validation/css-checkout-page.jpg) 
+
+</details>
+
+<details><summary>CSS results - products</summary>
+
+![CSS validation results products](docs/testing/validation/css-products-page.jpg) 
+
+</details>
+
+<details><summary>CSS results - profiles</summary>
+
+![CSS validation results profiles](docs/testing/validation/css-profiles-page.jpg) 
+
+</details>
 
 ##### Back to [top](#table-of-contents)
+
+### JavaScript
+
+[JSHint Static Code Analysis Tool](https://jshint.com/) for JavaScript was used to validate the Javascript files. No significant issues were found.
+
+<details><summary>JavaScript results</summary>
+
+![JavaScript validation results](docs/readme_images/test/javascript.jpg) 
+
+</details>
+
+### pep8 
+
+[pep8ci](https://pep8ci.herokuapp.com/) was used for validating all python files. All python files were checked with no errors reported.
+
+<details><summary>Example of pep8ci results</summary>
+
+![Example of pep8ci results](docs/testing/validation/pep8-validation.jpg) 
+
+</details>
+
+### Accessibility
+
+The WAVE WebAIM web accessibility evaluation tool was used throughout development and for final testing of the deployed website to ensure the website met high accessibility standard. I have included an image of the homepage result only, however, all pages passed with 0 errors. I tested the website through a [Colour Contrast Accessibility Validator](https://color.a11y.com/Contrast/) to further test the contrast and no issues were detected.
+
+
+<details><summary>WAVE Homepage results</summary>
+
+![WAVE Homepage results](docs/testing/validation/wave-home.jpg) 
+
+</details>
+
+<details><summary>Colour Contrast Accessibility Validator results</summary>
+
+![Color Contrast Accessibility Validator results](docs/testing/validation/colour-contrast.jpg) 
+
+</details>
+
+## Performance
+
+Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website.
+
+<details>
+<summary>Homepage</summary>
+
+![homepage page](docs/testing/validation/lighthouse-home.jpg)
+
+</details>
+
+<details>
+<summary>Products page</summary>
+
+![Products page](docs/testing/validation/lighthouse-products.jpg)
+
+</details>
+
+<details>
+<summary>Product detail page</summary>
+
+![Product detail page](docs/testing/validation/lighthouse-product-detail.jpg)
+
+</details>
+
+<details>
+<summary>Bag page</summary>
+
+![Bag page](docs/testing/validation/lighthouse-bag.jpg)
+
+</details>
+
+<details>
+<summary>Checkout page</summary>
+
+![Checkout page](docs/testing/validation/lighthouse-checkout.jpg)
+
+</details>
+
+<details>
+<summary>Contact page</summary>
+
+![Contact page](docs/testing/validation/lighthouse-contact.jpg)
+
+</details>
+
+<details>
+<summary>Profile page</summary>
+
+![Profile page](docs/testing/validation/lighthouse-profiles.jpg)
+
+</details>
+
+<details>
+<summary>Wishlist page</summary>
+
+![Wishlist page](docs/testing/validation/lighthouse-wishlist.jpg)
+
+</details>
+
+
+
+<details>
+<summary>Admin panel page</summary>
+
+![Admin panel page](docs/testing/validation/lighthouse-admin-panel.jpg)
+
+</details>
+
+<details>
+<summary>Category and Product Management page</summary>
+
+![Category and Product Management page](docs/testing/validation/lighthouse-product-management.jpg)
+
+</details>
+
+<details>
+<summary>Category Management page</summary>
+
+![Category Management page](docs/testing/validation/lighthouse-category.jpg)
+
+</details>
+
+<details>
+<summary>Product Management page</summary>
+
+![Category Management page](docs/testing/validation/lighthouse-add-product.jpg)
+
+</details>
+
+<details>
+<summary>Stock page</summary>
+
+![Stock page](docs/testing/validation/lighthouse-stock.jpg)
+
+</details>
+
+<details>
+<summary>Edit Stock page</summary>
+
+![Edit Stock page](docs/testing/validation/lighthouse-stock-update.jpg)
+
+</details>
+
+<details>
+<summary>Shipping page</summary>
+
+![Shipping page](docs/testing/validation/lighthouse-order-list.jpg)
+
+</details>
+
+<details>
+<summary>Confirm Shipping page</summary>
+
+![Confirm Shipping page](docs/testing/validation/lighthouse-order-list-edit.jpg)
+
+</details>
+
+<details>
+<summary>Privacy page</summary>
+
+![Privacy page](docs/testing/validation/lighthouse-privacy.jpg)
+
+</details>
+
+<details>
+<summary>Terms and Conditions page</summary>
+
+![Terms and Conditions page](docs/testing/validation/lighthouse-terms.jpg)
+
+</details>
 
 ## Testing Browser Compatibility
 
@@ -478,7 +822,7 @@ In addition to the above listed devices, the Google Chrome Developer Tools devic
 
 ## Unfixed 
 
-
+There is no known bugs left to solve.
 
 [Return to README.md](README.md)
 

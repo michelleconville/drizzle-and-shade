@@ -742,6 +742,9 @@ Staff users can edit, update and delete a faqs.
 
 #### AllAuth
 
+                As a shopper I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
+                As a shopper I can log in/out of my account if I wish so that I can connect or disconnect from the website
+
 The AllAuth pages have been styled in line with the site theme, included are Sign Up, Login, Logout, and email/password-related pages.
 
 ##### Login page
