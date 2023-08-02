@@ -1,6 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -56,14 +54,16 @@ def delete_profile(request, username):
     profile = get_object_or_404(UserProfile, user=user)
 
     if user != profile.user:
-        messages.success(request, "You are not authorized to delete this Profile.")
-        return redirect("profile")  # Redirect back to the profile page if not authorized.
+        messages.success(request, "You are not authorized \
+             to delete this Profile.")
+        return redirect("profile")
 
     if request.method == "POST":
         logout(request)
         user.delete()
-        messages.success(request, "Sorry to see you go, your Account has been deleted.")
-        return redirect("home")  # Redirect to the home page after successful deletion.
+        messages.success(request, "Sorry to see you go, \
+            your Account has been deleted.")
+        return redirect("home")
 
     context = {"username": username}
     return render(request, "profiles/profile.html", context)

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from products.models import Product
 from profiles.models import UserProfile
-from . models import Wishlist, WishlistItem
+from . models import Wishlist
 
 
 @login_required

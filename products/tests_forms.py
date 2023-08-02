@@ -1,7 +1,6 @@
 from django.test import TestCase
-from django import forms
-from .forms import ProductForm, CategoryForm, ReviewForm, UpdateStockForm
-from .models import Category, Product, Review
+from .forms import CategoryForm, ReviewForm, UpdateStockForm
+from .models import Product
 
 
 class CategoryFormTest(TestCase):

@@ -49,15 +49,21 @@ def all_products(request):
             if not query:
                 messages.error(
                     request, "You didn't enter any search criteria!"
-                    )
+                )
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) \
-                | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
+    if not sort:
+        products = products.order_by('id')
+
     paginator = Paginator(products, 8)
-    page = request.GET.get('page')
+    page = request.GET.get("page")
+    paginated_products = paginator.get_page(page)
+    current_sorting = f"{sort}_{direction}"
+    selected_category = request.GET.get("category")
 
     try:
         paginated_products = paginator.page(page)
