@@ -23,6 +23,7 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """Stores the checkout data and stores it in the user's session"""
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -39,6 +40,10 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    A view that renders the checkout page and retrieves the
+    payment form data from the profile if one is present
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 

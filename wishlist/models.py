@@ -16,6 +16,7 @@ class Wishlist(models.Model):
 
 
 class WishlistItem(models.Model):
+    """ Wishlist item model to store users favourite products"""
     wishlist = models.ForeignKey(Wishlist, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 

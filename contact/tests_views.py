@@ -21,7 +21,7 @@ class TestContactViews(TestCase):
         Test that contact message works
         """
         contact_data = {
-            "contact_reason": "other",  # Use a valid choice here
+            "contact_reason": "other",
             "name": "Michelle",
             "email": "michelle@test.com",
             "subject": "Test Subject",
@@ -29,11 +29,9 @@ class TestContactViews(TestCase):
         }
         response = self.client.post(reverse("contact"), data=contact_data)
 
-        # Check if the form is valid
         form = ContactForm(contact_data)
         self.assertTrue(form.is_valid(), form.errors)
 
-        # Check the response status code and redirect URL
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("home"))
 
@@ -42,7 +40,7 @@ class TestContactViews(TestCase):
         Test that contact message wont work with invalid data
         """
         contact_data = {
-            "contact_reason": "test",  # Make sure this field is invalid
+            "contact_reason": "test",
             "name": "Michelle",
             "email": "michelle@test.com",
             "subject": "Test Subject",
@@ -50,10 +48,8 @@ class TestContactViews(TestCase):
         }
         response = self.client.post(reverse("contact"), data=contact_data)
 
-        # Check if the form is invalid
         form = ContactForm(contact_data)
         self.assertFalse(form.is_valid())
 
-        # Check the response status code and template used
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "contact/contact.html")

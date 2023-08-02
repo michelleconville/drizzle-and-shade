@@ -51,10 +51,12 @@ class OrderForm(forms.ModelForm):
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            # self.fields[field].label = False
 
 
 class OrderShippedForm(forms.ModelForm):
+    """
+    Create the layout of the Order Shipped Form
+    """
     class Meta:
         model = Order
         fields = ('order_shipped',)

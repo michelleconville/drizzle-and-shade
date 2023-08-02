@@ -11,7 +11,9 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
-    """ order model """
+    """
+    Order model
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
@@ -72,6 +74,9 @@ class Order(models.Model):
         super().save(*args, **kwargs)
 
     def set_order_shipped(self, shipped_status):
+        """
+        Update order to shipped
+        """
         self.order_shipped = shipped_status
         self.save()
 
@@ -80,6 +85,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    A model for Order Line Items
+    """
     order = models.ForeignKey(
         Order, on_delete=models.CASCADE, related_name='lineitems',
         null=False, blank=False)

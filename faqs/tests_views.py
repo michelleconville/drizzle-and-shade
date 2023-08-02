@@ -5,7 +5,9 @@ from .models import Faqs
 
 
 class FaqsViewsTest(TestCase):
-
+    """
+        Tests the faqs view
+        """
     @classmethod
     def setUpTestData(cls):
         cls.test_user = User.objects.create_user(

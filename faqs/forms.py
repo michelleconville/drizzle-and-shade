@@ -40,10 +40,8 @@ class FaqsForm(forms.ModelForm):
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
-            # add class to fields
             self.fields[field].widget.attrs['class'] = 'border-blue rounded-0'
 
-            # Set custom IDs for form fields
             if field == 'category':
                 self.fields[field].widget.attrs['id'] = 'category-field'
             elif field == 'questions':
@@ -51,7 +49,6 @@ class FaqsForm(forms.ModelForm):
             elif field == 'answers':
                 self.fields[field].widget.attrs['id'] = 'answers-field'
 
-            # Set aria-labelledby attributes to use the custom IDs
             self.fields[field].widget.attrs['aria-labelledby'] = (
                 f"{self.fields[field].widget.attrs['id']}-label"
                 )
