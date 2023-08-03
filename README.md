@@ -470,7 +470,7 @@ The product information section contains:
                 As a shopper I can see ratings and reviews so that I can read the opinions of other shoppers
                 As a logged-in shopper I can leave a rating and reviews so that I can share my experience with others
 
-The review section will allow any user read reviews that have been written by other users. Registered users can rate and add one review per product, they also have the ability to edit the review or delete it. If Product has not been reviewed the rating for the Product is set to 0. This will update with the average rating across all reviews.
+The review section will allow any user read reviews that have been written by other users. Registered users can rate and review products, they also have the ability to edit the review or delete it. If Product has not been reviewed the rating for the Product is set to 0. This will update with the average rating across all reviews.
 
 ##### Unregistered user
 
@@ -479,10 +479,6 @@ The review section will allow any user read reviews that have been written by ot
 ##### Registered user 
 
 ![Product detail reivew page for registered user](docs/features/product-detail-page-reivew-logged-in.jpg)
-
-##### User left a comment
-
-![Product detail reivew page when a User left a comment](docs/features/product-detail-page-reivew.jpg)
 
 ##### Back to [top](#table-of-contents)
 

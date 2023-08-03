@@ -229,7 +229,6 @@ View the site wide coverage report [coverage-report](coverage.txt)
 
 * Review section displays a list of reviews for a product if available 
 * Registered users can rate and review a product
-* Registered users can only review a prodcut once
 * Registered users can edit and delete their review
 * When a producted is rated, the rating will update with the average rating across all reviews
 
@@ -244,10 +243,6 @@ All review fucntionality working as expected
 ##### Registered user 
 
 ![Product detail reivew page for registered user](docs/features/product-detail-page-reivew-logged-in.jpg)
-
-##### User left a comment
-
-![Product detail reivew page when a User left a comment](docs/features/product-detail-page-reivew.jpg)
 
 
 ### Shopping cart
