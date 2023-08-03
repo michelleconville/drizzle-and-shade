@@ -28,6 +28,8 @@ body {
 background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, rgba(255,157,92,1) 100%);
 }
 
+/*  Helper Styles */
+
 /* from Bulma for font awesome icons */
 .icon {
     align-items: center;
@@ -37,18 +39,6 @@ background: radial-gradient(circle, rgba(7,36,70,1) 0%, rgba(178,33,141,1) 50%, 
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
-}
-
-.logo {
-    font-family: 'Pangolin';
-    color: var(--pink);
-}
-.main-logo-link {
-    width: fit-content;
-}
-
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -56,11 +46,6 @@ hr {
     border-top: 1px solid var(--main_blue);
 }
 
-.shop-now-button {
-    background: var(--main_blue);
-    color: var(--orange);
-    min-width: 260px;
-}
 
 .btn-blue {
     background: var(--main_blue);
@@ -101,6 +86,42 @@ hr {
     color: var(--pink) !important;
     }
 
+/*  Navigation and homepage */
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.logo {
+    font-family: 'Pangolin';
+    color: var(--pink);
+}
+.main-logo-link {
+    width: fit-content;
+}
+   
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+input[name='q']::placeholder {
+    color: #aab7c4;
+}
+
+.shop-now-button {
+    background: var(--main_blue);
+    color: var(--orange);
+    min-width: 260px;
+}
+
+/*  Product cards */
+
 .card {
     text-decoration: none;
     color: var(--main_blue);
@@ -115,20 +136,7 @@ hr {
 .border-blue {
     border: 1px solid var(--main_blue) !important;
 }
- 
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
-}
 
-input[name='q']::placeholder {
-    color: #aab7c4;
-}
 
 /* Footer */
 
